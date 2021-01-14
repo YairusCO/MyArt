@@ -13,7 +13,7 @@ class _Home extends Component {
     }
   }
   componentDidMount() {
-    this.props.loadReviews()
+    // this.props.loadReviews()
     this.props.loadUsers()
   }
 
@@ -107,7 +107,7 @@ const mapDispatchToProps = {
   loadReviews,
   loadUsers,
   addReview,
-  removeReview
+  // removeReview
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)

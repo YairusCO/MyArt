@@ -1,12 +1,13 @@
-import { httpService } from './httpService'
+// import { httpService } from './httpService'
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
 // import { utilService } from './utilService'
-
+const KEY = 'itemsDB';
 export const appStoreService = {
- // add,
+ add,
   query,
- // remove
+  remove,
+  getById
 }
 
 
@@ -119,20 +120,53 @@ var gItems = [
   }
 ]
 function query() {
-  return gItems
+  return Promise.resolve(gItems);
 }
 
 function remove(itemId) {
-  return httpService.delete(`item/${itemId}`)
+//   return httpService.delete(`item/${itemId}`)
   // return storageService.delete('item', itemId)
+  gItems = gItems.filter(item => item.id !== itemId);
+  _saveItemsToStorage();
+  return Promise.resolve();
 
 }
-async function add(item) {
-  const addedItem = await httpService.post(`item`, item)
+// async 
+function add(itemId) {
+//   const addedItem = await httpService.post(`item`, item)
 
+  itemId = itemId.filter(item => item.id !== itemId);
+  _saveItemsToStorage();
+  return Promise.resolve();
   // item.byUser = userService.getLoggedinUser()
   // item.aboutUser = await userService.getById(item.aboutUserId)
   // const addedItem = storageService.post('item', item)
+//   return addedItem
+}
 
-  return addedItem
+function getById(itemId) {
+    const item = gItems.find(item => item.id === itemId);
+    return Promise.resolve(item);
+}
+
+function _saveItemsToStorage() {
+    storageService.save(KEY, gItems)
+}
+
+
+// // Storage Util
+
+export const storageService = {
+    load,
+    save
+}
+
+function load(key) {
+    const str = localStorage.getItem(key)
+    return JSON.parse(str)
+}
+
+function save(key, val) {
+    const str = JSON.stringify(val)
+    localStorage.setItem(key, str)
 }

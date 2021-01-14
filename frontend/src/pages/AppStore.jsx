@@ -50,6 +50,9 @@ class _AppStore extends Component {
   console.log(items);
     return (
       <div className="appStore">
+     
+               
+           
         <h1>MyArt Store</h1>
         <ItemList items={items}>
                 {items.map(item => <ItemPreview key={item._id} item={item} />)}
