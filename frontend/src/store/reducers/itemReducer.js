@@ -1,4 +1,4 @@
-import { itemService } from '../../service/itemService.js'
+// import { itemService } from '../../service/itemService.js'
 
 const initialState = {
   toys: [],

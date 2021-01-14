@@ -120,14 +120,14 @@ var gItems = [
   }
 ]
 function query() {
-  return Promise.resolve(gItem);
+  return Promise.resolve(gItems);
 }
 
 function remove(itemId) {
 //   return httpService.delete(`item/${itemId}`)
   // return storageService.delete('item', itemId)
   gItems = gItems.filter(item => item.id !== itemId);
-  _savePetsToStorage();
+  _saveItemsToStorage();
   return Promise.resolve();
 
 }
@@ -156,17 +156,17 @@ function _saveItemsToStorage() {
 
 // // Storage Util
 
-// export const storageService = {
-//     load,
-//     save
-// }
+export const storageService = {
+    load,
+    save
+}
 
-// function load(key) {
-//     const str = localStorage.getItem(key)
-//     return JSON.parse(str)
-// }
+function load(key) {
+    const str = localStorage.getItem(key)
+    return JSON.parse(str)
+}
 
-// function save(key, val) {
-//     const str = JSON.stringify(val)
-//     localStorage.setItem(key, str)
-// }
+function save(key, val) {
+    const str = JSON.stringify(val)
+    localStorage.setItem(key, str)
+}

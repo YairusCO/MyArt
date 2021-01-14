@@ -13,7 +13,7 @@ class _Home extends Component {
     }
   }
   componentDidMount() {
-    this.props.loadReviews()
+    // this.props.loadReviews()
     this.props.loadUsers()
   }
 

@@ -48,6 +48,9 @@ class _AppStore extends Component {
   const items = appStoreService.query
     return (
       <div className="appStore">
+     
+               
+           
         <h1>MyArt Store</h1>
 
 
