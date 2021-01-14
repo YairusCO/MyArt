@@ -4,10 +4,14 @@
 // import { utilService } from './utilService'
 const KEY = 'itemsDB';
 export const appStoreService = {
-  add,
+ // add,
   query,
+<<<<<<< HEAD
   remove,
   getById
+=======
+ // remove
+>>>>>>> 57f39fe37569fab839f7c27f48f90bacc1227b8a
 }
 
 
@@ -20,7 +24,7 @@ export const appStoreService = {
 //   return httpService.get(`item${queryStr}`)
 //   // return storageService.query('item')
 // }
-var gItem = [
+var gItems = [
   {
       "_id": "v140",
       "title": "Wooden Elephant",
@@ -120,7 +124,11 @@ var gItem = [
   }
 ]
 function query() {
+<<<<<<< HEAD
   return Promise.resolve(gItem);
+=======
+  return gItems
+>>>>>>> 57f39fe37569fab839f7c27f48f90bacc1227b8a
 }
 
 function remove(itemId) {
