@@ -107,7 +107,7 @@ const mapDispatchToProps = {
   loadReviews,
   loadUsers,
   addReview,
-  removeReview
+  // removeReview
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home)
