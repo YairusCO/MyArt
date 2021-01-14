@@ -120,8 +120,13 @@ var gItems = [
   }
 ]
 function query() {
+<<<<<<< HEAD
 //   return Promise.resolve(gItems);
 return gItems
+=======
+  // return Promise.resolve(gItems);
+  return gItems;
+>>>>>>> a5487a04d496f59fcb4029974740c4594a657ccf
 }
 
 function remove(itemId) {
