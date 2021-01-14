@@ -1,8 +1,5 @@
 
 
-
-
-
 export function ItemList({ children }) {
     return (
         <ul>
