@@ -1,79 +1,89 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { loadReviews, addReview, removeReview } from '../store/actions/reviewActions.js'
-import { loadUsers } from '../store/actions/userActions.js'
+// import { loadItems, addItem, removeItem } from '../store/actions/itemActions.js'
+// import { loadUsers } from '../store/actions/userActions.js'
+import {appStoreService} from '../services/appStoreService.js'
 import { Link } from 'react-router-dom'
 
 class _AppStore extends Component {
-  state = {
-    reviewToEdit: {
-      txt: '',
-      aboutUserId: ''
-    }
-  }
-  componentDidMount() {
-    this.props.loadReviews()
-    this.props.loadUsers()
-  }
+  // state = {
+  //  itemToEdit: {
+  //     txt: '',
+  //     aboutUserId: ''
+  //   }
+  // }
+  // componentDidMount() {
+  //   this.props.loadItems()
+  //   this.props.loadUsers()
+  // }
 
-  handleChange = ev => {
-    const { name, value } = ev.target
-    this.setState(prevState => ({
-      reviewToEdit: {
-        ...prevState.reviewToEdit,
-        [name]: value
-      }
-    }))
-  }
+  // handleChange = ev => {
+  //   const { name, value } = ev.target
+  //   this.setState(prevState => ({
+  //    itemToEdit: {
+  //       ...prevState.itemToEdit,
+  //       [name]: value
+  //     }
+  //   }))
+  // }
 
-  addReview = async ev => {
-    ev.preventDefault()
-    const { reviewToEdit } = this.state
-    if (!reviewToEdit.txt || !reviewToEdit.aboutUserId) return alert('All fields are required')
-    await this.props.addReview(this.state.reviewToEdit)
-    this.setState({ reviewToEdit: { txt: '', aboutUserId: '' } })
-  }
+  // addItem = async ev => {
+  //   ev.preventDefault()
+  //   const {itemToEdit } = this.state
+  //   if (!itemToEdit.txt || !itemToEdit.aboutUserId) return alert('All fields are required')
+  //   await this.props.addItem(this.state.itemToEdit)
+  //   this.setState({itemToEdit: { txt: '', aboutUserId: '' } })
+  // }
 
-  onRemove = async reviewId => {
-    await this.props.removeReview(reviewId)
-    // this.props.history.push('/login')
-  }
+  // onRemove = asyncitemId => {
+  //   await this.props.removeItem(itemId)
+  //   // this.props.history.push('/login')
+  // }
 
-  canRemove = review =>
-    (review.byUser._id === this.props.loggedInUser?._id || this.props.loggedInUser?.isAdmin)
+  // canRemove =item =>
+  //   (item.seller._id === this.props.loggedInUser?._id || this.props.loggedInUser?.isAdmin)
 
   render() {
+  const items = appStoreService.query
     return (
       <div className="appStore">
-        <h1>Reviews and Gossip</h1>
-        {this.props.reviews && <ul className="review-list">
-          {this.props.reviews.map(review => (
-            <li key={review._id}>
-              { this.canRemove(review) &&
-                <button onClick={() => this.onRemove(review._id)}>X</button>}
+        <h1>MyArt Store</h1>
+
+
+
+
+
+
+
+
+        {/* {this.props.items && <ul className="item-list">
+          {this.props.items.map(item => (
+            <li key={item._id}>
+              { this.canRemove(item) &&
+                <button onClick={() => this.onRemove(item._id)}>X</button>}
               <p>
                 About:
-                <Link to={`user/${review.aboutUser._id}`}>
-                  {review.aboutUser.fullname}
+                <Link to={`user/${item.aboutUser._id}`}>
+                  {item.aboutUser.fullname}
                 </Link>
               </p>
-              <h3>{review.txt}</h3>
+              <h3>{item.txt}</h3>
 
               <p>
                 By:
-                <Link to={`user/${review.byUser._id}`}>
-                  {review.byUser.fullname}
+                <Link to={`user/${item.seller._id}`}>
+                  {item.seller.fullname}
                 </Link>
               </p>
             </li>
           ))}
         </ul>}
         {this.props.users && this.props.loggedInUser &&
-          <form onSubmit={this.addReview}>
+          <form onSubmit={this.addItem}>
             <select
               onChange={this.handleChange}
-              value={this.state.reviewToEdit.aboutUserId}
+              value={this.state.itemToEdit.aboutUserId}
               name="aboutUserId"
             >
               <option value="">Select User</option>
@@ -86,28 +96,28 @@ class _AppStore extends Component {
             <textarea
               name="txt"
               onChange={this.handleChange}
-              value={this.state.reviewToEdit.txt}
+              value={this.state.itemToEdit.txt}
             ></textarea>
             <button>Submit</button>
           </form>}
-        <hr />
+        <hr /> */}
       </div>
     )
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    reviews: state.reviewModule.reviews,
-    users: state.userModule.users,
-    loggedInUser: state.userModule.loggedInUser
-  }
-}
-const mapDispatchToProps = {
-  loadReviews,
-  loadUsers,
-  addReview,
-  removeReview
-}
+// const mapStateToProps = state => {
+//   return {
+//    items: state.itemModule.items,
+//     users: state.userModule.users,
+//     loggedInUser: state.userModule.loggedInUser
+//   }
+// }
+// const mapDispatchToProps = {
+//   loadItems,
+//   loadUsers,
+//   addItem,
+//   removeItem
+// } connect(mapStateToProps, mapDispatchToProps)
 
-export const AppStore = connect(mapStateToProps, mapDispatchToProps)(_AppStore)
+export const AppStore = (_AppStore)

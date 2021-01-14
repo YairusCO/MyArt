@@ -4,9 +4,9 @@ import { httpService } from './httpService'
 // import { utilService } from './utilService'
 
 export const appStoreService = {
-  add,
+ // add,
   query,
-  remove
+ // remove
 }
 
 
@@ -19,7 +19,7 @@ export const appStoreService = {
 //   return httpService.get(`item${queryStr}`)
 //   // return storageService.query('item')
 // }
-var gItem = [
+var gItems = [
   {
       "_id": "v140",
       "title": "Wooden Elephant",
@@ -119,7 +119,7 @@ var gItem = [
   }
 ]
 function query() {
-  return gItem
+  return gItems
 }
 
 function remove(itemId) {
