@@ -4,14 +4,10 @@
 // import { utilService } from './utilService'
 const KEY = 'itemsDB';
 export const appStoreService = {
- // add,
+ add,
   query,
-<<<<<<< HEAD
   remove,
   getById
-=======
- // remove
->>>>>>> 57f39fe37569fab839f7c27f48f90bacc1227b8a
 }
 
 
@@ -124,16 +120,15 @@ var gItems = [
   }
 ]
 function query() {
-<<<<<<< HEAD
   return Promise.resolve(gItem);
-=======
-  return gItems
->>>>>>> 57f39fe37569fab839f7c27f48f90bacc1227b8a
 }
 
 function remove(itemId) {
-  return httpService.delete(`item/${itemId}`)
+//   return httpService.delete(`item/${itemId}`)
   // return storageService.delete('item', itemId)
+  gItems = gItems.filter(item => item.id !== itemId);
+  _savePetsToStorage();
+  return Promise.resolve();
 
 }
 // async 
@@ -159,19 +154,19 @@ function _saveItemsToStorage() {
 }
 
 
-// Storage Util
+// // Storage Util
 
-export const storageService = {
-    load,
-    save
-}
+// export const storageService = {
+//     load,
+//     save
+// }
 
-function load(key) {
-    const str = localStorage.getItem(key)
-    return JSON.parse(str)
-}
+// function load(key) {
+//     const str = localStorage.getItem(key)
+//     return JSON.parse(str)
+// }
 
-function save(key, val) {
-    const str = JSON.stringify(val)
-    localStorage.setItem(key, str)
-}
+// function save(key, val) {
+//     const str = JSON.stringify(val)
+//     localStorage.setItem(key, str)
+// }
