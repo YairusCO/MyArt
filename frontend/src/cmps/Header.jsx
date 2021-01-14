@@ -8,7 +8,7 @@ class _Header extends Component {
         return <header>
            
             <nav>
-                <NavLink exact to="/"><span role="img" aria-label="logo">🙏</span></NavLink>
+                <NavLink exact to="/store"><span role="img" aria-label="logo">🙏</span></NavLink>
                 <NavLink to="/login">Login</NavLink>
                 <NavLink exact to="/">User Reviews</NavLink>
                 <NavLink to="/chat">Chat Room</NavLink>

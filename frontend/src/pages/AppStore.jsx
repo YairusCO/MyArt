@@ -50,19 +50,12 @@ class _AppStore extends Component {
   console.log(items);
     return (
       <div className="appStore">
-     
-               
-           
         <h1>MyArt Store</h1>
+
+        <img src="../src/assets/imgs/hero.jpg" alt="hero"/>
         <ItemList items={items}>
                 {items.map(item => <ItemPreview key={item._id} item={item} />)}
             </ItemList>
-
-
-
-
-
-
 
         {/* {this.props.items && <ul className="item-list">
           {this.props.items.map(item => (
