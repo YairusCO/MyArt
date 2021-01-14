@@ -5,7 +5,8 @@ import { connect } from 'react-redux'
 // import { loadUsers } from '../store/actions/userActions.js'
 import {appStoreService} from '../services/appStoreService.js'
 import { Link } from 'react-router-dom'
-
+import { ItemList } from '../cmps/ItemList';
+import { ItemPreview } from '../cmps/ItemPreview.jsx';
 class _AppStore extends Component {
   // state = {
   //  itemToEdit: {
@@ -45,11 +46,14 @@ class _AppStore extends Component {
   //   (item.seller._id === this.props.loggedInUser?._id || this.props.loggedInUser?.isAdmin)
 
   render() {
-  const items = appStoreService.query
+  var items = appStoreService.query()
+  console.log(items);
     return (
       <div className="appStore">
         <h1>MyArt Store</h1>
-
+        <ItemList items={items}>
+                {items.map(item => <ItemPreview key={item._id} item={item} />)}
+            </ItemList>
 
 
 
