@@ -7,6 +7,7 @@ import { Chat } from './pages/Chat'
 import { UserDetails } from './pages/UserDetails'
 
 import { Header } from './cmps/Header'
+import { AppStore } from './pages/AppStore'
 
 
 export function App() {
@@ -19,6 +20,7 @@ export function App() {
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/chat" component={Chat} />
+            <Route path="/store" component={AppStore} />
             <Route path="/" component={Home} />
           </Switch>
         </main>

@@ -1,0 +1,138 @@
+import { httpService } from './httpService'
+// import { storageService } from './asyncStorageService'
+// import userService from './userService'
+// import { utilService } from './utilService'
+
+export const appStoreService = {
+ // add,
+  query,
+ // remove
+}
+
+
+// More ways to send query params:
+// return axios.get('api/item/?id=1223&balance=13')
+// return axios.get('api/item/?', {params: {id: 1223, balanse:13}})
+
+// function query(filterBy) {
+//   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+//   return httpService.get(`item${queryStr}`)
+//   // return storageService.query('item')
+// }
+var gItems = [
+  {
+      "_id": "v140",
+      "title": "Wooden Elephant",
+      "price": 380,
+      "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
+      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
+      "createdAt": 1519229860500,
+      "purchasedAt": 1529129853500,
+      "tags": [
+          "wood",
+          "elephant",
+          "traditional"
+      ],
+      "seller": {
+          "_id": "u101",
+          "fullname": "Ayelet Avni",
+          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+      }
+  },
+  {
+      "_id": "v141",
+      "title": "B&W Painting",
+      "price": 200,
+      "description": "Noir-themed black and white painting",
+      "imgUrl": "/img/items/img3.jpg",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+          "50s",
+          "noir",
+          "painting",
+          "black",
+          "white"
+      ],
+      "seller": {
+          "_id": "u103",
+          "fullname": "Efrat Cohen",
+          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+      }
+  },
+  {
+      "_id": "v142",
+      "title": "WWII Photo",
+      "price": 150,
+      "description": "Early photo from World War 2",
+      "imgUrl": "/img/items/img3.jpg",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+          "war",
+          "world",
+          "photo"
+      ],
+      "seller": {
+          "_id": "u101",
+          "fullname": "Ayelet Avni",
+          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+      }
+  },
+  {
+      "_id": "v143",
+      "title": "Body painting",
+      "price": 150,
+      "description": "Early photo from World War 2",
+      "imgUrl": "/img/items/img3.jpg",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+          "body",
+          "paint",
+          "color"
+      ],
+      "seller": {
+          "_id": "u102",
+          "fullname": "Mike Bosh",
+          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+      }
+  },
+  {
+      "_id": "v144",
+      "title": "Onyx stone ring",
+      "price": 150,
+      "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
+      "imgUrl": "/img/items/img3.jpg",
+      "createdAt": 1519129853500,
+      "purchasedAt": 1519129853500,
+      "tags": [
+          "ring",
+          "jewelry",
+          "silver"
+      ],
+      "seller": {
+          "_id": "u103",
+          "fullname": "Efrat Cohen",
+          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+      }
+  }
+]
+function query() {
+  return gItems
+}
+
+function remove(itemId) {
+  return httpService.delete(`item/${itemId}`)
+  // return storageService.delete('item', itemId)
+
+}
+async function add(item) {
+  const addedItem = await httpService.post(`item`, item)
+
+  // item.byUser = userService.getLoggedinUser()
+  // item.aboutUser = await userService.getById(item.aboutUserId)
+  // const addedItem = storageService.post('item', item)
+
+  return addedItem
+}
