@@ -2,8 +2,8 @@
 
 export function ItemList({ children }) {
     return (
-        <ul>
+        <div className="item-details">
             {children}
-        </ul>
+        </div>
     )
 }

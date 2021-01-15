@@ -26,7 +26,7 @@ var gItems = [
       "title": "Wooden Elephant",
       "price": 380,
       "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
-      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700380/07_bmhjka.jpg",
       "createdAt": 1519229860500,
       "purchasedAt": 1529129853500,
       "tags": [
@@ -45,7 +45,7 @@ var gItems = [
       "title": "B&W Painting",
       "price": 200,
       "description": "Noir-themed black and white painting",
-      "imgUrl": "https://res.cloudinary.com/demo/image/upload/w_500/sample.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700369/09_okcyg2.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -66,7 +66,7 @@ var gItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl":"/frontend/public/",
+      "imgUrl":"https://res.cloudinary.com/dgoonzit8/image/upload/v1610700355/08_b9bc6y.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -85,7 +85,7 @@ var gItems = [
       "title": "Body painting",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/frontend/src/assets/imgs/01.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700352/01_mpelsr.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -104,7 +104,7 @@ var gItems = [
       "title": "Onyx stone ring",
       "price": 150,
       "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700315/04_qval2z.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [

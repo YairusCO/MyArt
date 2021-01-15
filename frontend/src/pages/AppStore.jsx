@@ -58,6 +58,7 @@ class _AppStore extends Component {
     var items = this.props.items;
     console.log(items);
     return (
+      <React.Fragment>
       <div className="appStore">
         <img src={Hero} className="hero" alt="hero" className="hero-img" />
         <h1 className="store-name">MyArt Store</h1>
@@ -112,6 +113,7 @@ class _AppStore extends Component {
           </form>}
         <hr /> */}
       </div>
+      </React.Fragment>
     )
   }
 }

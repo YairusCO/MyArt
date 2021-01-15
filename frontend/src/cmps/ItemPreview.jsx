@@ -6,6 +6,7 @@ import '../assets/imgs/05.jpg';
 import Button from '@material-ui/core/Button';
 export function ItemPreview({ item ,  onRemoveItem}) {
     return (
+
         <div>
        <ul className="clean-list">
            <li>{item.title}</li>
@@ -14,7 +15,7 @@ export function ItemPreview({ item ,  onRemoveItem}) {
            <li>{item.price}</li>
            <li>{item.seller.fullname}</li>
        </ul>
-       <Button onClick={() => { onRemove(item._id) }}>Delete</Button>
+       <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button>
         </div>
     )
 }
