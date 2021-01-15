@@ -50,7 +50,7 @@ class _AppStore extends Component {
   console.log(items);
     return (
       <div className="appStore">
-           <img src={Hero}  alt="hero" className="hero-img"/>
+           <img src={Hero} className="hero"  alt="hero" className="hero-img"/>
         <h1 className="store-name">MyArt Store</h1>
 
      

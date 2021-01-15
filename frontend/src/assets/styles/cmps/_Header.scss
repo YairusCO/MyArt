@@ -1,8 +1,12 @@
 header {
-    background-color: $clr5;
+  
+    background-color: hsla(0,0%,100%,0);
     padding: 10px;
     display: flex;
+    position: fixed;
     justify-content: space-between;
+    z-index: 1;
+    width: 100%;
 
     .loggedin-user {
         background-color: $clr1;
@@ -19,7 +23,7 @@ header {
     }
 }
 nav {
-    background-color: $clr4;
+    // background-color: $clr4;
     padding: 5px 0;
 }
 nav a:not(:first-child) {
