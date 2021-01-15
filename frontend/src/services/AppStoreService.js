@@ -120,8 +120,8 @@ var gItems = [
   }
 ]
 function query() {
-  // return Promise.resolve(gItems);
-  return gItems;
+  return Promise.resolve(gItems);
+
 }
 
 function remove(itemId) {

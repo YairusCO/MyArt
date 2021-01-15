@@ -1,14 +1,16 @@
 // import { itemService } from '../../service/itemService.js'
 
 const initialState = {
-  toys: [],
+  items: [],
   filterBy: {name: '', type: '', lowPrice: 1, highPrice: 1000}
 }
 
 export function itemReducer(state = initialState, action) {
+
   switch (action.type) {
     case 'SET_ITEMS':
-      return { ...state, items: action.items, filterBy: action.filterBy }
+      console.log(action.items);
+      return { ...state, items: action.items}
     case 'ADD_ITEM':
       return { ...state, items: [...state.items, action.item] }
     case 'SAVE_ITEM':
