@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hero from '../assets/imgs/hero.jpg';
-// import { loadItems, addItem, removeItem } from '../store/actions/itemActions.js'
+import { loadItems, addItem, removeItem } from '../store/actions/itemActions.js'
 // import { loadUsers } from '../store/actions/userActions.js'
-import {appStoreService} from '../services/appStoreService.js'
+import { appStoreService } from '../services/appStoreService.js'
+import { itemService } from '../services/itemService.js'
 import { Link } from 'react-router-dom'
 import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
@@ -14,10 +15,10 @@ class _AppStore extends Component {
   //     aboutUserId: ''
   //   }
   // }
-  // componentDidMount() {
-  //   this.props.loadItems()
-  //   this.props.loadUsers()
-  // }
+  componentDidMount() {
+    this.props.loadItems()
+    //this.props.loadUsers()
+  }
 
   // handleChange = ev => {
   //   const { name, value } = ev.target
@@ -38,25 +39,33 @@ class _AppStore extends Component {
   // }
 
   // onRemove = asyncitemId => {
-  //   await this.props.removeItem(itemId)
+  //   //await 
+  //   this.props.removeItem(itemId)
   //   // this.props.history.push('/login')
   // }
 
   // canRemove =item =>
   //   (item.seller._id === this.props.loggedInUser?._id || this.props.loggedInUser?.isAdmin)
+  removeItem = (item) => {
+    appStoreService.remove(item._id)
+    // .then(() => {
+    //     this.props.removeItem(item._id)
+    //     // this.props.doNotification(`deleted Item`)
+    // })
+  }
 
   render() {
-  var items = appStoreService.query()
-  console.log(items);
+    var items = this.props.items;
+    console.log(items);
     return (
       <div className="appStore">
-           <img src={Hero} className="hero"  alt="hero" className="hero-img"/>
+        <img src={Hero} className="hero" alt="hero" className="hero-img" />
         <h1 className="store-name">MyArt Store</h1>
 
-     
+
         <ItemList items={items}>
-                {items.map(item => <ItemPreview key={item._id} item={item} />)}
-            </ItemList>
+          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.removeItem} />)}
+        </ItemList>
 
         {/* {this.props.items && <ul className="item-list">
           {this.props.items.map(item => (
@@ -107,18 +116,17 @@ class _AppStore extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//    items: state.itemModule.items,
-//     users: state.userModule.users,
-//     loggedInUser: state.userModule.loggedInUser
-//   }
-// }
-// const mapDispatchToProps = {
-//   loadItems,
-//   loadUsers,
-//   addItem,
-//   removeItem
-// } connect(mapStateToProps, mapDispatchToProps)
-
-export const AppStore = (_AppStore)
+const mapStateToProps = state => {
+  return {
+   items: state.itemModule.items,
+    // users: state.userModule.users,
+    // loggedInUser: state.userModule.loggedInUser
+  }
+}
+const mapDispatchToProps = {
+  loadItems,
+  // loadUsers,
+  // addItem,
+  // removeItem
+} 
+export const AppStore = connect(mapStateToProps, mapDispatchToProps)(_AppStore)
