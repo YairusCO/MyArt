@@ -15,8 +15,24 @@
         background-color: #ddd;
         padding: 10px 5px;
         margin: 5px;
-    }    
+    }
+    
 }
+
+.clean-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    }
+    
+
+    #root > div > main > div > ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    }
+
+
 
 
 

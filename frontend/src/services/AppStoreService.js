@@ -36,7 +36,7 @@ var gItems = [
       ],
       "seller": {
           "_id": "u101",
-          "fullname": "Ayelet Avni",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
       }
   },
@@ -45,7 +45,7 @@ var gItems = [
       "title": "B&W Painting",
       "price": 200,
       "description": "Noir-themed black and white painting",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "https://res.cloudinary.com/demo/image/upload/w_500/sample.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -57,7 +57,7 @@ var gItems = [
       ],
       "seller": {
           "_id": "u103",
-          "fullname": "Efrat Cohen",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
       }
   },
@@ -66,7 +66,7 @@ var gItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl":"/frontend/public/",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -76,7 +76,7 @@ var gItems = [
       ],
       "seller": {
           "_id": "u101",
-          "fullname": "Ayelet Avni",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
       }
   },
@@ -85,7 +85,7 @@ var gItems = [
       "title": "Body painting",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "/frontend/src/assets/imgs/01.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -95,7 +95,7 @@ var gItems = [
       ],
       "seller": {
           "_id": "u102",
-          "fullname": "Mike Bosh",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
       }
   },
@@ -104,7 +104,7 @@ var gItems = [
       "title": "Onyx stone ring",
       "price": 150,
       "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "/img/items/img03.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
