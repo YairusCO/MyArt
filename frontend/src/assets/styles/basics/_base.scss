@@ -29,14 +29,15 @@ h1, h2, h3, h4, h5, h6 {
 //     padding: 5px;
 // }
 
-img {
+img:not(.hero-img) {
     width: 100%;
+    height: 250px;
 }
 
-p {
-    margin: 0 0 1em;
-    max-width: 40ch;
-}
+// p {
+//     margin: 0 0 1em;
+//     max-width: 40ch;
+// }
 
 a {
     text-decoration: none;

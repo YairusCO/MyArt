@@ -66,7 +66,7 @@ var gItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl":"/frontend/public/",
+      "imgUrl": "",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [

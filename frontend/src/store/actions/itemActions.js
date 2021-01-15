@@ -1,14 +1,15 @@
-import { itemService } from '../../service/itemService'
+import { itemService } from '../../services/itemService'
+import { appStoreService } from '../../services/appStoreService'
 
-
-export function loadItems(filterBy) { // Action Creator
+//filterBy
+export function loadItems() { // Action Creator
     return (dispatch) => {
-        return itemService.query(filterBy)
+        return appStoreService.query()
             .then(items => {
+                console.log(items);
                 const action = {
-                    type: 'SET_ITEM',
-                    items,
-                    filterBy
+                    type: 'SET_ITEMS',
+                    items
                 }
                 dispatch(action)
             })
