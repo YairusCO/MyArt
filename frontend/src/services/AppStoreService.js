@@ -45,7 +45,7 @@ var gItems = [
       "title": "B&W Painting",
       "price": 200,
       "description": "Noir-themed black and white painting",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "https://res.cloudinary.com/demo/image/upload/w_500/sample.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -66,7 +66,7 @@ var gItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl":"/frontend/public/",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -85,7 +85,7 @@ var gItems = [
       "title": "Body painting",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/img/items/img3.jpg",
+      "imgUrl": "/frontend/src/assets/imgs/01.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -120,13 +120,8 @@ var gItems = [
   }
 ]
 function query() {
-<<<<<<< HEAD
-//   return Promise.resolve(gItems);
-return gItems
-=======
   // return Promise.resolve(gItems);
   return gItems;
->>>>>>> a5487a04d496f59fcb4029974740c4594a657ccf
 }
 
 function remove(itemId) {
