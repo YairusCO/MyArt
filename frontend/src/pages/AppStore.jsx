@@ -20,40 +20,10 @@ class _AppStore extends Component {
     //this.props.loadUsers()
   }
 
-  // handleChange = ev => {
-  //   const { name, value } = ev.target
-  //   this.setState(prevState => ({
-  //    itemToEdit: {
-  //       ...prevState.itemToEdit,
-  //       [name]: value
-  //     }
-  //   }))
-  // }
-
-  // addItem = async ev => {
-  //   ev.preventDefault()
-  //   const {itemToEdit } = this.state
-  //   if (!itemToEdit.txt || !itemToEdit.aboutUserId) return alert('All fields are required')
-  //   await this.props.addItem(this.state.itemToEdit)
-  //   this.setState({itemToEdit: { txt: '', aboutUserId: '' } })
-  // }
-
-  // onRemove = asyncitemId => {
-  //   //await 
-  //   this.props.removeItem(itemId)
-  //   // this.props.history.push('/login')
-  // }
-
-  // canRemove =item =>
-  //   (item.seller._id === this.props.loggedInUser?._id || this.props.loggedInUser?.isAdmin)
-  removeItem = (item) => {
-    appStoreService.remove(item._id)
-    // .then(() => {
-    //     this.props.removeItem(item._id)
-    //     // this.props.doNotification(`deleted Item`)
-    // })
+  onRemoveItem = async itemId => {
+    await this.props.removeItem(itemId)
+    // this.props.history.push('/login')
   }
-
   render() {
     var items = this.props.items;
     console.log(items);
@@ -65,54 +35,10 @@ class _AppStore extends Component {
 
 
         <ItemList items={items}>
-          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.removeItem} />)}
+          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
         </ItemList>
 
-        {/* {this.props.items && <ul className="item-list">
-          {this.props.items.map(item => (
-            <li key={item._id}>
-              { this.canRemove(item) &&
-                <button onClick={() => this.onRemove(item._id)}>X</button>}
-              <p>
-                About:
-                <Link to={`user/${item.aboutUser._id}`}>
-                  {item.aboutUser.fullname}
-                </Link>
-              </p>
-              <h3>{item.txt}</h3>
-
-              <p>
-                By:
-                <Link to={`user/${item.seller._id}`}>
-                  {item.seller.fullname}
-                </Link>
-              </p>
-            </li>
-          ))}
-        </ul>}
-        {this.props.users && this.props.loggedInUser &&
-          <form onSubmit={this.addItem}>
-            <select
-              onChange={this.handleChange}
-              value={this.state.itemToEdit.aboutUserId}
-              name="aboutUserId"
-            >
-              <option value="">Select User</option>
-              {this.props.users.map(user => (
-                <option key={user._id} value={user._id}>
-                  {user.fullname}
-                </option>
-              ))}
-            </select>
-            <textarea
-              name="txt"
-              onChange={this.handleChange}
-              value={this.state.itemToEdit.txt}
-            ></textarea>
-            <button>Submit</button>
-          </form>}
-        <hr /> */}
- 
+      
       </div>
       </React.Fragment>
     )
@@ -130,6 +56,6 @@ const mapDispatchToProps = {
   loadItems,
   // loadUsers,
   // addItem,
-  // removeItem
+   removeItem
 } 
 export const AppStore = connect(mapStateToProps, mapDispatchToProps)(_AppStore)

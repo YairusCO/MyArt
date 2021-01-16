@@ -9,36 +9,28 @@ export class _ItemDetails extends Component {
         item: null
     }
 
-    componentDidMount() {
-        // this.loadItems;
-    }
+  //   componentDidMount() {
+  //     const itemId = this.props.match.params.itemId
+  //     if (itemId) {
+  //         const item = this.props.items
+  //             .find(item => item._id === itemId)
+  //         this.setState({ item })
+  //     }
+  // }
 
-    loadItems = async () => {
-        console.log(item)
-        const { itemId } = this.props.match.params
-        const item = await appStoreService.getById(itemId)
-        this.setState({ item })
-    
-      }
 
     render(){
-
-
+      const { items, itemId } = this.props
+      debugger
+      const item = items.find(item => item._id === itemId) || {}
+console.log('haim', item);
         return (
             <section className="item-details">
         <div className="item-desc">
           <div className="right-desc">
-            {/* <h1>{item.title}</h1>
-            <img src={ item.imgUrl } /> */}
+            <h1>{item.title}</h1>
+            <img src={ item.imgUrl } />
           </div>
-          {/* <div className="left-desc">
-           
-            
-          </div>
-        </div>
-        <div className="details-btn">
-          {loggedInUser.isAdmin && <button onClick={() => this.onRemove(toy._id)} className="delete-btn">Delete</button>}
-          {loggedInUser.isAdmin && <button className="edit-btn"><Link to={`/toy/edit/${toy._id}`}>Edit</Link></button>} */}
         </div>
       
       </section>
@@ -47,17 +39,18 @@ export class _ItemDetails extends Component {
 }
 
 
-const mapStateToProps = state => {
-    return {
-      items: state.itemModule
-    //   loggedInUser: state.userModule.loggedInUser,
-    }
-  }
-  
-  const mapDispatchToProps = {
-    
-    // loadItems,
-  }
-  
-  export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails);
 
+const mapStateToProps = state => {
+  return {
+   items: state.itemModule.items,
+    // users: state.userModule.users,
+    // loggedInUser: state.userModule.loggedInUser
+  }
+}
+const mapDispatchToProps = {
+  // loadItems,
+  // // loadUsers,
+  // // addItem,
+  //  removeItem
+} 
+export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)

@@ -20,7 +20,7 @@ export const appStoreService = {
 //   return httpService.get(`item${queryStr}`)
 //   // return storageService.query('item')
 // }
-var gItems = [
+var gCreatItems = [
   {
       "_id": "v140",
       "title": "Wooden Elephant",
@@ -119,18 +119,25 @@ var gItems = [
       }
   }
 ]
+var gItems=[];
 function query() {
+  gItems = load(KEY)
+  if (!gItems || !gItems.length) {
+    gItems = gCreatItems
+      }
+console.log('query: ', gItems);
+      _saveItemsToStorage();
   return Promise.resolve(gItems);
-
 }
 
 function remove(itemId) {
+    console.log('remove', gItems);
 //   return httpService.delete(`item/${itemId}`)
   // return storageService.delete('item', itemId)
+  gItems = load(KEY)
   gItems = gItems.filter(item => item.id !== itemId);
   _saveItemsToStorage();
   return Promise.resolve();
-
 }
 // async 
 function add(itemId) {
