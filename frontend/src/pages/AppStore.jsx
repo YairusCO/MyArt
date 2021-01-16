@@ -112,6 +112,7 @@ class _AppStore extends Component {
             <button>Submit</button>
           </form>}
         <hr /> */}
+ 
       </div>
       </React.Fragment>
     )
