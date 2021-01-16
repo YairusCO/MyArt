@@ -1,7 +1,5 @@
-import '../assets/imgs/01.jpg';
-import '../assets/imgs/02.jpg';
-import '../assets/imgs/03.jpg';
-import  '../assets/imgs/04.jpg';
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import x from '../assets/imgs/01.jpg';
 import Button from '@material-ui/core/Button';
 export function ItemPreview({ item ,  onRemoveItem}) {
@@ -11,11 +9,12 @@ export function ItemPreview({ item ,  onRemoveItem}) {
        <ul className="clean-list">
            <li>{item.title}</li>
            <img src={x} alt="" />
-           <li>{item.description}</li>
-           <li>{item.price}</li>
-           <li>{item.seller.fullname}</li>
+           <li>Description: {item.description}</li>
+           <li>Price: {item.price}</li>
+           <li>Artist: {item.seller.fullname}</li>
        </ul>
        <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button>
+       <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
         </div>
     )
 }

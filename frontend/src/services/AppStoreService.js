@@ -26,7 +26,7 @@ var gCreatItems = [
       "title": "Wooden Elephant",
       "price": 380,
       "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
-      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700380/07_bmhjka.jpg",
+      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
       "createdAt": 1519229860500,
       "purchasedAt": 1529129853500,
       "tags": [
@@ -36,7 +36,7 @@ var gCreatItems = [
       ],
       "seller": {
           "_id": "u101",
-          "fullname": "Ayelet Avni",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
       }
   },
@@ -45,7 +45,7 @@ var gCreatItems = [
       "title": "B&W Painting",
       "price": 200,
       "description": "Noir-themed black and white painting",
-      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700369/09_okcyg2.jpg",
+      "imgUrl": "https://res.cloudinary.com/demo/image/upload/w_500/sample.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -57,7 +57,7 @@ var gCreatItems = [
       ],
       "seller": {
           "_id": "u103",
-          "fullname": "Efrat Cohen",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
       }
   },
@@ -66,7 +66,7 @@ var gCreatItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl":"https://res.cloudinary.com/dgoonzit8/image/upload/v1610700355/08_b9bc6y.jpg",
+      "imgUrl": "",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -76,7 +76,7 @@ var gCreatItems = [
       ],
       "seller": {
           "_id": "u101",
-          "fullname": "Ayelet Avni",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
       }
   },
@@ -85,7 +85,7 @@ var gCreatItems = [
       "title": "Body painting",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700352/01_mpelsr.jpg",
+      "imgUrl": "/frontend/src/assets/imgs/01.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -95,7 +95,7 @@ var gCreatItems = [
       ],
       "seller": {
           "_id": "u102",
-          "fullname": "Mike Bosh",
+          "fullname": "Inbal Azmon",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
       }
   },
@@ -104,7 +104,7 @@ var gCreatItems = [
       "title": "Onyx stone ring",
       "price": 150,
       "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700315/04_qval2z.jpg",
+      "imgUrl": "/img/items/img03.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [

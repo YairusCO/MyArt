@@ -34,3 +34,11 @@ nav a:not(:first-child) {
 nav .active {
     color: $clr1;
 }
+
+.main-header{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #51a1cf;
+}
