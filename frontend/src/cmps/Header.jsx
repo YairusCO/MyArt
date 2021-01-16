@@ -7,7 +7,7 @@ class _Header extends Component {
         const {loggedInUser} = this.props;
         return <header>
            
-            <nav>
+            <nav className="main-header">
                 <NavLink exact to="/store"><span role="img" aria-label="logo">🙏</span></NavLink>
                 <NavLink to="/login">Login</NavLink>
                 <NavLink exact to="/">User Reviews</NavLink>
