@@ -1,4 +1,4 @@
-import { itemService } from '../../services/itemService'
+//import { appStoreService } from '../../services/appStoreService'
 import { appStoreService } from '../../services/appStoreService'
 
 //filterBy
@@ -18,7 +18,7 @@ export function loadItems() { // Action Creator
 
 export function saveItem(item){
     return (dispatch) => {
-        return itemService.save(item)
+        return appStoreService.save(item)
             .then(saveItem => {
                 const action = {
                     type: (item._id) ? 'SAVE_ITEM' : 'ADD_ITEM',
@@ -31,7 +31,7 @@ export function saveItem(item){
 
 export function removeItem(itemId) {
     return (dispatch) => {
-        return itemService.remove(itemId)
+        return appStoreService.remove(itemId)
         .then(items => {
             const action = {
                 type: 'REMOVE_ITEM',
