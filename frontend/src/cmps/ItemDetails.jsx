@@ -32,7 +32,7 @@ export class _ItemDetails extends Component {
 
 <div className="item-container">
   <div className="img-container">
-  <img src={ item.imgUrl } />
+  <img className="img-details" src={ item.imgUrl } />
   </div>
   <div className="txt-container" >
   <h1>{item.title}</h1>
@@ -40,9 +40,8 @@ export class _ItemDetails extends Component {
   <p>Price: {item.price}$</p>
   <p>Artist: {item.seller.fullname}</p>
   <div>
-  <Button>Edit</Button>
-  <Button>Add</Button>
-  <Button>Save</Button>
+  <Button>Buy</Button>
+ 
   </div>
   {/* <Button onClick={() => { this.onRemoveItem(item._id) }}>Delete</Button> */}
 </div></div>

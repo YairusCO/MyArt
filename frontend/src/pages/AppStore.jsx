@@ -1,20 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
-import { loadItems, addItem, removeItem } from '../store/actions/itemActions.js'
+import Hero from '../assets/imgs/hero.jpg'
+import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
 // import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
 import { itemService } from '../services/itemService.js'
 import { Link } from 'react-router-dom'
+import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
 class _AppStore extends Component {
-  // state = {
-  //  itemToEdit: {
-  //     txt: '',
-  //     aboutUserId: ''
-  //   }
-  // }
+  state = {
+    filterBy: 'All',
+    filterByTxt: ''
+  }
+  
   componentDidMount() {
     this.props.loadItems()
     //this.props.loadUsers()
@@ -24,6 +24,12 @@ class _AppStore extends Component {
     await this.props.removeItem(itemId)
     // this.props.history.push('/login')
   }
+
+  onSetFilter = (filterBy) => {
+    this.props.setFilter(filterBy)
+    this.props.loadItems(filterBy)
+
+}
   onBuy(item) {
     const action = {
         type: 'BUY',
@@ -37,6 +43,7 @@ class _AppStore extends Component {
       <React.Fragment>
       
       <div className="appStore">
+        <ItemFilter onSetFilter={this.onSetFilter} />
 
         <ItemList items={items}>
           {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
@@ -60,6 +67,7 @@ const mapDispatchToProps = {
   loadItems,
   // loadUsers,
   // addItem,
-   removeItem
+   removeItem,
+   setFilter
 } 
 export const AppStore = connect(mapStateToProps, mapDispatchToProps)(_AppStore)
