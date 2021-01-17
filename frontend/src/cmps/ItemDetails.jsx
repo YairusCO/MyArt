@@ -28,7 +28,7 @@ export class _ItemDetails extends Component {
       const { items, itemId } = this.props
       const item = items.find(item => item._id === itemId) || {}
         return (
-            <section className="item-details">
+            <section className="details-page">
 
 <div className="item-container">
   <div className="img-container">
@@ -36,9 +36,14 @@ export class _ItemDetails extends Component {
   </div>
   <div className="txt-container" >
   <h1>{item.title}</h1>
-  <p>{item.description}</p>
-  <p>{item.price}</p>
-  {/* <p>Artist: {item.seller.fullname}</p> */}
+  <p>Description: {item.description}</p>
+  <p>Price: {item.price}$</p>
+  <p>Artist: {item.seller.fullname}</p>
+  <div>
+  <Button>Edit</Button>
+  <Button>Add</Button>
+  <Button>Save</Button>
+  </div>
   {/* <Button onClick={() => { this.onRemoveItem(item._id) }}>Delete</Button> */}
 </div></div>
       
