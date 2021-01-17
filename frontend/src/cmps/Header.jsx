@@ -11,11 +11,13 @@ class _Header extends Component {
         <header>
            
             <nav className="main-header">
-                <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
+            <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
+            <div className="nav-bar">
                 <NavLink to="/login">Login</NavLink>
                 <NavLink exact to="/">User Reviews</NavLink>
                 <NavLink to="/chat">Chat Room</NavLink>
-                <Cart />
+                </div>
+                {/* <Cart /> */}
             </nav>
             
             {loggedInUser && <span className="loggedin-user">

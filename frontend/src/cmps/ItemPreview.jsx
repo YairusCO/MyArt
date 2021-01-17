@@ -16,12 +16,9 @@ export function ItemPreview({ item, onRemoveItem, onBuy }) {
             </ul>
             <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button>
             <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
-            <li key={item._id}>
-                {item.name} - ${item.price}
-                <button onClick={() => {
+                <Button onClick={() => {
                     this.onBuy(item)
-                }}>Buy</button>
-            </li>
+                }}>Buy</Button>
         </div>
     )
 }
