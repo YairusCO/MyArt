@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
+import { removeItem } from '../store/actions/itemActions.js'
+import Button from '@material-ui/core/Button';
 
 export class _ItemDetails extends Component {
     state = {
@@ -17,21 +19,28 @@ export class _ItemDetails extends Component {
   //         this.setState({ item })
   //     }
   // }
-
+  // onRemoveItem = async itemId => {
+  //   await this.props.removeItem(itemId)
+  //   // this.props.history.push('/login')
+  // }
 
     render(){
       const { items, itemId } = this.props
-      
       const item = items.find(item => item._id === itemId) || {}
         return (
             <section className="item-details">
-        <div className="item-desc">
-          <div className="right-desc">
-            <h1>{item.title}</h1>
-            <img src={ item.imgUrl } />
-            <p>{item.seller.fullname}</p>
-          </div>
-        </div>
+
+<div className="item-container">
+  <div className="img-container">
+  <img src={ item.imgUrl } />
+  </div>
+  <div className="txt-container" >
+  <h1>{item.title}</h1>
+  <p>{item.description}</p>
+  <p>{item.price}</p>
+  {/* <p>Artist: {item.seller.fullname}</p> */}
+  {/* <Button onClick={() => { this.onRemoveItem(item._id) }}>Delete</Button> */}
+</div></div>
       
       </section>
         )
