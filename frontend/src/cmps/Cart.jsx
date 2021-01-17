@@ -13,7 +13,6 @@ class _Cart extends React.Component {
   }
 
   render() {
-    console.log('workingg!');
     // const { cartItems } = this.props;
     // if (!cartItems) return null;
     return (

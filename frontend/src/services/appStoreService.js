@@ -20,12 +20,12 @@ export const appStoreService = {
 //   return httpService.get(`item${queryStr}`)
 //   // return storageService.query('item')
 // }
-var gCreatItems = [
+var gCreateItems = [
   {
       "_id": "v140",
       "title": "Wooden Elephant",
       "price": 380,
-      "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season, the finish is aged with brown gloss, and the carving is of a traditional vietnamese pattern I saw on the vietnamese baskets the ladies in the village weaved from straw ",
+      "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season. ",
       "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
       "createdAt": 1519229860500,
       "purchasedAt": 1529129853500,
@@ -123,7 +123,7 @@ var gItems=[];
 function query() {
   gItems = load(KEY)
   if (!gItems || !gItems.length) {
-    gItems = gCreatItems
+    gItems = gCreateItems
       }
 console.log('query: ', gItems);
       _saveItemsToStorage();

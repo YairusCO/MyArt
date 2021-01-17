@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
-import { appStoreService } from '../services/appStoreService.js'
+import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
 
 export class _ItemDetails extends Component {
@@ -23,14 +23,13 @@ export class _ItemDetails extends Component {
       const { items, itemId } = this.props
       
       const item = items.find(item => item._id === itemId) || {}
-console.log('haim', item);
         return (
             <section className="item-details">
         <div className="item-desc">
           <div className="right-desc">
             <h1>{item.title}</h1>
             <img src={ item.imgUrl } />
-            <p>{item.author}</p>
+            <p>{item.seller.fullname}</p>
           </div>
         </div>
       
