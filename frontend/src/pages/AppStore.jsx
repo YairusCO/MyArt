@@ -64,7 +64,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
   loadItems,
-   loadUsers,
+  loadUsers,
   // addItem,
    removeItem,
    setFilter
