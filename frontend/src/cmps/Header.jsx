@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-
+import Hero from '../assets/imgs/hero.jpg';
 import {Cart} from './Cart.jsx'
 
 class _Header extends Component {
@@ -19,6 +19,11 @@ class _Header extends Component {
                 </div>
                 {/* <Cart /> */}
             </nav>
+                <img src={Hero} className="hero appStore" alt="hero" />
+                <div  className="store-details">
+                <h1>MyArt Store</h1>
+                <p>Expose to an extensive and high-quality image database</p>
+                </div>
             
             {loggedInUser && <span className="loggedin-user">
 

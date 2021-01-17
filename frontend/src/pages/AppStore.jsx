@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Hero from '../assets/imgs/hero.jpg';
+
 import { loadItems, addItem, removeItem } from '../store/actions/itemActions.js'
 // import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
@@ -33,13 +33,10 @@ class _AppStore extends Component {
 }
   render() {
     var items = this.props.items;
-    console.log(items);
     return (
       <React.Fragment>
+      
       <div className="appStore">
-        <img src={Hero} className="hero" alt="hero" className="hero-img" />
-        <h1 className="store-name">MyArt Store</h1>
-
 
         <ItemList items={items}>
           {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}

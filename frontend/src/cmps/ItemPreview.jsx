@@ -10,7 +10,6 @@ export function ItemPreview({ item, onRemoveItem, onBuy }) {
             <ul className="clean-list item-preview">
                 <li>{item.title}</li>
                 <img className="item-img" src={item.imgUrl} alt="" />
-                <li>Description: {item.description}</li>
                 <li>Price: {item.price}</li>
                 <li>Artist: {item.seller.fullname}</li>
             </ul>
