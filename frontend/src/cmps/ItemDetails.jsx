@@ -29,8 +29,9 @@ console.log('haim', item);
         <div className="item-desc">
           <div className="right-desc">
             <h1>{item.title}</h1>
-            <img src={ item.imgUrl } />
+            <img className="toy-img" src={ item.imgUrl } />
             <p>{item.author}</p>
+            <p></p>
           </div>
         </div>
       
