@@ -1,10 +1,11 @@
 * {
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 ::selection {
-    background-color: $clr1;
-    color: $clr6;
+    background-color: white;
+    color: white;
 }
 
 html {

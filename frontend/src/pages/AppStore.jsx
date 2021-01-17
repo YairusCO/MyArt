@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hero from '../assets/imgs/hero.jpg';
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
-
-// import { loadUsers } from '../store/actions/userActions.js'
+ import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
-import { itemService } from '../services/itemService.js'
 import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
@@ -18,7 +16,7 @@ class _AppStore extends Component {
   
   componentDidMount() {
     this.props.loadItems()
-    //this.props.loadUsers()
+    this.props.loadUsers()
   }
 
   onRemoveItem = async itemId => {
@@ -62,13 +60,13 @@ class _AppStore extends Component {
 const mapStateToProps = state => {
   return {
    items: state.itemModule.items,
-    // users: state.userModule.users,
-    // loggedInUser: state.userModule.loggedInUser
+     users: state.userModule.users,
+     loggedInUser: state.userModule.loggedInUser
   }
 }
 const mapDispatchToProps = {
   loadItems,
-  // loadUsers,
+  loadUsers,
   // addItem,
    removeItem,
    setFilter
