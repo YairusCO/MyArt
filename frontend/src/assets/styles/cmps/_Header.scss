@@ -19,9 +19,10 @@ header {
 nav {
     padding: 5px 0;
 }
-nav a:not(:first-child) {
+nav a {
     padding: 0 5px;
     margin: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 nav .active {
     color: white;

@@ -5,19 +5,22 @@ import Button from '@material-ui/core/Button';
 export function ItemPreview({ item, onRemoveItem, onBuy }) {
 
     return (
-
-        <div>
-            <ul className="clean-list item-preview">
-                <li>{item.title}</li>
-                <img className="item-img" src={item.imgUrl} alt="" />
-                <li>Price: {item.price}</li>
-                <li>Artist: {item.seller.fullname}</li>
-            </ul>
-            <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button>
-            <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
-                <Button onClick={() => {
-                    this.onBuy(item)
-                }}>Buy</Button>
-        </div>
+        <React.Fragment>
+            <div>
+                <ul className="clean-list item-preview">
+                    <li>{item.title}</li>
+                    <img className="item-img" src={item.imgUrl} alt="" />
+                    <li>Price: {item.price}</li>
+                    <li>Artist: {item.seller.fullname}</li>
+                </ul>
+                <div className="items-btns">
+                    {/* <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button> */}
+                    <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
+                    <Button onClick={() => {
+                        this.onBuy(item)
+                    }}>Buy</Button>
+                </div>
+            </div>
+        </React.Fragment>
     )
 }

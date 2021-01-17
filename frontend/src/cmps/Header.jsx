@@ -14,14 +14,14 @@ class _Header extends Component {
             <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
             <div className="nav-bar">
                 <NavLink to="/login">Login</NavLink>
-                <NavLink exact to="/">User Reviews</NavLink>
-                <NavLink to="/chat">Chat Room</NavLink>
+                <NavLink exact to="/">My Profile</NavLink>
+                <NavLink to="/chat">About Us</NavLink>
                 </div>
                 {/* <Cart /> */}
             </nav>
                 <img src={Hero} className="hero appStore" alt="hero" />
                 <div  className="store-details">
-                <h1>MyArt Store</h1>
+                <h1>MyArt</h1>
                 <p>Expose to an extensive and high-quality image database</p>
                 </div>
             
