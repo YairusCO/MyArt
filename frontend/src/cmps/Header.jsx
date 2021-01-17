@@ -2,16 +2,22 @@ import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
+import {Cart} from './Cart.jsx'
+
 class _Header extends Component {
     render() {
         const {loggedInUser} = this.props;
-        return <header>
+        return <React.Fragment> 
+        <header>
            
             <nav className="main-header">
-                <NavLink exact to="/store"><span role="img" aria-label="logo">🙏</span></NavLink>
+            <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
+            <div className="nav-bar">
                 <NavLink to="/login">Login</NavLink>
                 <NavLink exact to="/">User Reviews</NavLink>
                 <NavLink to="/chat">Chat Room</NavLink>
+                </div>
+                {/* <Cart /> */}
             </nav>
             
             {loggedInUser && <span className="loggedin-user">
@@ -24,7 +30,7 @@ class _Header extends Component {
             </span>}
             
         </header>
-        
+        </React.Fragment>
     }
 
 }

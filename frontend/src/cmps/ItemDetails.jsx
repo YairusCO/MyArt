@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
-import { appStoreService } from '../services/appStoreService.js'
+import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
 import Button from '@material-ui/core/Button';
@@ -27,7 +27,6 @@ export class _ItemDetails extends Component {
     render(){
       const { items, itemId } = this.props
       const item = items.find(item => item._id === itemId) || {}
-console.log('haim', item);
         return (
             <section className="item-details">
 

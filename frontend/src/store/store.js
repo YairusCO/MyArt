@@ -5,11 +5,13 @@ import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import { itemReducer } from './reducers/itemReducer.js';
 import { userReducer } from './reducers/userReducer';
 import { reviewReducer } from './reducers/reviewReducer';
+import {cartReducer} from './reducers/cartReducer'
 
 const rootReducer = combineReducers({
     itemModule: itemReducer,
     userModule: userReducer,
-    reviewModule: reviewReducer
+    reviewModule: reviewReducer,
+    cartModule: cartReducer,
 });
 
 

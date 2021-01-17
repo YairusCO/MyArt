@@ -26,8 +26,8 @@ export function App() {
               // item={item}
               return <ItemDetails itemId={itemId} />
             }} />
-            <Route path="/store" component={AppStore} />
-            <Route path="/" component={Home} />
+            <Route path="/" component={AppStore} />
+            {/* <Route path="/" component={Home} /> */}
           </Switch>
           {/* <Footer/> */}
         </main>
