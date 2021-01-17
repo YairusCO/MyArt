@@ -26,7 +26,7 @@ var gCreateItems = [
       "title": "Wooden Elephant",
       "price": 380,
       "description": "Made of vietnamese Monkeypod and Mahagony with pearl inlay. I made this while traveling in southern vietnam during monsoon season. ",
-      "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610550004/items/wooden-elephant_btkeqr.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700352/01_mpelsr.jpg",
       "createdAt": 1519229860500,
       "purchasedAt": 1529129853500,
       "tags": [
@@ -117,7 +117,64 @@ var gCreateItems = [
           "fullname": "Efrat Cohen",
           "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
       }
-  }
+  },
+  {
+    "_id": "v144",
+    "title": "Onyx stone ring",
+    "price": 150,
+    "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
+    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700315/04_qval2z.jpg",
+    "createdAt": 1519129853500,
+    "purchasedAt": 1519129853500,
+    "tags": [
+        "ring",
+        "jewelry",
+        "silver"
+    ],
+    "seller": {
+        "_id": "u103",
+        "fullname": "Efrat Cohen",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+    }
+},
+{
+    "_id": "v144",
+    "title": "Onyx stone ring",
+    "price": 150,
+    "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
+    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700239/03_q9mzpk.jpg",
+    "createdAt": 1519129853500,
+    "purchasedAt": 1519129853500,
+    "tags": [
+        "ring",
+        "jewelry",
+        "silver"
+    ],
+    "seller": {
+        "_id": "u103",
+        "fullname": "Efrat Cohen",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+    }
+},
+{
+    "_id": "v144",
+    "title": "Onyx stone ring",
+    "price": 150,
+    "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
+    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700238/05_vh2hja.jpg",
+    "createdAt": 1519129853500,
+    "purchasedAt": 1519129853500,
+    "tags": [
+        "ring",
+        "jewelry",
+        "silver"
+    ],
+    "seller": {
+        "_id": "u103",
+        "fullname": "Efrat Cohen",
+        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+    }
+}
 ]
 var gItems=[];
 function query() {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Hero from '../assets/imgs/hero.jpg';
+
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
 // import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
@@ -39,9 +39,9 @@ class _AppStore extends Component {
 }
   render() {
     var items = this.props.items;
-    console.log(items);
     return (
       <React.Fragment>
+      
       <div className="appStore">
         <img src={Hero} className="hero" alt="hero" className="hero-img" />
         <h1 className="store-name">MyArt Store</h1>
