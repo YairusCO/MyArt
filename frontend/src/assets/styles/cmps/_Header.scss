@@ -1,9 +1,7 @@
 header {
-    // position: fixed;
     justify-content: space-between;
     z-index: 1;
     width: 100%;
-
     .loggedin-user {
         background-color: $clr1;
         padding: 2px 8px;
@@ -28,16 +26,21 @@ nav a:not(:first-child) {
 nav .active {
     color: $clr1;
 }
-
+#root > div > header {
+    grid-column: 1/-1;
+}
 .main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #51a1cf;
-    height: 30px;
+    height: 60px;
+
 }
 
 .logo {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
 }

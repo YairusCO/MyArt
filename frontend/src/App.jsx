@@ -5,7 +5,7 @@ import { Home } from './pages/Home'
 import { LoginSignup } from './pages/LoginSignup'
 import { Chat } from './pages/Chat'
 import { UserDetails } from './pages/UserDetails'
-// import { Footer } from './pages/Footer.jsx'
+import { Footer } from './pages/Footer.jsx'
 import { Header } from './cmps/Header'
 import { AppStore } from './pages/AppStore'
 
@@ -14,7 +14,7 @@ export function App() {
   return (
     <div className="app">
       <Router>
-        <Header></Header>
+        <Header/>
         <main>
           <Switch>
             <Route path="/user/:id" component={UserDetails} />
@@ -29,9 +29,8 @@ export function App() {
             <Route path="/" component={AppStore} />
             {/* <Route path="/" component={Home} /> */}
           </Switch>
-          {/* <Footer/> */}
         </main>
-       
+      <Footer/>
       </Router>
     </div>
   )

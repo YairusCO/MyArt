@@ -1,4 +1,4 @@
-img.hero-img {
+.hero {
     height: 100vh;
     width: 100%;
     background-position: center;
@@ -6,10 +6,21 @@ img.hero-img {
     background-size: cover;
     position: relative;
 }
-.store-name {
+.store-details {
+    text-align: center;
     position: absolute;
     top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     color:white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    h1 {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+}
+
+.footer {
+    grid-column: 1/-1;
+    text-align: center;
+    font-size: 1.5rem;
 }
