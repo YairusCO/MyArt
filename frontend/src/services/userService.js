@@ -1,7 +1,7 @@
 // import { storageService } from './asyncStorageService'
 import { httpService } from './httpService'
-const SCORE_FOR_REVIEW = 10
-
+// const SCORE_FOR_REVIEW = 10
+const KEY = 'usersDB';
 export const userService = {
     login,
     logout,
@@ -11,13 +11,49 @@ export const userService = {
     remove,
     update,
     getLoggedinUser,
-    increaseScore
+    query
+    // increaseScore
 }
 
-window.userService = userService
+// window.userService = userService
 // Note: due to async, must run one by one...
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
+
+const gCreateUsers = [{
+    fullname: 'Yair',
+    username: 'yairm', 
+    password:'123',
+    isAdmin: true
+},
+{
+    fullname: 'Inbal',
+    username: 'inbala', 
+    password:'123',
+    isAdmin: true
+},
+{
+    fullname: 'Nadav',
+    username: 'nadavm', 
+    password:'123', 
+    isAdmin: true
+},
+{
+    fullname: 'Guest',
+    username: 'guest', 
+    password:'123', 
+    isAdmin: false
+},
+]
+var gUsers=[];
+function query() {
+  gUsers = load(KEY)
+  if (!gUsers || !gUsers.length) {
+    gUsers = gCreateUsers
+      }
+      _saveLocalUser();
+  return Promise.resolve(gUsers);
+}
 
 function getUsers() {
     // return storageService.query('user')
@@ -40,12 +76,12 @@ async function update(user) {
     if (getLoggedinUser()._id === user._id) _saveLocalUser(user)
 }
 
-async function increaseScore(by = SCORE_FOR_REVIEW) {
-    const user = getLoggedinUser()
-    user.score = user.score + by || by
-    await update(user)
-    return user.score
-}
+// async function increaseScore(by = SCORE_FOR_REVIEW) {
+//     const user = getLoggedinUser()
+//     user.score = user.score + by || by
+//     await update(user)
+//     return user.score
+// }
 
 async function login(userCred) {
     // const users = await storageService.query('user')
@@ -73,3 +109,19 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem('loggedinUser'))
 }
 
+// // Storage Util
+
+export const storageService = {
+    load,
+    save
+}
+
+function load(key) {
+    const str = localStorage.getItem(key)
+    return JSON.parse(str)
+}
+
+function save(key, val) {
+    const str = JSON.stringify(val)
+    localStorage.setItem(key, str)
+}
