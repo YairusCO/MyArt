@@ -20,7 +20,7 @@ export class ItemFilter extends Component {
 
     render() {
         return <section className="item-filter item-filter-container">
-        <input className="item-filter-search" type="text" placeholder="Search:" onChange={(ev) => {
+        <input className="item-filter-search" type="text" placeholder="Enter Keywords" onChange={(ev) => {
             this.props.onSetFilter(ev.target.value, true)
         }} />
 
