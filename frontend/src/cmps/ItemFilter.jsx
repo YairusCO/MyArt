@@ -21,7 +21,7 @@ export class ItemFilter extends Component {
     render() {
         return <section className="item-filter item-filter-container">
         <input className="item-filter-search" type="text" placeholder="Search:" onChange={(ev) => {
-            this.props.onSetFilter(ev.target.value, true)
+            this.onChangeFilter(ev.target.value, true)
         }} />
 
         <select className="item-sort" onChange={(value) => this.onChangeFilter(value.target.value)} >
@@ -32,7 +32,7 @@ export class ItemFilter extends Component {
          
         </select>
 
-        <Button className="btn-search">Search</Button>
+        <Button onClick={this.onChangeFilter} className="btn-search">Search</Button>
     </section>
 
     }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
+import Hero from '../assets/imgs/hero.jpg';
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
+
 // import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
 import { itemService } from '../services/itemService.js'
