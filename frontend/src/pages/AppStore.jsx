@@ -24,6 +24,13 @@ class _AppStore extends Component {
     await this.props.removeItem(itemId)
     // this.props.history.push('/login')
   }
+  onBuy(item) {
+    const action = {
+        type: 'BUY',
+        item
+    }
+    this.props.dispatch(action)
+}
   render() {
     var items = this.props.items;
     console.log(items);

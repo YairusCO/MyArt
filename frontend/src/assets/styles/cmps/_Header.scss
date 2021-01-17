@@ -1,6 +1,5 @@
 header {
-    background-color: hsla(0,0%,100%,0);
-    position: fixed;
+    // position: fixed;
     justify-content: space-between;
     z-index: 1;
     width: 100%;
@@ -11,7 +10,7 @@ header {
         border-radius: 1em;
         align-self: flex-end;
         color: whitesmoke;
-        span{
+        span {
             background-color: $clr2;
             padding: 4px;
             margin: 10px;
@@ -20,11 +19,9 @@ header {
     }
 }
 nav {
-    // background-color: $clr4;
     padding: 5px 0;
 }
 nav a:not(:first-child) {
-    border-top: 1px solid $clr1;
     padding: 0 5px;
     margin: 10px;
 }
@@ -32,10 +29,15 @@ nav .active {
     color: $clr1;
 }
 
-.main-header{
+.main-header {
     display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: #51a1cf;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #51a1cf;
+    height: 30px;
+}
+
+.logo {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }

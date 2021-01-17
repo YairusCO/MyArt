@@ -45,7 +45,7 @@ var gCreatItems = [
       "title": "B&W Painting",
       "price": 200,
       "description": "Noir-themed black and white painting",
-      "imgUrl": "https://res.cloudinary.com/demo/image/upload/w_500/sample.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700380/07_bmhjka.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -66,7 +66,7 @@ var gCreatItems = [
       "title": "WWII Photo",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700369/09_okcyg2.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -85,7 +85,7 @@ var gCreatItems = [
       "title": "Body painting",
       "price": 150,
       "description": "Early photo from World War 2",
-      "imgUrl": "/frontend/src/assets/imgs/01.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700313/02_sfxbqt.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [
@@ -104,7 +104,7 @@ var gCreatItems = [
       "title": "Onyx stone ring",
       "price": 150,
       "description": "Home made ring 18(mm) made of silver with a beautiful onyx stone.",
-      "imgUrl": "/img/items/img03.jpg",
+      "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700355/08_b9bc6y.jpg",
       "createdAt": 1519129853500,
       "purchasedAt": 1519129853500,
       "tags": [

@@ -21,7 +21,7 @@ export class _ItemDetails extends Component {
 
     render(){
       const { items, itemId } = this.props
-      debugger
+      
       const item = items.find(item => item._id === itemId) || {}
 console.log('haim', item);
         return (
@@ -30,6 +30,7 @@ console.log('haim', item);
           <div className="right-desc">
             <h1>{item.title}</h1>
             <img src={ item.imgUrl } />
+            <p>{item.author}</p>
           </div>
         </div>
       
