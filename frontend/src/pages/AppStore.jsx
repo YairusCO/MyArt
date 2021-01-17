@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hero from '../assets/imgs/hero.jpg'
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
-// import { loadUsers } from '../store/actions/userActions.js'
+import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
 import { itemService } from '../services/itemService.js'
 import { Link } from 'react-router-dom'
@@ -17,7 +17,7 @@ class _AppStore extends Component {
   
   componentDidMount() {
     this.props.loadItems()
-    //this.props.loadUsers()
+    this.props.loadUsers()
   }
 
   onRemoveItem = async itemId => {
@@ -65,7 +65,7 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
   loadItems,
-  // loadUsers,
+  loadUsers,
   // addItem,
    removeItem,
    setFilter
