@@ -3,13 +3,13 @@ header {
     z-index: 1;
     width: 100%;
     .loggedin-user {
-        background-color: $clr1;
+        background-color: white;
         padding: 2px 8px;
         border-radius: 1em;
         align-self: flex-end;
         color: whitesmoke;
         span {
-            background-color: $clr2;
+            background-color: white;
             padding: 4px;
             margin: 10px;
             border-radius: 50%;
@@ -24,7 +24,7 @@ nav a:not(:first-child) {
     margin: 10px;
 }
 nav .active {
-    color: $clr1;
+    color: white;
 }
 #root > div > header {
     grid-column: 1/-1;
