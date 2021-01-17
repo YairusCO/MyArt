@@ -22,8 +22,6 @@ export function App() {
             <Route path="/chat" component={Chat} />
             <Route path="/item/:itemId" render={({match}) => {
               const { itemId } = match.params
-              //const item = items.find(item => item._id === itemId) || {}
-              // item={item}
               return <ItemDetails itemId={itemId} />
             }} />
             <Route path="/" component={AppStore} />
@@ -36,3 +34,8 @@ export function App() {
   )
 }
 
+
+
+
+//const item = items.find(item => item._id === itemId) || {}
+              // item={item}
