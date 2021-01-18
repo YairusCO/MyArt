@@ -53,6 +53,7 @@ a:hover {
     >* {
         grid-column: 2;
     }
+  
 }
 
 #root {
@@ -61,5 +62,9 @@ a:hover {
 }
 
 #root > div > main > div > img {
+    grid-column: 1/-1;
+}
+
+#root > div > main > img {
     grid-column: 1/-1;
 }
