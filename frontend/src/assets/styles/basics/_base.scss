@@ -47,24 +47,15 @@ a:hover {
     text-decoration: underline;
 }
 
-.app {
+.appStore {
     display: grid;
     grid-template-columns: minmax(2rem,1fr) minmax(auto,1000px) minmax(2rem,1fr);
     >* {
         grid-column: 2;
     }
-  
 }
 
 #root {
     min-height: 100vh;
     grid-template-rows: auto 1fr auto;
-}
-
-#root > div > main > div > img {
-    grid-column: 1/-1;
-}
-
-#root > div > main > img {
-    grid-column: 1/-1;
 }

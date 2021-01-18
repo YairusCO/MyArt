@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-
 import {Cart} from './Cart.jsx'
 
 class _Header extends Component {
@@ -13,7 +12,7 @@ class _Header extends Component {
             <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
             <div className="nav-bar">
                 <NavLink to="/login">Login</NavLink>
-                <NavLink exact to="/">My Profile</NavLink>
+                <NavLink exact to="/user/:user._id">My Profile</NavLink>
                 <NavLink to="/chat">About Us</NavLink>
                 </div>
                 {/* <Cart /> */}

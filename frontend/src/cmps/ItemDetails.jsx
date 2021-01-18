@@ -2,7 +2,8 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
-import { ItemPreview } from './ItemPreview.jsx'
+import { SellerItemList } from './SellerItemList.jsx'
+import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
 
 export class _ItemDetails extends Component {
@@ -26,6 +27,10 @@ export class _ItemDetails extends Component {
     render(){
       const { items, itemId } = this.props
       const item = items.find(item => item._id === itemId) || {}
+      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
+      console.log('details', sellerItems);
+
+
         return (
             <section className="details-page">
 
@@ -45,7 +50,11 @@ export class _ItemDetails extends Component {
  
   </div>
 </div></div>
-      
+      <div>
+      <SellerItemList sellerItems={sellerItems}>
+            {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
+          </SellerItemList>
+      </div>
       </section>
         )
     }
