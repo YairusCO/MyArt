@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-
 import { loadReviews, addReview, removeReview } from '../store/actions/reviewActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { Link } from 'react-router-dom'

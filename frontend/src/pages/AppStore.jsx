@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Hero from '../assets/imgs/hero.jpg';
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
@@ -8,6 +7,9 @@ import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
+// import Hero from '../assets/imgs/hero.jpg';
+import { HeroPic } from '../cmps/Hero'
+
 class _AppStore extends Component {
   state = {
     filterBy: {title: ''},
@@ -74,10 +76,9 @@ class _AppStore extends Component {
     const { items } = this.props;
     return (
       <React.Fragment>
-
+<HeroPic />
         <div className="appStore">
-          <img src={Hero} className="hero" alt="hero" className="hero-img" />
-          <h1 className="store-name">MyArt Store</h1>
+          
           <ItemFilter handleInput={this.handleInput} />
 
           <ItemList items={items} onRemoveItem={this.onRemoveItem} />
