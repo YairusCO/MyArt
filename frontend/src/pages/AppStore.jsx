@@ -41,6 +41,7 @@ class _AppStore extends Component {
     var items = this.props.items;
     return (
       <React.Fragment>
+<<<<<<< HEAD
         <img src={Hero} className="hero" alt="hero" />
         <div className="store-details">
           <h1>MyArt</h1>
@@ -52,6 +53,20 @@ class _AppStore extends Component {
             {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
           </ItemList>
         </div>
+=======
+      
+      <div className="appStore">
+        <img src={Hero} className="hero" alt="hero" className="hero-img" />
+        <h1 className="store-name">MyArt Store</h1>
+        <ItemFilter onSetFilter={this.onSetFilter} />
+
+        <ItemList items={items}>
+          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
+        </ItemList>
+
+      
+      </div>
+>>>>>>> 83d76758e5eb1564028fae19ea9228e7db6605a1
       </React.Fragment>
     )
   }

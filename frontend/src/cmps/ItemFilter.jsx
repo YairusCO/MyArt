@@ -20,8 +20,13 @@ export class ItemFilter extends Component {
 
     render() {
         return <section className="item-filter item-filter-container">
+<<<<<<< HEAD
         <input className="item-filter-search" type="text" placeholder="Enter Keywords" onChange={(ev) => {
             this.props.onSetFilter(ev.target.value, true)
+=======
+        <input className="item-filter-search" type="text" placeholder="Search:" onChange={(ev) => {
+            this.onChangeFilter(ev.target.value, true)
+>>>>>>> 83d76758e5eb1564028fae19ea9228e7db6605a1
         }} />
 
         <select className="item-sort" onChange={(value) => this.onChangeFilter(value.target.value)} >
@@ -32,7 +37,7 @@ export class ItemFilter extends Component {
          
         </select>
 
-        <Button className="btn-search">Search</Button>
+        <Button onClick={this.onChangeFilter} className="btn-search">Search</Button>
     </section>
 
     }
