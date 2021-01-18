@@ -1,39 +1,18 @@
-import React, { Component } from 'react'
-import Button from '@material-ui/core/Button';
-export class ItemFilter extends Component {
+import React from 'react';
 
-    state = {
-        filterBy: {
-            title: '',
-            artist: '',
-            lowPrice: -Infinity,
-            highPrice: Infinity
-        }
-    }
+export function ItemFilter(props) {
 
-    onChangeFilter = (type) => {
-        this.props.onSetFilter(type);
-    }
+    return <section className="item-filter item-filter-container">
+        <input className="item-filter-search" name="title" type="text" placeholder="Search:" onChange={props.handleInput} />
 
-    
-
-
-    render() {
-        return <section className="item-filter item-filter-container">
-        <input className="item-filter-search" type="text" placeholder="Search:" onChange={(ev) => {
-            this.onChangeFilter(ev.target.value, true)
-        }} />
-
-        <select className="item-sort" onChange={(value) => this.onChangeFilter(value.target.value)} >
+        {/* <select className="item-sort" name="title" onChange={(ev) => this.handleChange(ev)} >
             <option value="title" >Title</option>
             <option value="artist" >Artist</option>
             <option value="lowPrice">Low Price</option>
             <option value="highPrice">High Price</option>
          
-        </select>
+        </select> */}
 
-        <Button onClick={this.onChangeFilter} className="btn-search">Search</Button>
+        {/* <Button onClick={ this.onChangeFilter } className="btn-search">Search</Button> */}
     </section>
-
-    }
 }

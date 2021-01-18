@@ -2,9 +2,9 @@
 import { appStoreService } from '../../services/appStoreService'
 
 //filterBy
-export function loadItems() { // Action Creator
+export function loadItems(filterBy = {title:''}) { // Action Creator
     return (dispatch) => {
-        return appStoreService.query()
+        return appStoreService.query(filterBy)
             .then(items => {
                 console.log(items);
                 const action = {
@@ -32,7 +32,7 @@ export function saveItem(item){
 export function removeItem(itemId) {
     return (dispatch) => {
         return appStoreService.remove(itemId)
-        .then(items => {
+        .then(() => {
             const action = {
                 type: 'REMOVE_ITEM',
                 itemId
@@ -43,11 +43,14 @@ export function removeItem(itemId) {
 }
 
 export function setFilter(filterBy) {
+    
     return (dispatch) => {
+        console.log(filterBy)
         const action = {
             type: 'FILTER',
             filterBy
         }
         dispatch(action)
+        return Promise.resolve();
     }
 }

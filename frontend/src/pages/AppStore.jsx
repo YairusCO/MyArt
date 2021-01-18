@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Hero from '../assets/imgs/hero.jpg';
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
- import { loadUsers } from '../store/actions/userActions.js'
+import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
 import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
@@ -10,48 +10,83 @@ import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
 class _AppStore extends Component {
   state = {
-    filterBy: 'All',
-    filterByTxt: ''
+    filterBy: {title: ''},
+    items: []
+    // filterByTxt: ''
   }
-  
+
   componentDidMount() {
     this.props.loadItems()
     this.props.loadUsers()
+    // this.onLoadItems()
+
   }
 
+  // onLoadItems() {
+  //   appStoreService.query(this.state.filterBy)
+  //     .then(items => {
+  //       this.setState({ items })
+  //     })
+
+  // }
   onRemoveItem = async itemId => {
     await this.props.removeItem(itemId)
     // this.props.history.push('/login')
   }
+  
 
-  onSetFilter = (filterBy) => {
-    this.props.setFilter(filterBy)
-    this.props.loadItems(filterBy)
+  handleInput = ({ target: { name, value, type } }) => {
+    const modValue = (type === 'number') ? parseInt(value) : value  //'margad'
+    this.setState(prevState => {
+      return {
+        filterBy: {
+          ...prevState.filterBy, // title:''
+          [name]: modValue  //title:'margad'
+        }
 
-}
+      }
+    }, () => {
+    //  await this.props.setFilter(this.state.filterBy);
+     this.props.loadItems(this.state.filterBy);
+    })
+
+  }
+  //   onSetFilter = (filterBy) => {
+  //     this.props.setFilter(filterBy)
+  //     this.props.loadItems(filterBy)
+
+  // }
   onBuy(item) {
     const action = {
-        type: 'BUY',
-        item
+      type: 'BUY',
+      item
     }
     this.props.dispatch(action)
-}
+  }
+  // getItems() {
+
+  //   const items = this.props.items
+  //   const filter = this.props.filterBy
+  //   console.log(items)
+  //   console.log(filter)
+  // }
   render() {
-    var items = this.props.items;
+    const { items } = this.props;
     return (
       <React.Fragment>
-      
-      <div className="appStore">
-        <img src={Hero} className="hero" alt="hero" className="hero-img" />
-        <h1 className="store-name">MyArt Store</h1>
-        <ItemFilter onSetFilter={this.onSetFilter} />
 
-        <ItemList items={items}>
-          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
-        </ItemList>
+        <div className="appStore">
+          <img src={Hero} className="hero" alt="hero" className="hero-img" />
+          <h1 className="store-name">MyArt Store</h1>
+          <ItemFilter handleInput={this.handleInput} />
 
-      
-      </div>
+          <ItemList items={items} onRemoveItem={this.onRemoveItem} />
+            {/* {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
+          </ItemList> */}
+          {/* <ItemList items={items}>
+          </ItemList> */}
+
+        </div>
       </React.Fragment>
     )
   }
@@ -59,16 +94,17 @@ class _AppStore extends Component {
 
 const mapStateToProps = state => {
   return {
-   items: state.itemModule.items,
-     users: state.userModule.users,
-     loggedInUser: state.userModule.loggedInUser
+    items: state.itemModule.items,
+    users: state.userModule.users,
+    loggedInUser: state.userModule.loggedInUser,
+    filterBy: state.itemModule.filterBy
   }
 }
 const mapDispatchToProps = {
   loadItems,
   loadUsers,
   // addItem,
-   removeItem,
-   setFilter
-} 
+  removeItem,
+  setFilter
+}
 export const AppStore = connect(mapStateToProps, mapDispatchToProps)(_AppStore)
