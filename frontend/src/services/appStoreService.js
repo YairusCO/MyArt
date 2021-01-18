@@ -37,7 +37,7 @@ var gCreateItems = [
       "seller": {
           "_id": "u101",
           "fullname": "Inbal Azmon",
-          "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+          "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
       }
   },
   {

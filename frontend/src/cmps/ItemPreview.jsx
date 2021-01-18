@@ -8,13 +8,15 @@ export function ItemPreview({ item, onBuy }) {
         <React.Fragment>
             <div>
                 <ul className="clean-list item-preview">
-                    <li>{item.title}</li>
-                    <img className="item-img" src={item.imgUrl} alt="" />
-                    <li>Price: {item.price}</li>
-                    <li>Artist: {item.seller.fullname}</li>
+                <Link to={`/item/${item._id}`}><img className="item-img" src={item.imgUrl} alt="" /></Link>
+                <div className="card-info">
+                    {/* <li >{item.title}</li>
+                    <li>💲{item.price}</li> */}
+                    {/* <img className="item-img" src={item.seller.imgUrl} alt="" /> */}
+                    <li>{item.seller.fullname}</li>
+                    </div>
                 </ul>
                 <div className="items-btns">
-                    <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
                     <Button onClick={() => {
                         this.onBuy(item)
                     }}>Buy</Button>
