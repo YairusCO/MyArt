@@ -14,7 +14,7 @@ export function loadUsers() {
             type: 'SET_USERS',
             users
         }
-      dispatch({ type: 'SET_USERS', users })
+      dispatch(action)
       })
     } catch (err) {
       console.log('UserActions: err in loadUsers', err)

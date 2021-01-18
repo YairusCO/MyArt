@@ -7,9 +7,9 @@ import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
 
 export class _ItemDetails extends Component {
-    state = {
-        item: null
-    }
+  state = {
+    item: null
+  }
 
   //   componentDidMount() {
   //     const itemId = this.props.match.params.itemId
@@ -24,47 +24,50 @@ export class _ItemDetails extends Component {
   //   // this.props.history.push('/login')
   // }
 
-    render(){
-      const { items, itemId } = this.props
-      const item = items.find(item => item._id === itemId) || {}
-      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
-      console.log('details', sellerItems);
+  render() {
+    const { items, itemId } = this.props
+    const item = items.find(item => item._id === itemId) || {}
+    const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
+    console.log('details', sellerItems);
 
 
-        return (
-            <section className="details-page">
+    return (
+      <section className="details-page main-container">
+        <div className="details-page-container">
+          <div className="item-container">
+            <div className="img-container">
+              <img className="img-details" src={item.imgUrl} />
+            </div>
+            <div className="txt-container" >
+              <h1>{item.title}</h1>
+              <p>{item.description}</p>
+              <p>${item.price}</p>
+              <p>{item.seller.fullname}</p>
+              <div>
+                <button className="btn-buy">Buy</button>
+                <button className="btn-buy">❤️</button>
 
-<div className="item-container">
-  <div className="img-container">
-  <img className="img-details" src={ item.imgUrl } />
-  </div>
-  <div className="txt-container" >
-  <h1>{item.title}</h1>
-  <p>{item.description}</p>
-  <p>${item.price}</p>
-  <p>{item.seller.fullname}</p>
-  <div>
-  <button className="btn-buy">Buy</button>
-  <button className="btn-buy">❤️</button>
- 
- 
-  </div>
-</div></div>
-      <div>
-      <SellerItemList sellerItems={sellerItems}>
-            {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
-          </SellerItemList>
-      </div>
+
+              </div>
+            </div>
+          </div>
+          <div className="seller-items">
+            <SellerItemList sellerItems={sellerItems}>
+              {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
+            </SellerItemList>
+          </div>
+        </div>
+
       </section>
-        )
-    }
+    )
+  }
 }
 
 
 
 const mapStateToProps = state => {
   return {
-   items: state.itemModule.items,
+    items: state.itemModule.items,
     // users: state.userModule.users,
     // loggedInUser: state.userModule.loggedInUser
   }
@@ -74,5 +77,5 @@ const mapDispatchToProps = {
   // // loadUsers,
   // // addItem,
   //  removeItem
-} 
+}
 export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)
