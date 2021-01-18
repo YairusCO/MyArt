@@ -1,9 +1,10 @@
+import { ItemPreview } from "./ItemPreview";
 
 
-export function ItemList({ children }) {
+export function ItemList({ items, onRemoveItem }) {
     return (
         <div className="item-details">
-            {children}
+            {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={onRemoveItem} />)}
         </div>
     )
 }

@@ -33,3 +33,32 @@
      }
  }
 }
+
+
+
+.btn-buy {
+    background: #d93434;
+    background-image: -webkit-linear-gradient(top, #d93434, #d99a9a);
+    background-image: -moz-linear-gradient(top, #d93434, #d99a9a);
+    background-image: -ms-linear-gradient(top, #d93434, #d99a9a);
+    background-image: -o-linear-gradient(top, #d93434, #d99a9a);
+    background-image: linear-gradient(to bottom, #d93434, #d99a9a);
+    -webkit-border-radius: 28;
+    -moz-border-radius: 28;
+    border-radius: 28px;
+    font-family: Georgia;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+  }
+  
+  .btn-buy:hover {
+    background: #d67e7e;
+    background-image: -webkit-linear-gradient(top, #d67e7e, #d69c9c);
+    background-image: -moz-linear-gradient(top, #d67e7e, #d69c9c);
+    background-image: -ms-linear-gradient(top, #d67e7e, #d69c9c);
+    background-image: -o-linear-gradient(top, #d67e7e, #d69c9c);
+    background-image: linear-gradient(to bottom, #d67e7e, #d69c9c);
+    text-decoration: none;
+  }

@@ -14,13 +14,13 @@ export function App() {
   return (
     <div className="app">
       <Router>
-        <Header />
+        <Header/>
         <main>
           <Switch>
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/chat" component={Chat} />
-            <Route path="/item/:itemId" render={({ match }) => {
+            <Route path="/item/:itemId" render={({match}) => {
               const { itemId } = match.params
               return <ItemDetails itemId={itemId} />
             }} />
@@ -28,7 +28,7 @@ export function App() {
             {/* <Route path="/" component={Home} /> */}
           </Switch>
         </main>
-        <Footer />
+      <Footer/>
       </Router>
     </div>
   )

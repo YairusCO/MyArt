@@ -4,10 +4,10 @@
 // import { utilService } from './utilService'
 const KEY = 'itemsDB';
 export const appStoreService = {
- add,
-  query,
-  remove,
-  getById
+    add,
+    query,
+    remove,
+    getById
 }
 
 
@@ -136,77 +136,40 @@ var gCreateItems = [
         "fullname": "Efrat Cohen",
         "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
     }
-},
-{
-    "_id": "v146",
-    "title": "Tibouchina",
-    "price": 150,
-    "description": "Tibouchina Aubl. is a neoptropical flowering plant genus in Melastomataceae Juss. that contains approximately 240 species. Species of this genus are herbs, shrubs or trees and typically have purple flowers.",
-    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700239/03_q9mzpk.jpg",
-    "createdAt": 1519129853500,
-    "purchasedAt": 1519129853500,
-    "tags": [
-        "ring",
-        "jewelry",
-        "silver"
-    ],
-    "seller": {
-        "_id": "u103",
-        "fullname": "Efrat Cohen",
-        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+  }]
+var gItems = [];
+
+function query(filterBy) {
+    gItems = load(KEY)
+    if (!gItems || !gItems.length) {
+        gItems = gCreateItems
     }
-},
-{
-    "_id": "v147",
-    "title": "Oenothera",
-    "price": 150,
-    "description": "Oenothera is a genus of about 145 species of herbaceous flowering plants native to the Americas. It is the type genus of the family Onagraceae.",
-    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610700238/05_vh2hja.jpg",
-    "createdAt": 1519129853500,
-    "purchasedAt": 1519129853500,
-    "tags": [
-        "ring",
-        "jewelry",
-        "silver"
-    ],
-    "seller": {
-        "_id": "u103",
-        "fullname": "Efrat Cohen",
-        "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
-    }
-}
-]
-var gItems=[];
-function query() {
-  gItems = load(KEY)
-  if (!gItems || !gItems.length) {
-    gItems = gCreateItems
-      }
-console.log('query: ', gItems);
-      _saveItemsToStorage();
-  return Promise.resolve(gItems);
+    const filteredItems = gItems.filter(item => item.title.includes(filterBy.title))
+    console.log('query: ', filteredItems);
+    _saveItemsToStorage();
+    return Promise.resolve(filteredItems);
 }
 
 function remove(itemId) {
     console.log('remove', gItems);
-//   return httpService.delete(`item/${itemId}`)
-  // return storageService.delete('item', itemId)
-  gItems = load(KEY)
-  gItems = gItems.filter(item => item.id !== itemId);
-  _saveItemsToStorage();
-  return Promise.resolve();
+    //   return httpService.delete(`item/${itemId}`)
+    // return storageService.delete('item', itemId)
+    gItems = load(KEY)
+    gItems = gItems.filter(item => item.id !== itemId);
+    _saveItemsToStorage();
+    return Promise.resolve();
 }
 // async 
 function add(itemId) {
-//   const addedItem = await httpService.post(`item`, item)
+    //   const addedItem = await httpService.post(`item`, item)
 
-  itemId = itemId.filter(item => item.id !== itemId);
-  _saveItemsToStorage();
-  return Promise.resolve();
-  // item.byUser = userService.getLoggedinUser()
-  // item.aboutUser = await userService.getById(item.aboutUserId)
-  // const addedItem = storageService.post('item', item)
-//   return addedItem
+    itemId = itemId.filter(item => item.id !== itemId);
+    _saveItemsToStorage();
+    return Promise.resolve();
+    // item.byUser = userService.getLoggedinUser()
+    // item.aboutUser = await userService.getById(item.aboutUserId)
+    // const addedItem = storageService.post('item', item)
+    //   return addedItem
 }
 
 function getById(itemId) {

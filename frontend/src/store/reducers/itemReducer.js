@@ -2,10 +2,7 @@
 
 const initialState = {
   items: [],
-  filterBy: {title: '',
-  artist: '',
-  lowPrice: -Infinity,
-  highPrice: Infinity}
+  filterBy: {filter: ''}
 }
 
 export function itemReducer(state = initialState, action) {

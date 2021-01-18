@@ -6,7 +6,8 @@ import { httpService } from './httpService'
 export const reviewService = {
   add,
   query,
-  remove
+  remove,
+
 }
 
 
@@ -16,8 +17,8 @@ export const reviewService = {
 
 function query(filterBy) {
   var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-  return httpService.get(`review${queryStr}`)
-  // return storageService.query('review')
+  // return httpService.get(`review${queryStr}`)
+  return storageService.query('review')
 }
 
 function remove(reviewId) {
