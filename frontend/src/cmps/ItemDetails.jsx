@@ -4,7 +4,6 @@ import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
-import Button from '@material-ui/core/Button';
 
 export class _ItemDetails extends Component {
     state = {
@@ -36,14 +35,15 @@ export class _ItemDetails extends Component {
   </div>
   <div className="txt-container" >
   <h1>{item.title}</h1>
-  <p>Description: {item.description}</p>
-  <p>Price: {item.price}$</p>
-  <p>Artist: {item.seller.fullname}</p>
+  <p>{item.description}</p>
+  <p>${item.price}</p>
+  <p>{item.seller.fullname}</p>
   <div>
-  <Button>Buy</Button>
+  <button className="btn-buy">Buy</button>
+  <button className="btn-buy">❤️</button>
+ 
  
   </div>
-  {/* <Button onClick={() => { this.onRemoveItem(item._id) }}>Delete</Button> */}
 </div></div>
       
       </section>
