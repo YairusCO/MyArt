@@ -20,7 +20,7 @@ export const userService = {
 // userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
 // userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
 
-const gCreateUsers = [
+const USER_DB = [
     {
         "_id": "u101",
         "fullname": "Ayelet Avni",
@@ -118,10 +118,10 @@ var gUsers=[];
 function query() {
   gUsers = load(KEY)
   if (!gUsers || !gUsers.length) {
-    gUsers = gCreateUsers
+    gUsers = USER_DB;
       }
    //   _saveLocalUser();
-  return Promise.resolve(gUsers);
+  return Promise.resolve([...gUsers]);
 }
 
 function getUsers() {
@@ -153,7 +153,7 @@ async function update(user) {
 // }
 
 async function login(userCred) {
-     const users = gCreateUsers
+     const users = gUsers
      //await storageService.query()
      const user = users.find(user => user.username === userCred.username)
     // return _handleLogin(user)
