@@ -29,8 +29,8 @@ class _AppStore extends Component {
   onSetFilter = (filterBy) => {
     this.props.setFilter(filterBy)
     this.props.loadItems(filterBy)
+}
 
-  }
   onBuy(item) {
     const action = {
       type: 'BUY',
