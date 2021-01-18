@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Hero from '../assets/imgs/hero.jpg';
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
@@ -8,6 +7,8 @@ import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
+// import Hero from '../assets/imgs/hero.jpg';
+import { HeroPic } from '../cmps/Hero'
 
 class _AppStore extends Component {
   state = {
@@ -40,34 +41,15 @@ class _AppStore extends Component {
   render() {
     var items = this.props.items;
     return (
-      <React.Fragment>
-<<<<<<< HEAD
-        <img src={Hero} className="hero" alt="hero" />
-        <div className="store-details">
-          <h1>MyArt</h1>
-          <p>Expose to an extensive and high-quality image database</p>
-        </div>
+     <React.Fragment>
+         <HeroPic />
         <div className="appStore">
           <ItemFilter onSetFilter={this.onSetFilter} />
           <ItemList items={items}>
             {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
           </ItemList>
         </div>
-=======
-      
-      <div className="appStore">
-        <img src={Hero} className="hero" alt="hero" className="hero-img" />
-        <h1 className="store-name">MyArt Store</h1>
-        <ItemFilter onSetFilter={this.onSetFilter} />
-
-        <ItemList items={items}>
-          {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
-        </ItemList>
-
-      
-      </div>
->>>>>>> 83d76758e5eb1564028fae19ea9228e7db6605a1
-      </React.Fragment>
+        </React.Fragment>
     )
   }
 }
