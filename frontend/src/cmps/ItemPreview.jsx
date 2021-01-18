@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 // import x from '../assets/imgs/01.jpg';
 import Button from '@material-ui/core/Button';
-export function ItemPreview({ item, onRemoveItem, onBuy }) {
+export function ItemPreview({ item, onBuy }) {
 
     return (
         <React.Fragment>
@@ -14,7 +14,6 @@ export function ItemPreview({ item, onRemoveItem, onBuy }) {
                     <li>Artist: {item.seller.fullname}</li>
                 </ul>
                 <div className="items-btns">
-                    {/* <Button onClick={() => { onRemoveItem(item._id) }}>Delete</Button> */}
                     <Button><Link to={`/item/${item._id}`}>Details</Link></Button>
                     <Button onClick={() => {
                         this.onBuy(item)

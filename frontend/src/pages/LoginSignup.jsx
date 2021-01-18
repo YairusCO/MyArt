@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Button from '@material-ui/core/Button';
 
 import {
   loadUsers,
@@ -49,6 +50,7 @@ class _LoginSignup extends Component {
 
   doLogin = async ev => {
     ev.preventDefault()
+    console.log('login');
     const { username, password } = this.state.loginCred
     if (!username) {
       return this.setState({ msg: 'Please enter user/password' })
@@ -105,7 +107,7 @@ class _LoginSignup extends Component {
           autoComplete="username"
         />
         <br />
-        <button>Signup</button>
+        <Button>Signup</Button>
       </form>
     )
     let loginSection = (
@@ -120,14 +122,13 @@ class _LoginSignup extends Component {
           {this.props.users && this.props.users.map(user => <option key={user._id} value={user.username}>{user.fullname}</option>)}
         </select>
 
-        {/* <input
+        <input
           type="text"
           name="username"
           value={this.state.loginCred.username}
           onChange={this.loginHandleChange}
           placeholder="Username"
         />
-        <br />
         <input
           type="password"
           name="password"
@@ -135,8 +136,8 @@ class _LoginSignup extends Component {
           onChange={this.loginHandleChange}
           placeholder="Password"
         />
-        <br /> */}
-        <button>Login</button>
+        <br />
+        <Button onClick={this.doLogin}>Login</Button>
       </form>
     )
 
