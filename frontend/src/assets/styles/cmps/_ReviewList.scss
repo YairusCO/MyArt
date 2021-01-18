@@ -4,27 +4,18 @@
     list-style-type: none;
 
     }
-    
-
-    // .img-container {
-    //     display: grid;
-    //     grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    //     grid-gap: 10px;
-    // }
-
     .item-preview{
-        text-align: center;
         border-radius: 5px;
       }
-
-    //   .item-img{
-    //     width: 120px;
-    //     height: 100px;
-    //   }
 
     .items-btns {
       text-align: center;
     }
+
+    img.profile-img {
+      width: 40px;
+      border-radius: 30px;
+  }
 
 
 

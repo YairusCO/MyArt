@@ -12,7 +12,7 @@ export function ItemPreview({ item, onBuy }) {
                 <div className="card-info">
                     {/* <li >{item.title}</li>
                     <li>💲{item.price}</li> */}
-                    {/* <img className="item-img" src={item.seller.imgUrl} alt="" /> */}
+                    <img className="profile-img" src={item.seller.imgUrl} alt="" />
                     <li>{item.seller.fullname}</li>
                     </div>
                 </ul>
