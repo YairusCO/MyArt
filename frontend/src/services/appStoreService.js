@@ -59,7 +59,7 @@ const ITEM_DB = [
         "seller": {
             "_id": "u103",
             "fullname": "Inbal Azmon",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+            "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
     },
     {
@@ -78,7 +78,7 @@ const ITEM_DB = [
         "seller": {
             "_id": "u101",
             "fullname": "Inbal Azmon",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg"
+            "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
     },
     {
@@ -97,7 +97,7 @@ const ITEM_DB = [
         "seller": {
             "_id": "u102",
             "fullname": "Inbal Azmon",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+            "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
     },
     {
@@ -115,8 +115,8 @@ const ITEM_DB = [
         ],
         "seller": {
             "_id": "u103",
-            "fullname": "Efrat Cohen",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+            "fullname": "Inbal Azmon",
+            "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
     },
     {
@@ -134,8 +134,8 @@ const ITEM_DB = [
         ],
         "seller": {
             "_id": "u103",
-            "fullname": "Efrat Cohen",
-            "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+            "fullname": "Inbal Azmon",
+            "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
     },
     {
