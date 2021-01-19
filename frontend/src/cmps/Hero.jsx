@@ -9,7 +9,7 @@ render() {
         <React.Fragment>
             <img src={Hero} className="hero" alt="hero" />
         <div className="store-details">
-          <h1>MyArt</h1>
+          <h1>BuyArt</h1>
           <p>Expose to an extensive and high-quality image database</p>
         </div>
         </React.Fragment>

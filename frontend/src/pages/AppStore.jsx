@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { loadItems, addItem, removeItem, setFilter } from '../store/actions/itemActions.js'
 import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
+import { orderService } from '../services/orderService'
 import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
@@ -12,8 +13,9 @@ import { HeroPic } from '../cmps/Hero'
 
 class _AppStore extends Component {
   state = {
-    filterBy: {title: ''},
-    items: []
+    filterBy: { title: '' },
+    items: [],
+    cart: []
     // filterByTxt: ''
   }
 
@@ -35,7 +37,7 @@ class _AppStore extends Component {
     await this.props.removeItem(itemId)
     // this.props.history.push('/login')
   }
-  
+
 
   handleInput = ({ target: { name, value, type } }) => {
     const modValue = (type === 'number') ? parseInt(value) : value  //'margad'
@@ -48,8 +50,8 @@ class _AppStore extends Component {
 
       }
     }, () => {
-    //  await this.props.setFilter(this.state.filterBy);
-     this.props.loadItems(this.state.filterBy);
+      //  await this.props.setFilter(this.state.filterBy);
+      this.props.loadItems(this.state.filterBy);
     })
 
   }
@@ -58,12 +60,20 @@ class _AppStore extends Component {
   //     this.props.loadItems(filterBy)
 
   // }
-  onBuy(item) {
-    const action = {
-      type: 'BUY',
-      item
-    }
-    this.props.dispatch(action)
+  onBuy= (items) => {
+    var order = orderService.add(this.props.loggedInUser,items)
+    console.log('this order', order)
+    // const action = {
+    //   type: 'BUY',
+    //   item
+    // }
+    // this.props.dispatch(action)
+  }
+
+  onAddToCart = (item) => {
+    // push item to cart
+    // on checkout call onBuy
+    // send this.state.cart as the items
   }
   // getItems() {
 
@@ -76,13 +86,13 @@ class _AppStore extends Component {
     const { items } = this.props;
     return (
       <React.Fragment>
-<HeroPic />
+        <HeroPic />
         <div className="appStore">
-          
+
           <ItemFilter handleInput={this.handleInput} />
 
-          <ItemList items={items} onRemoveItem={this.onRemoveItem} />
-            {/* {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
+          <ItemList items={items} onBuy={this.onBuy} onRemoveItem={this.onRemoveItem} />
+          {/* {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
           </ItemList> */}
           {/* <ItemList items={items}>
           </ItemList> */}

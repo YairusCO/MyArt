@@ -1,11 +1,10 @@
 .hero {
-    height: 100vh;
+    height: 85vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    
 }
 #root > div > main > img.hero {grid-column: 1/-1 !important;}
 .store-details {

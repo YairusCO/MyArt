@@ -1,30 +1,28 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
-import {Cart} from './Cart.jsx'
+import { Cart } from './Cart.jsx'
 
 class _Header extends Component {
     render() {
-        const {loggedInUser} = this.props;
-        return <React.Fragment> 
-        <header>
-            <nav className="main-header">
-            <NavLink exact to="/store"><div className="logo">MyArt</div></NavLink>
-            <div className="nav-bar">
-                <NavLink to="/login">Login</NavLink>
-                <NavLink exact to="/user/:user._id">My Profile</NavLink>
-                <NavLink to="/chat">About Us</NavLink>
-                </div>
-                {/* <Cart /> */}
-            </nav>
-            {loggedInUser && <span className="loggedin-user">
-
-                <Link to={`user/${loggedInUser._id}`}>
-                    {loggedInUser.fullname}
-                </Link>
-                <span>{loggedInUser.score || 0}</span>
-            </span>}
-        </header>
+        const { loggedInUser } = this.props;
+        return <React.Fragment>
+            <header>
+                <nav className="main-header">
+                    <NavLink exact to="/store"><div className="logo">BuyArt</div></NavLink>
+                    <div className="nav-bar">
+                        <NavLink to="/login">Login</NavLink>
+                        <NavLink to="/chat">About Us</NavLink>
+                        {loggedInUser && <span className="loggedin-user">
+                            <Link to={`/user/${loggedInUser._id}`}>
+                                {loggedInUser.fullname}
+                            </Link>
+                            <span>{loggedInUser.score || 0}</span>
+                        </span>}
+                    </div>
+                    {/* <Cart /> */}
+                </nav>
+            </header>
         </React.Fragment>
     }
 
