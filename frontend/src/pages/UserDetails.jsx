@@ -11,8 +11,10 @@ export class UserDetails extends Component {
     const user = await userService.getById(this.props.match.params.id)
     this.setState({user})
     const orders = await orderService.query()
-    const userOrders = orders.filter(order => order.buyer._id === user._id)
     console.log('orders:', orders);
+    console.log('user:', user);
+    const userOrders = orders.filter(order => order.buyer._id === user._id)
+
     this.setState({
       orders : userOrders
     })

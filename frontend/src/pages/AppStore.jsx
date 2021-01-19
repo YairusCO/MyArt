@@ -4,10 +4,12 @@ import { loadItems, addItem, removeItem, setFilter } from '../store/actions/item
 import { loadUsers } from '../store/actions/userActions.js'
 import { appStoreService } from '../services/appStoreService.js'
 import { orderService } from '../services/orderService'
+import { cartService } from '../services/cartService'
 import { Link } from 'react-router-dom'
 import { ItemFilter } from '../cmps/ItemFilter'
 import { ItemList } from '../cmps/ItemList';
 import { ItemPreview } from '../cmps/ItemPreview.jsx';
+import { Cart } from '../cmps/Cart.jsx'
 // import Hero from '../assets/imgs/hero.jpg';
 import { HeroPic } from '../cmps/Hero'
 
@@ -22,6 +24,7 @@ class _AppStore extends Component {
   componentDidMount() {
     this.props.loadItems()
     this.props.loadUsers()
+    
     // this.onLoadItems()
 
   }
@@ -60,8 +63,8 @@ class _AppStore extends Component {
   //     this.props.loadItems(filterBy)
 
   // }
-  onBuy= (items) => {
-    var order = orderService.add(this.props.loggedInUser,items)
+  onBuy = (items) => {
+    var order = orderService.add(this.props.loggedInUser, items)
     console.log('this order', order)
     // const action = {
     //   type: 'BUY',
@@ -70,7 +73,9 @@ class _AppStore extends Component {
     // this.props.dispatch(action)
   }
 
-  onAddToCart = (item) => {
+  onAddToCart = (items) => {
+    var cart = cartService.add(this.props.loggedInUser, items)
+    console.log('this cart', cart)
     // push item to cart
     // on checkout call onBuy
     // send this.state.cart as the items
@@ -88,10 +93,10 @@ class _AppStore extends Component {
       <React.Fragment>
         <HeroPic />
         <div className="appStore">
-
+          {/* <Cart /> */}
           <ItemFilter handleInput={this.handleInput} />
 
-          <ItemList items={items} onBuy={this.onBuy} onRemoveItem={this.onRemoveItem} />
+          <ItemList items={items} onBuy={this.onBuy} onAddToCart={this.onAddToCart} onRemoveItem={this.onRemoveItem} />
           {/* {items.map(item => <ItemPreview key={item._id} item={item} onRemoveItem={this.onRemoveItem} />)}
           </ItemList> */}
           {/* <ItemList items={items}>

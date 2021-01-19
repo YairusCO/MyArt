@@ -7,6 +7,7 @@ import { Chat } from './pages/Chat'
 import { UserDetails } from './pages/UserDetails'
 import { Footer } from './pages/Footer.jsx'
 import { Header } from './cmps/Header'
+import { Cart } from './cmps/Cart'
 import { AppStore } from './pages/AppStore'
 
 
@@ -18,6 +19,7 @@ export function App() {
         <main>
           <Switch>
             <Route path="/user/:id" component={UserDetails} />
+            <Route path="/cart/:id" component={Cart} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/chat" component={Chat} />
             <Route path="/item/:itemId" render={({match}) => {

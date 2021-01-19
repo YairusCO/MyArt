@@ -39,6 +39,7 @@ a:hover {
 }
 
 .appStore {
+    margin: 5px 0;
     display: grid;
     grid-template-columns: minmax(2rem,1fr) minmax(auto,1040px) minmax(2rem,1fr);
     >* {
