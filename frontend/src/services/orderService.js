@@ -26,7 +26,6 @@ function query() {
     if (!gOrders || !gOrders.length) {
         gOrders = ORDER_DB;
     }
-    //   _saveLocalUser();
     return Promise.resolve([...gOrders]);
 }
 

@@ -72,6 +72,7 @@ class _AppStore extends Component {
 
   onAddToCart = (item) => {
     // push item to cart
+    item.push()
     // on checkout call onBuy
     // send this.state.cart as the items
   }

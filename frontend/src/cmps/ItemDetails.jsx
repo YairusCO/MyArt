@@ -46,7 +46,12 @@ export class _ItemDetails extends Component {
               <div>
                 <button className="btn-buy">Buy</button>
                 <button className="btn-buy">❤️</button>
-
+                {/* <div className="items-btns">
+                        <Button onClick={() => {
+                            onBuy([item])
+                        }}>Buy</Button>
+                        <Button>Add to cart</Button>
+                    </div> */}
 
               </div>
             </div>
