@@ -5,10 +5,12 @@ import { appStoreService } from '../services/appStoreService'
 import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
+import { orderService } from '../services/orderService'
+import { cartService } from '../services/cartService'
 
 export class _ItemDetails extends Component {
   state = {
-    item: null
+    items: []
   }
 
   //   componentDidMount() {
@@ -23,6 +25,26 @@ export class _ItemDetails extends Component {
   //   await this.props.removeItem(itemId)
   //   // this.props.history.push('/login')
   // }
+
+
+  onBuy = (item) => {
+    var order = orderService.add(this.props.loggedInUser, item)
+    console.log('this order', order)
+    // const action = {
+    //   type: 'BUY',
+    //   item
+    // }
+    // this.props.dispatch(action)
+  }
+
+  onAddToCart = (items) => {
+    var cart = cartService.add(this.props.loggedInUser, items)
+    console.log('this cart', cart)
+    // push item to cart
+    items.push()
+    // on checkout call onBuy
+    // send this.state.cart as the items
+  }
 
   render() {
     const { items, itemId } = this.props
@@ -44,14 +66,15 @@ export class _ItemDetails extends Component {
               <p>${item.price}</p>
               <p>{item.seller.fullname}</p>
               <div>
-                <button className="btn-buy">Buy</button>
-                <button className="btn-buy">❤️</button>
-                {/* <div className="items-btns">
-                        <Button onClick={() => {
-                            onBuy([item])
-                        }}>Buy</Button>
-                        <Button>Add to cart</Button>
-                    </div> */}
+
+                <div className="items-btns">
+                  <button className="btn-buy" onClick={() => {
+                    this.onBuy([item])
+                  }}>Buy</button>
+                  <button className="btn-buy" onClick={() => {
+                    this.onAddToCart([item])
+                  }}>Add to cart</button>
+                </div>
 
               </div>
             </div>
@@ -73,8 +96,8 @@ export class _ItemDetails extends Component {
 const mapStateToProps = state => {
   return {
     items: state.itemModule.items,
-    // users: state.userModule.users,
-    // loggedInUser: state.userModule.loggedInUser
+    users: state.userModule.users,
+    loggedInUser: state.userModule.loggedInUser
   }
 }
 const mapDispatchToProps = {

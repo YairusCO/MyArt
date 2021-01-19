@@ -13,7 +13,7 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                         <img className="profile-img" src={item.seller.imgUrl} alt="" />
                         <p>{item.seller.fullname}</p>
                     </div>
-                    <div className="items-btns">
+                    {/* <div className="items-btns">
                         <Button onClick={() => {
                             onBuy([item])
                         }}>Buy</Button>
@@ -21,7 +21,7 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                             onAddToCart([item])
                         }}>Add to cart</Button>
 
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </React.Fragment>

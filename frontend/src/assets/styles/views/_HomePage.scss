@@ -6,6 +6,11 @@
     background-size: cover;
     position: relative;
 }
+
+.hero-text{
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgb(63, 62, 62);
+}
 #root > div > main > img.hero {grid-column: 1/-1 !important;}
 .store-details {
     text-align: center;
