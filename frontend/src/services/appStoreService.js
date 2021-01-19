@@ -21,7 +21,7 @@ export const appStoreService = {
 //   return httpService.get(`item${queryStr}`)
 //   // return storageService.query('item')
 // }
-var gCreateItems = [
+const ITEM_DB = [
     {
         "_id": "v140",
         "title": "Common Dandelion",
@@ -355,7 +355,7 @@ var gItems = [];
 function query(filterBy) {
     gItems =  storageService.load(KEY)
     if (!gItems || !gItems.length) {
-        gItems = gCreateItems
+        gItems = ITEM_DB
     }
     const filteredItems = gItems.filter(item => item.title.includes(filterBy.title))
     console.log('query: ', filteredItems);
