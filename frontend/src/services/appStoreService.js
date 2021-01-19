@@ -2,6 +2,7 @@
 // import { storageService } from './asyncStorageService'
 // import userService from './userService'
 // import { utilService } from './utilService'
+import { storageService } from './storageService'
 const KEY = 'itemsDB';
 export const appStoreService = {
     add,
@@ -331,7 +332,7 @@ const ITEM_DB = [
         }
     },
     {
-        "_id": "v1578",
+        "_id": "v158",
         "title": "A New Beginning",
         "price": 150,
         "description":"",
@@ -352,7 +353,7 @@ const ITEM_DB = [
 var gItems = [];
 
 function query(filterBy) {
-    gItems = load(KEY)
+    gItems =  storageService.load(KEY)
     if (!gItems || !gItems.length) {
         gItems = ITEM_DB
     }
@@ -366,7 +367,7 @@ function remove(itemId) {
     console.log('remove', gItems);
     //   return httpService.delete(`item/${itemId}`)
     // return storageService.delete('item', itemId)
-    gItems = load(KEY)
+    gItems = storageService.load(KEY)
     gItems = gItems.filter(item => item.id !== itemId);
     _saveItemsToStorage();
     return Promise.resolve();
@@ -396,17 +397,17 @@ function _saveItemsToStorage() {
 
 // // Storage Util
 
-export const storageService = {
-    load,
-    save
-}
+// export const storageService = {
+//     load,
+//     save
+// }
 
-function load(key) {
-    const str = localStorage.getItem(key)
-    return JSON.parse(str)
-}
+// function load(key) {
+//     const str = localStorage.getItem(key)
+//     return JSON.parse(str)
+// }
 
-function save(key, val) {
-    const str = JSON.stringify(val)
-    localStorage.setItem(key, str)
-}
+// function save(key, val) {
+//     const str = JSON.stringify(val)
+//     localStorage.setItem(key, str)
+// }

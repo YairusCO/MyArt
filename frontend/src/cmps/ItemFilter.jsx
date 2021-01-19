@@ -10,7 +10,6 @@ export function ItemFilter(props) {
             <option value="artist" >Artist</option>
             <option value="lowPrice">Low Price</option>
             <option value="highPrice">High Price</option>
-         
         </select> */}
 
         {/* <Button onClick={ this.onChangeFilter } className="btn-search">Search</Button> */}

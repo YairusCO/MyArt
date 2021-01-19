@@ -130,8 +130,10 @@ function getUsers() {
 }
 
 function getById(userId) {
+    var user = gUsers.find(user => user._id === userId)
+    return Promise.resolve({...user})
     // return storageService.get('user', userId)
-    return httpService.get(`user/${userId}`)
+    // return httpService.get(`user/${userId}`)
 }
 function remove(userId) {
     // return storageService.remove('user', userId)
