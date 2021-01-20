@@ -10,27 +10,27 @@ export class UserDetails extends Component {
   async componentDidMount() {
     const user = await userService.getById(this.props.match.params.id)
     this.setState({user})
-    const orders = await orderService.query()
-    console.log('orders:', orders);
-    console.log('user:', user);
-    const userOrders = orders.filter(order => order.buyer._id === user._id)
-
-    this.setState({
-      orders : userOrders
-    })
+    // const orders = await orderService.query()
+    // console.log('orders:', orders);
+    // console.log('user:', user);
+    // const userOrders = orders.filter(order => order.buyer._id === user._id)
+    // this.setState({
+    //   orders : userOrders
+    // })
   }
   render() {
     return (
       <section className="user-details">
-        <h1>User Details</h1>
         {this.state.user && <div>
-          <h3>
+          <img className="user-profile" src={this.state.user.imgUrls.profile} alt=""/>
+          <h3 className="user-name">
             {this.state.user.fullname}
           </h3>
+          <p className="user-desc">"{this.state.user.description}"</p>
           {this.state.orders.map(order => <h1 key={order._id}>{order.items[0].title}</h1>)}
-          <pre>
+          {/* <pre>
             {JSON.stringify(this.state.user, null, 2)}
-          </pre>
+          </pre> */}
         </div>}
       </section>
     )

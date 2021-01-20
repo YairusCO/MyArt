@@ -36,7 +36,7 @@ const ITEM_DB = [
             "traditional"
         ],
         "seller": {
-            "_id": "u101",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -57,7 +57,7 @@ const ITEM_DB = [
             "white"
         ],
         "seller": {
-            "_id": "u103",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -76,7 +76,7 @@ const ITEM_DB = [
             "photo"
         ],
         "seller": {
-            "_id": "u101",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -95,7 +95,7 @@ const ITEM_DB = [
             "color"
         ],
         "seller": {
-            "_id": "u102",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -114,7 +114,7 @@ const ITEM_DB = [
             "silver"
         ],
         "seller": {
-            "_id": "u103",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -133,7 +133,7 @@ const ITEM_DB = [
             "silver"
         ],
         "seller": {
-            "_id": "u103",
+            "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
         }
@@ -150,7 +150,7 @@ const ITEM_DB = [
             "bike",
         ],
         "seller": {
-            "_id": "u104",
+            "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
         }
@@ -167,7 +167,7 @@ const ITEM_DB = [
             "bike",
         ],
         "seller": {
-            "_id": "u104",
+            "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
         }
@@ -184,7 +184,7 @@ const ITEM_DB = [
             "bike",
         ],
         "seller": {
-            "_id": "u104",
+            "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
         }
@@ -201,7 +201,7 @@ const ITEM_DB = [
             "bike",
         ],
         "seller": {
-            "_id": "u104",
+            "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
         }
@@ -218,7 +218,7 @@ const ITEM_DB = [
             "bike",
         ],
         "seller": {
-            "_id": "u104",
+            "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
         }
@@ -236,7 +236,7 @@ const ITEM_DB = [
             "dog",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -255,7 +255,7 @@ const ITEM_DB = [
             "zion",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -273,7 +273,7 @@ const ITEM_DB = [
             "paint",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -291,7 +291,7 @@ const ITEM_DB = [
             "paint",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -308,7 +308,7 @@ const ITEM_DB = [
             "paint",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -326,7 +326,7 @@ const ITEM_DB = [
             "paint",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
@@ -343,7 +343,7 @@ const ITEM_DB = [
             "paint",
         ],
         "seller": {
-            "_id": "u105",
+            "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
         }
