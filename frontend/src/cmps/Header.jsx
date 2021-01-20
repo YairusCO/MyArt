@@ -15,9 +15,8 @@ class _Header extends Component {
                         <NavLink to="/chat">About Us</NavLink>
                         {loggedInUser && <span className="loggedin-user">
                             <Link to={`/user/${loggedInUser._id}`}>
-                                {loggedInUser.fullname}
+                             Welcome, {loggedInUser.fullname}
                             </Link>
-                            <span>{loggedInUser.score || 0}</span>
                         </span>}
                     </div>
                     {/* <Cart /> */}
