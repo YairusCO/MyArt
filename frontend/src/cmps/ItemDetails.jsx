@@ -7,6 +7,7 @@ import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem, loadItems } from '../store/actions/itemActions.js'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
+import Button from '@material-ui/core/Button';
 
 export class _ItemDetails extends Component {
   state = {
@@ -77,19 +78,24 @@ export class _ItemDetails extends Component {
             <div className="txt-container" >
               <h1>{item.title}</h1>
               <p>{item.description}</p>
+              <p>{item.createdAt}</p>
+              <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
-              <p>{item.seller.fullname}</p>
-              <div>
-
-                <div className="items-btns">
-                  <button className="btn-buy" onClick={() => {
-                    this.onBuy([item])
-                  }}>Buy</button>
-                  <button className="btn-buy" onClick={() => {
-                    this.onAddToCart([item])
-                  }}>Add to cart</button>
+              <div className="items-btns">
+                <button className="btn-buy" onClick={() => {
+                  this.onBuy([item])
+                }}>Buy</button>
+                <button className="btn-buy" onClick={() => {
+                  this.onAddToCart([item])
+                }}>Add to cart</button>
+                <div className="details-reactions">
+                  <Button>❤️</Button>
+                  <Button>👍</Button>
                 </div>
-
+                <div className="item-reviews">
+                  <p>Review: {item.reviews[0].txt}</p>
+                  <p>Rating: {item.reviews[0].rate}</p>
+                </div>
               </div>
             </div>
           </div>

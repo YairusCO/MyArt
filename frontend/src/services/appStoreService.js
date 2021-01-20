@@ -39,7 +39,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v141",
@@ -60,7 +82,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v142",
@@ -79,7 +123,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v143",
@@ -98,7 +164,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v144",
@@ -117,7 +205,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v145",
@@ -136,7 +246,29 @@ const ITEM_DB = [
             "_id": "s101",
             "fullname": "Inbal Azmon",
             "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v146",
@@ -153,7 +285,29 @@ const ITEM_DB = [
             "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v148",
@@ -170,7 +324,29 @@ const ITEM_DB = [
             "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v149",
@@ -187,7 +363,29 @@ const ITEM_DB = [
             "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v150",
@@ -204,7 +402,29 @@ const ITEM_DB = [
             "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v151",
@@ -221,7 +441,29 @@ const ITEM_DB = [
             "_id": "s102",
             "fullname": "Eliran Kadosh",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v152",
@@ -239,7 +481,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v153",
@@ -258,7 +522,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v154",
@@ -276,7 +562,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v155",
@@ -294,7 +602,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v156",
@@ -311,7 +641,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
     {
         "_id": "v157",
@@ -346,7 +698,29 @@ const ITEM_DB = [
             "_id": "s103",
             "fullname": "Harel Malachi",
             "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992823/myArt/99152911_111476110415932_6134678813593847894_n_bra2og.jpg"
-        }
+        },
+        "reviews": [
+            {
+                "id": "r101",
+                "rate": 5,
+                "txt": "Best Artist EVER!!!",
+                "byUser": {
+                    "_id": "u102",
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
+                }
+            },
+            {
+                "id": "r102",
+                "rate": 4,
+                "txt": "I've really liked her work.",
+                "byUser": {
+                    "_id": "u103",
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
+                }
+            }
+        ]
     },
 
 ]
