@@ -16,6 +16,9 @@
         font-family: 'IndieFlower',sans-serif;
     }
 }
+p{
+    font-family: 'montserrat';
+}
 }
 #root > div > main > img.hero {grid-column: 1/-1 !important;}
 .store-details {
@@ -26,7 +29,7 @@
     transform: translate(-50%, -50%);
     color:white;
     font-size: 2rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     // h1 {
     //     // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     // }
