@@ -42,7 +42,7 @@ a:hover {
     margin: 5px 0;
     display: grid;
     grid-template-columns: minmax(2rem,1fr) minmax(auto,1040px) minmax(2rem,1fr);
-    border:1px solid #01E4F5;
+//    border:1px solid #01E4F5;
     >* {
         grid-column: 2;
     }
