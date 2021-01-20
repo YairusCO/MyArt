@@ -4,15 +4,15 @@ import { connect } from 'react-redux'
 import Hero from '../assets/imgs/hero.jpg';
 export class HeroPic extends Component {
 
-render() {
-    return (
-        <React.Fragment>
-            <img src={Hero} className="hero" alt="hero" />
-        <div className="store-details">
-          <h1>MyArt</h1>
-          <p>Expose to an extensive and high-quality image database</p>
-        </div>
-        </React.Fragment>
-    )
-}
+    render() {
+        return (
+            <React.Fragment>
+                <img src={Hero} className="hero" alt="hero" />
+                <div className="store-details">
+                    <h1 className="hero-text">BuyArt</h1>
+                    <p className="hero-text" >Your place for buying high quality images and artwork</p>
+                </div>
+            </React.Fragment>
+        )
+    }
 }

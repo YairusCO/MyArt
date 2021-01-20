@@ -3,17 +3,10 @@ header {
     z-index: 1;
     width: 100%;
     .loggedin-user {
-        background-color: white;
         padding: 2px 8px;
         border-radius: 1em;
         align-self: flex-end;
         color: whitesmoke;
-        span {
-            background-color: white;
-            padding: 4px;
-            margin: 10px;
-            border-radius: 50%;
-        }
     }
 }
 nav {
@@ -23,6 +16,7 @@ nav a {
     padding: 0 5px;
     margin: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:white;
 }
 nav .active {
     color: white;
@@ -35,13 +29,15 @@ nav .active {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #51a1cf;
+    background-color:#f7f7f7;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 20px 0px;
     height: 60px;
-
+    color: #9ac7f0;
 }
 
 .logo {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
+    color: #9ac7f0;
 }

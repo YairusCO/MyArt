@@ -12,27 +12,20 @@ export const userService = {
     update,
     getLoggedinUser,
     query
-    // increaseScore
 }
-
-// window.userService = userService
-// Note: due to async, must run one by one...
-// userService.signup({fullname: 'Puki Norma', username: 'user1', password:'123',score: 100, isAdmin: false})
-// userService.signup({fullname: 'Master Adminov', username: 'admin', password:'123', score: 100, isAdmin: true})
-
-const gCreateUsers = [
+const USER_DB = [
     {
         "_id": "u101",
-        "fullname": "Ayelet Avni",
+        "fullname": "Nadav Mozes",
         "imgUrls": {
-            "profile": "https://res.cloudinary.com/arter/image/upload/v1610573149/users/profiles/ayeletavni_bfgfh7.jpg",
+            "profile": "https://res.cloudinary.com/dgoonzit8/image/upload/v1611128015/nadav_z8aeoa.jpg",
             "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633390/users/banners/0056_nm1u5s.jpg"
         },
-        "description" : "Hi! This is Ayelet Avni, i love to do Crafting, I do Any DIY Origami Craft videos for Your Social Media for Commercial use, Include-Full HD Video, copyright free Music, Title & Pro Edits for your youtube Channel or any social media Content.",
-        "isAdmin": false,
-        "username": "ayalila",
-        "email": "avnia12@gmail.com",
-        "password": "secret",
+        "description" : "Hi, my name is Nadav and i like to take photos of view and pets",
+        "isAdmin": true,
+        "username": "nadavm",
+        "email": "nadavm@gmail.com",
+        "password": "123456",
         "createdAt": 1312130853500,
         "reviews": [
             {
@@ -41,8 +34,8 @@ const gCreateUsers = [
                 "txt": "Best Artist EVER!!!",
                 "byUser": {
                     "_id": "u102",
-                    "fullname": "Mike Bosh",
-                    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg"
+                    "fullname": "Inbal Azmon",
+                    "imgUrl": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg"
                 }
             },
             {
@@ -51,8 +44,8 @@ const gCreateUsers = [
                 "txt": "I've really liked her work.",
                 "byUser": {
                     "_id": "u103",
-                    "fullname": "Efrat Cohen",
-                    "imgUrl": "https://res.cloudinary.com/arter/image/upload/v1610626024/users/profiles/mike-pence-rule_gq4ug4.jpg"
+                    "fullname": "Eliran Kadosh",
+                    "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610992803/myArt/77024852_10219560406297249_3160022827982127104_o_aax41g.jpg"
                 }
             }
         ]
@@ -118,10 +111,10 @@ var gUsers=[];
 function query() {
   gUsers = load(KEY)
   if (!gUsers || !gUsers.length) {
-    gUsers = gCreateUsers
+    gUsers = USER_DB;
       }
    //   _saveLocalUser();
-  return Promise.resolve(gUsers);
+  return Promise.resolve([...gUsers]);
 }
 
 function getUsers() {
@@ -130,8 +123,10 @@ function getUsers() {
 }
 
 function getById(userId) {
+    var user = gUsers.find(user => user._id === userId)
+    return Promise.resolve({...user})
     // return storageService.get('user', userId)
-    return httpService.get(`user/${userId}`)
+    // return httpService.get(`user/${userId}`)
 }
 function remove(userId) {
     // return storageService.remove('user', userId)
@@ -153,7 +148,7 @@ async function update(user) {
 // }
 
 async function login(userCred) {
-     const users = gCreateUsers
+     const users = gUsers
      //await storageService.query()
      const user = users.find(user => user.username === userCred.username)
     // return _handleLogin(user)
