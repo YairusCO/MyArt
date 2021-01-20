@@ -3,9 +3,12 @@ import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
+import { SellerItemList } from './SellerItemList.jsx'
+import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
+
 
 export class _ItemDetails extends Component {
   state = {
