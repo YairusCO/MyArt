@@ -7,7 +7,9 @@ export const appStoreService = {
     add,
     query,
     remove,
-    getById
+    getById,
+    // updateItem,
+    // handleItemChanges
 }
 
 
@@ -171,7 +173,26 @@ function add(itemId) {
     // const addedItem = storageService.post('item', item)
     //   return addedItem
 }
+// function updateItem(updatedItem, item, desc, loggedUser) {
+//     item.items = item.items.map(item => item.id === updatedItem.id ? updatedItem : item)
+//     return handleItemChanges(desc, loggedUser, item)
+// }
 
+// function handleItemChanges(desc, loggedUser, item) {
+//     if (!desc) return updateItem(item)
+//     const changes = { //change it
+//         id: _makeid(), 
+//         changedAt: Date.now(),
+//         desc,
+//         byUser: {
+//             _id: loggedUser._id,
+//             fullName: loggedUser.fullName,
+//             imgUrl: loggedUser.imgUrl
+//         },
+//     }
+//     const updatedItem = { ...item, activityLog: [changes, ...item.activityLog] }
+//     return updateItem(updatedItem)
+// }
 function getById(itemId) {
     const item = gItems.find(item => item.id === itemId);
     return Promise.resolve(item);

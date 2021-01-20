@@ -2,9 +2,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
-import { SellerItemList } from './SellerItemList.jsx'
-import { SellerItemPreview } from './SellerItemPreview.jsx'
+import { ItemPreview } from './ItemPreview.jsx'
 import { removeItem } from '../store/actions/itemActions.js'
+import Button from '@material-ui/core/Button';
 
 export class _ItemDetails extends Component {
     state = {
@@ -27,10 +27,6 @@ export class _ItemDetails extends Component {
     render(){
       const { items, itemId } = this.props
       const item = items.find(item => item._id === itemId) || {}
-      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
-      console.log('details', sellerItems);
-
-
         return (
             <section className="details-page">
 
@@ -40,21 +36,16 @@ export class _ItemDetails extends Component {
   </div>
   <div className="txt-container" >
   <h1>{item.title}</h1>
-  <p>{item.description}</p>
-  <p>${item.price}</p>
-  <p>{item.seller.fullname}</p>
+  <p>Description: {item.description}</p>
+  <p>Price: {item.price}$</p>
+  <p>Artist: {item.seller.fullname}</p>
   <div>
-  <button className="btn-buy">Buy</button>
-  <button className="btn-buy">❤️</button>
- 
+  <Button>Buy</Button>
  
   </div>
+  {/* <Button onClick={() => { this.onRemoveItem(item._id) }}>Delete</Button> */}
 </div></div>
-      <div>
-      <SellerItemList sellerItems={sellerItems}>
-            {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
-          </SellerItemList>
-      </div>
+      
       </section>
         )
     }

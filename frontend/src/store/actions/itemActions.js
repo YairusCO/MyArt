@@ -29,6 +29,33 @@ export function saveItem(item){
     }
 }
 
+// export function updateItem(itemToSave, desc, loggedUser) {
+//     return (dispatch) => {
+//         return appStoreService.handleItemChanges(itemToSave, desc, loggedUser)
+//             .then(updateItem => {
+//                 const action = {
+//                     type: 'SET_ITEM',
+//                     item: updateItem
+//                 }
+//                 dispatch(action)
+//             })
+//     }
+// }
+
+// export function addItem(item) {
+//     return (dispatch) => {
+//         return appStoreService.add(item)
+//             .then(addItem => {
+//                 const action = {
+//                 type: 'ADD_ITEM',
+//                 item: addItem
+//             }
+//             dispatch(action)
+//             })
+//         }
+//     }
+
+
 export function removeItem(itemId) {
     return (dispatch) => {
         return appStoreService.remove(itemId)
