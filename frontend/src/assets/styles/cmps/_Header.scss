@@ -16,10 +16,10 @@ nav a {
     padding: 0 5px;
     margin: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:white;
+    color:#9AC7F0
 }
 nav .active {
-    color: white;
+    color: #9AC7F0
 }
 #root > div > header {
     grid-column: 1/-1;
@@ -29,12 +29,8 @@ nav .active {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-<<<<<<< HEAD
-    background-color: #d0d0d0bd;
-=======
     background-color:#f7f7f7;
     box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 20px 0px;
->>>>>>> 175ab399a27af39ac4b60345b9b38da8efd8d853
     height: 60px;
     color: #9ac7f0;
 }
