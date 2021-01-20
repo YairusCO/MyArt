@@ -10,6 +10,12 @@
 .hero-text{
     -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: rgb(63, 62, 62);
+ h1{
+    font-family: 'PottaOne',sans-serif;
+    span{
+        font-family: 'IndieFlower',sans-serif;
+    }
+}
 }
 #root > div > main > img.hero {grid-column: 1/-1 !important;}
 .store-details {
@@ -21,9 +27,9 @@
     color:white;
     font-size: 2rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    h1 {
-        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    }
+    // h1 {
+    //     // font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    // }
  
 }
 
@@ -31,6 +37,6 @@
     grid-column: 1/-1;
     text-align: center;
     font-size: 1.5rem;
-    border-top: 1px solid #A6E4E7;
+    border-top: 1px solid #9AC7F0;
     margin: 20px;
 }

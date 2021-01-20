@@ -9,7 +9,7 @@ export class HeroPic extends Component {
             <React.Fragment>
                 <img src={Hero} className="hero" alt="hero" />
                 <div className="store-details">
-                    <h1 className="hero-text">BuyArt</h1>
+                    <h1 className="hero-text">Buy<span>Art</span></h1>
                     <p className="hero-text" >Your place for buying high quality images and artwork</p>
                 </div>
             </React.Fragment>

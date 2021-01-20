@@ -4,23 +4,32 @@ import React, { Component } from 'react'
 import { appStoreService } from '../services/appStoreService'
 import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
-import { removeItem } from '../store/actions/itemActions.js'
+import { removeItem, loadItems } from '../store/actions/itemActions.js'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
 
 export class _ItemDetails extends Component {
   state = {
+    item: null,
     items: []
   }
 
-  //   componentDidMount() {
-  //     const itemId = this.props.match.params.itemId
-  //     if (itemId) {
-  //         const item = this.props.items
-  //             .find(item => item._id === itemId)
-  //         this.setState({ item })
-  //     }
-  // }
+  componentDidMount() {
+    this.props.loadItems()
+    console.log('Items from store:', this.props.items)
+
+    const itemId = this.props.match.params.itemId
+    if (itemId) {
+      const item = this.props.items.find(item => item._id === itemId)
+      console.log('item from find CDM', item)
+      this.setState({ item }, () => {
+
+        console.log('item local state', this.state.item)
+      })
+    }
+
+  }
+
   // onRemoveItem = async itemId => {
   //   await this.props.removeItem(itemId)
   //   // this.props.history.push('/login')
@@ -47,11 +56,16 @@ export class _ItemDetails extends Component {
   }
 
   render() {
-    const { items, itemId } = this.props
-    const item = items.find(item => item._id === itemId) || {}
-    const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
-    console.log('details', sellerItems);
+    const { items } = this.props
+    const { item } = this.state
+    const itemId = this.state.item?._id
+    if (!item) return <h1>loading..</h1>
 
+
+    
+      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
+      console.log('details', sellerItems);
+    
 
     return (
       <section className="details-page main-container">
@@ -102,7 +116,7 @@ const mapStateToProps = state => {
   }
 }
 const mapDispatchToProps = {
-  // loadItems,
+  loadItems,
   // // loadUsers,
   // // addItem,
   //  removeItem

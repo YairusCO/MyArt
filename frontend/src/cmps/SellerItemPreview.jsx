@@ -7,10 +7,10 @@ export function SellerItemPreview({ sellerItem}) {
     return (
         <React.Fragment>
             <div>
-                <ul className="clean-list item-preview">
+                <p className="item-preview">
                 <Button><Link to={`/item/${sellerItem._id}`}>  <img className="item-img" src={sellerItem.imgUrl} alt="" /></Link></Button>
                   
-                </ul>
+                </p>
                 <div className="items-btns">
                    
                
