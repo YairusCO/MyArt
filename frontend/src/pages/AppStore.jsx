@@ -77,7 +77,7 @@ class _AppStore extends Component {
     var cart = cartService.add(this.props.loggedInUser, items)
     console.log('this cart', cart)
     // push item to cart
-    // item.push()
+    items.push()
     // on checkout call onBuy
     // send this.state.cart as the items
   }

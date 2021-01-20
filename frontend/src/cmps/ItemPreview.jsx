@@ -16,14 +16,6 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                             <Button>👍</Button>
                         </div>
                     </div>
-                    <div className="items-btns">
-                        {/* <Button onClick={() => {
-                            onBuy([item])
-                        }}>Buy</Button>
-                        <Button onClick={() => {
-                            onAddToCart([item])
-                        }}>Add to cart</Button> */}
-                    </div>
                 </div>
             </div>
         </React.Fragment>
