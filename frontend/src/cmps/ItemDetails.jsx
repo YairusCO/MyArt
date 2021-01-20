@@ -79,6 +79,7 @@ export class _ItemDetails extends Component {
               </div>
             </div>
           </div>
+          <div>More by this artist....</div>
           <div className="seller-items">
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
