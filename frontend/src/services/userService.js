@@ -52,16 +52,15 @@ const USER_DB = [
     },
     {
         "_id": "u102",
-        "fullname": "Mike Bosh",
+        "fullname": "Inbal Azmon",
         "imgUrls": {
-            "profile": "https://res.cloudinary.com/arter/image/upload/v1610573152/users/profiles/jhonkrispel_qxmioc.jpg",
-            "banner": "https://res.cloudinary.com/arter/image/upload/c_fill,h_1080,w_2560/v1610633068/users/banners/002.jpg"
+            "profile": "https://res.cloudinary.com/dgoonzit8/image/upload/v1610978465/inbal_lb5cup.jpg",
         },
-        "description" :"NEED TO ADD",
-        "isAdmin": false,
-        "username": "mikey",
-        "email": "mikebo@gmail.com",
-        "password": "secret",
+        "description" :"Hi, my name is Inbal and i like to take photos of view and flowers",
+        "isAdmin": true,
+        "username": "inbala",
+        "email": "inbala@gmail.com",
+        "password": "123456",
         "createdAt": 1319620853500,
         "reviews": []
     },
