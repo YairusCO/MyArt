@@ -5,24 +5,35 @@ import { appStoreService } from '../services/appStoreService'
 import { ItemPreview } from './ItemPreview.jsx'
 import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
-import { removeItem } from '../store/actions/itemActions.js'
+import { removeItem, loadItems } from '../store/actions/itemActions.js'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
+import Button from '@material-ui/core/Button';
 
 
 export class _ItemDetails extends Component {
   state = {
+    item: null,
     items: []
   }
+ 
+  componentDidMount() {
 
-  //   componentDidMount() {
-  //     const itemId = this.props.match.params.itemId
-  //     if (itemId) {
-  //         const item = this.props.items
-  //             .find(item => item._id === itemId)
-  //         this.setState({ item })
-  //     }
-  // }
+    this.props.loadItems()
+    console.log('Items from store:', this.props.items)
+
+    const itemId = this.props.match.params.itemId
+    if (itemId) {
+      const item = this.props.items.find(item => item._id === itemId)
+      console.log('item from find CDM', item)
+      this.setState({ item }, () => {
+
+        console.log('item local state', this.state.item)
+      })
+    }
+
+  }
+
   // onRemoveItem = async itemId => {
   //   await this.props.removeItem(itemId)
   //   // this.props.history.push('/login')
@@ -49,11 +60,21 @@ export class _ItemDetails extends Component {
   }
 
   render() {
-    const { items, itemId } = this.props
-    const item = items.find(item => item._id === itemId) || {}
-    const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname) || {}
-    console.log('details', sellerItems);
+    const { items } = this.props
+    const { loggedInUser } = this.props
+   console.log('loggedInUser', loggedInUser);
 
+   const itemId = this.props.match.params.itemId
+    // const itemId = this.state.item?._id
+    const item = this.props.items.find(item => item._id === itemId)
+    // const { item } = this.state
+    if (!item) return <h1>loading..</h1>
+
+    console.log('props');
+    
+      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
+      console.log('details', sellerItems);
+    
 
     return (
       <section className="details-page main-container">
@@ -65,19 +86,24 @@ export class _ItemDetails extends Component {
             <div className="txt-container" >
               <h1>{item.title}</h1>
               <p>{item.description}</p>
+              <p>{item.createdAt}</p>
+              <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
-              <p>{item.seller.fullname}</p>
-              <div>
-
-                <div className="items-btns">
-                  <button className="btn-buy" onClick={() => {
-                    this.onBuy([item])
-                  }}>Buy</button>
-                  <button className="btn-buy" onClick={() => {
-                    this.onAddToCart([item])
-                  }}>Add to cart</button>
+              <div className="items-btns">
+                <button className="btn-buy" onClick={() => {
+                  this.onBuy([item])
+                }}>Buy</button>
+                <button className="btn-buy" onClick={() => {
+                  this.onAddToCart([item])
+                }}>Add to cart</button>
+                <div className="details-reactions">
+                  <Button>❤️</Button>
+                  <Button>👍</Button>
                 </div>
-
+                <div className="item-reviews">
+                  <p>Review: {item.reviews[0].txt}</p>
+                  <p>Rating: {item.reviews[0].rate}</p>
+                </div>
               </div>
             </div>
           </div>
@@ -104,7 +130,7 @@ const mapStateToProps = state => {
   }
 }
 const mapDispatchToProps = {
-  // loadItems,
+  loadItems,
   // // loadUsers,
   // // addItem,
   //  removeItem

@@ -1,5 +1,7 @@
 .item-preview {
-  // border: 1px solid black;
+  display: block;
+  margin: 0 auto;
+
 }
 
 .items-btns {
@@ -28,6 +30,7 @@ img.profile-img {
     display: flex;
     align-items: center;
     margin: 0;
+    font-family: cursive;
   }
 }
 

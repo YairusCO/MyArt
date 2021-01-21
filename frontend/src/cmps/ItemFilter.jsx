@@ -10,9 +10,9 @@ export function ItemFilter(props) {
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
             </SellerItemList>  </Button> */}
 
-        <Button>Paints</Button>
+        {/* <Button name="artist1" onClick={props.handleArtist}>Paints</Button>
         <Button>Bycecles</Button>
-        <Button>Nature</Button>
+        <Button>Nature</Button> */}
 
         {/* <select className="item-sort" name="title" onChange={(ev) => this.handleChange(ev)} >
             <option value="title" >Title</option>
