@@ -33,6 +33,7 @@ const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const reviewRoutes = require('./api/review/review.routes')
 const itemRoutes = require('./api/item/item.routes')
+// const orderRoutes = require('./api/order/order.routes')
 const {connectSockets} = require('./services/socket.service')
 
 
@@ -44,6 +45,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/review', reviewRoutes)
 app.use('/api/item', itemRoutes)
+// app.use('/api/order', orderRoutes)
 connectSockets(http, session)
 
 // Make every server-side-route to match the index.html
