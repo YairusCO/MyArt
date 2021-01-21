@@ -20,6 +20,7 @@ function doLog(level, ...args) {
     const sessionId = store?.sessionId
     const sid = sessionId ? `(sid: ${sessionId})` : ''
     line = `${getTime()} - ${level} - ${line} ${sid}\n`
+    console.log(line)
     fs.appendFileSync('./logs/backend.log', line)
 }
 
