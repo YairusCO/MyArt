@@ -19,7 +19,7 @@ export function App() {
         <main>
           <Switch>
             <Route path="/user/:id" component={UserDetails} />
-            <Route path="/cart/:id" component={Cart} />
+            <Route path="/order/:id" component={Cart} />
             <Route path="/login" component={LoginSignup} />
             <Route path="/chat" component={Chat} />
             <Route path="/item/:itemId" component={ItemDetails} />

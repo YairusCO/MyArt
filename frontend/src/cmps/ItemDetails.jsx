@@ -5,6 +5,7 @@ import { appStoreService } from '../services/appStoreService'
 import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem, loadItems } from '../store/actions/itemActions.js'
+import { loadOrders, addOrder } from '../store/actions/orderActions.js'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
 import Button from '@material-ui/core/Button';
@@ -12,12 +13,17 @@ import Button from '@material-ui/core/Button';
 export class _ItemDetails extends Component {
   state = {
     item: null,
-    items: []
+    items: [],
+    order: {
+      item: [],
+      userId: '',
+    },
   }
- 
+
   componentDidMount() {
 
     this.props.loadItems()
+    this.props.loadOrders()
     console.log('Items from store:', this.props.items)
 
     const itemId = this.props.match.params.itemId
@@ -37,6 +43,25 @@ export class _ItemDetails extends Component {
   //   // this.props.history.push('/login')
   // }
 
+  // addOrder = async ev => {
+  //   ev.preventDefault()
+  //   const { order } = this.state
+  //   if (!order.items || !order.userId) return alert('All fields are required')
+  //   await this.props.addOrder(this.state.order)
+  //   this.setState({ order: { items: [], userId: '' } })
+  // }
+  onPurchase = async (item) => {
+    const { loggedInUser } = this.props
+    debugger
+    try {
+      console.log('Ze Kara!!!!')
+      await this.props.addOrder({ user: loggedInUser, item })
+      return item
+
+    } catch (err) {
+      console.log('Ze Kara!!!!-basa')
+    }
+  }
 
   onBuy = (item) => {
     var order = orderService.add(this.props.loggedInUser, item)
@@ -60,19 +85,19 @@ export class _ItemDetails extends Component {
   render() {
     const { items } = this.props
     const { loggedInUser } = this.props
-   console.log('loggedInUser', loggedInUser);
+    console.log('loggedInUser', loggedInUser);
 
-   const itemId = this.props.match.params.itemId
+    const itemId = this.props.match.params.itemId
     // const itemId = this.state.item?._id
     const item = this.props.items.find(item => item._id === itemId)
     // const { item } = this.state
     if (!item) return <h1>loading..</h1>
 
     console.log('props');
-    
-      const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
-      console.log('details', sellerItems);
-    
+
+    const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
+    console.log('details', sellerItems);
+
 
     return (
       <section className="details-page main-container">
@@ -88,8 +113,11 @@ export class _ItemDetails extends Component {
               <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
               <div className="items-btns">
-                <button className="btn-buy" onClick={() => {
+                {/* <button className="btn-buy" onClick={() => {
                   this.onBuy([item])
+                }}>Buy</button> */}
+                    <button className="btn-buy" onClick={() => {
+                  this.onPurchase(item)
                 }}>Buy</button>
                 <button className="btn-buy" onClick={() => {
                   this.onAddToCart([item])
@@ -129,6 +157,8 @@ const mapStateToProps = state => {
 }
 const mapDispatchToProps = {
   loadItems,
+  loadOrders,
+  addOrder
   // // loadUsers,
   // // addItem,
   //  removeItem
