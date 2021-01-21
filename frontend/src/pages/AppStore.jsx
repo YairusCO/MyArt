@@ -15,7 +15,7 @@ import { HeroPic } from '../cmps/Hero'
 
 class _AppStore extends Component {
   state = {
-    filterBy: { title: '' },
+    filterBy: { title: '', artist1: 'Harel Malachi', artist2: 'Eliran Kadosh', artist3: 'Inbal Azmon' },
     items: [],
     cart: []
     // filterByTxt: ''
@@ -58,6 +58,16 @@ class _AppStore extends Component {
     })
 
   }
+
+  handleArtist = ({ target }) => {
+    const field = target.name
+    const value = (target.type === 'artist') ? parseInt(target.value) : target.value
+
+    this.setState(prevState => ({ filterBy: { ...prevState.filterBy, [field]: value } }), () => {
+        this.props.onSetFilter(this.state.filterBy)
+    })
+}
+
   //   onSetFilter = (filterBy) => {
   //     this.props.setFilter(filterBy)
   //     this.props.loadItems(filterBy)
