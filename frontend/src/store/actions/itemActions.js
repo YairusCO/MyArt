@@ -1,5 +1,5 @@
 //import { appStoreService } from '../../services/appStoreService'
-import { appStoreService } from '../../services/appStoreService'
+import { appStoreService } from '../../services/appStoreService.js'
 
 //filterBy
 export function loadItems(filterBy = {title:''}) { // Action Creator

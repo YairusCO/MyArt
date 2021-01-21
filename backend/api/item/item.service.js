@@ -1,100 +1,93 @@
 const dbService = require('../../services/db.service')
+const userService = require('../user/user.service')
+// const logger = require('../../services/logger.service')
+// const reviewService = require('../review/review.service')
 const ObjectId = require('mongodb').ObjectId
-const asyncLocalStorage = require('../../services/als.service')
 
-async function query(filterBy = {}) {
+module.exports = {
+    query,
+    getById,
+    remove,
+    update
+}
+
+
+async function query(filterBy) {
+    // const criteria = _buildCriteria(filterBy)
+    // const criteria = {}
+    console.log(items);
     try {
-        // const criteria = _buildCriteria(filterBy)
         const collection = await dbService.getCollection('item')
-        // const items = await collection.find(criteria).toArray()
-        var items = await collection.aggregate([
-            {
-                $match: filterBy
-            },
-            {
-                $lookup:
-                {
-                    from: 'user',
-                    localField: 'byUserId',
-                    foreignField: '_id',
-                    as: 'byUser'
-                }
-            },
-            {
-                $unwind: '$byUser'
-            },
-            {
-                $lookup:
-                {
-                    from: 'user',
-                    localField: 'aboutUserId',
-                    foreignField: '_id',
-                    as: 'aboutUser'
-                }
-            },
-            {
-                $unwind: '$aboutUser'
-            }
-        ]).toArray()
-        items = items.map(item => {
-            item.byUser = { _id: item.byUser._id, fullname: item.byUser.fullname }
-            item.aboutUser = { _id: item.aboutUser._id, fullname: item.aboutUser.fullname }
-            delete item.byUserId
-            delete item.aboutUserId
-            return item
-        })
+        const items = await collection.find({}).toArray();
+        return items;
 
-        return items
     } catch (err) {
         logger.error('cannot find items', err)
         throw err
     }
+}
 
+async function getById(itemId) {
+    try {
+        const collection = await dbService.getCollection('item')
+        const item = await collection.findOne({ '_id': ObjectId(itemId) })
+        const seller = await userService.getById(item.sellerId)
+        item.seller = seller
+        return item
+    } catch (err) {
+        logger.error(`while finding item ${itemId}`, err)
+        throw err
+    }
 }
 
 async function remove(itemId) {
     try {
-        const store = asyncLocalStorage.getStore()
-        const { userId, isAdmin } = store
         const collection = await dbService.getCollection('item')
-        // remove only if user is owner/admin
-        const query = { _id: ObjectId(itemId) }
-        if (!isAdmin) query.byUserId = ObjectId(userId)
-        await collection.deleteOne(query)
-        // return await collection.deleteOne({ _id: ObjectId(itemId), byUserId: ObjectId(userId) })
+        await collection.deleteOne({ '_id': ObjectId(itemId) })
     } catch (err) {
         logger.error(`cannot remove item ${itemId}`, err)
         throw err
     }
 }
 
-
-async function add(item) {
+async function update(item) {
     try {
         // peek only updatable fields!
-        const itemToAdd = {
-            byUserId: ObjectId(item.byUserId),
-            aboutUserId: ObjectId(item.aboutUserId),
-            txt: item.txt
+        // TODO: CHECK +item.price
+        const itemToSave = {
+            _id: ObjectId(item._id),
+            title: item.title,
+            price: +item.price,
+            description: item.description,
+            createdAt: item.createdAt,
+            purchasedAt: item.purchasedAt,
+            tags: item.tags,
+            sellerId: ObjectId(item.seller._id),
+            imgUrl: item.imgUrl
         }
         const collection = await dbService.getCollection('item')
-        await collection.insertOne(itemToAdd)
-        return itemToAdd;
+        await collection.updateOne({ '_id': itemToSave._id }, { $set: itemToSave })
+        const seller = await userService.getById(itemToSave.sellerId)
+        itemToSave.seller = seller
+        return itemToSave;
     } catch (err) {
-        logger.error('cannot insert item', err)
+        logger.error(`cannot update item ${item._id}`, err)
         throw err
     }
 }
 
-function _buildCriteria(filterBy) {
+function _buildCriteria(txt) {
     const criteria = {}
+    if (txt) {
+        const txtCriteria = { $regex: txt, $options: 'i' }
+        criteria.$or = [
+            {
+                title: txtCriteria
+            },
+            {
+                tags: txtCriteria
+            }
+        ]
+    }
     return criteria
 }
-
-module.exports = {
-    query,
-    remove,
-    add
-}
-
-

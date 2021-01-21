@@ -1,8 +1,9 @@
-import { httpService } from './httpService'
+// import { httpService } from './httpService'
+// import { storageService } from './asyncStorageService'
+// import userService from './userService'
+// import { utilService } from './utilService'
 import { storageService } from './storageService'
-
 const KEY = 'itemsDB';
-
 export const appStoreService = {
     add,
     query,
@@ -686,7 +687,7 @@ const ITEM_DB = [
         "_id": "v158",
         "title": "A New Beginning",
         "price": 150,
-        "description": "",
+        "description":"",
         "imgUrl": "https://res.cloudinary.com/yair/image/upload/v1610994469/myArt/70946421_2584248381598127_9222562319555362816_o_gg30kn.jpg",
         "createdAt": 1519129853500,
         "purchasedAt": 1519129853500,
@@ -725,51 +726,33 @@ const ITEM_DB = [
 ]
 var gItems = [];
 
-const BASE_URL = 'item/'
-
-async function query(filterBy) {
-    // gItems =  storageService.load(KEY)
-    // if (!gItems || !gItems.length) {
-    //     gItems = ITEM_DB
-    // }
-    // console.log('query: ', filteredItems);
-    // _saveItemsToStorage();
-    // return Promise.resolve(filteredItems);
-    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
-    const items = await httpService.get(BASE_URL)
-    console.log(items);
-    const filteredItems = items.filter(item => item.title.includes(filterBy.title))
-    return filteredItems;
+function query(filterBy) {
+    gItems =  storageService.load(KEY)
+    if (!gItems || !gItems.length) {
+        gItems = ITEM_DB
+    }
+    const filteredItems = gItems.filter(item => item.title.includes(filterBy.title))
+    console.log('query: ', filteredItems);
+    _saveItemsToStorage();
+    return Promise.resolve(filteredItems);
 }
 
 function remove(itemId) {
-    // console.log('remove', gItems);
-    // //   return httpService.delete(`item/${itemId}`)
-    // // return storageService.delete('item', itemId)
-    // gItems = storageService.load(KEY)
-    // gItems = gItems.filter(item => item.id !== itemId);
-    // _saveItemsToStorage();
-    // return Promise.resolve();
-    return httpService.delete(`${BASE_URL}/${itemId}`)
+    console.log('remove', gItems);
+    //   return httpService.delete(`item/${itemId}`)
+    // return storageService.delete('item', itemId)
+    gItems = storageService.load(KEY)
+    gItems = gItems.filter(item => item.id !== itemId);
+    _saveItemsToStorage();
+    return Promise.resolve();
 }
-
 // async 
-async function add(item) {
-
-    const newItem = await httpService.post(BASE_URL, item)
-
-    // review.byUser = userService.getLoggedinUser()
-    // review.aboutUser = await userService.getById(review.aboutUserId)
-    // const addedReview = storageService.post('review', review)
-
-    return newItem
-
-
+function add(itemId) {
     //   const addedItem = await httpService.post(`item`, item)
 
-    // itemId = itemId.filter(item => item.id !== itemId);
-    // _saveItemsToStorage();
-    // return Promise.resolve();
+    itemId = itemId.filter(item => item.id !== itemId);
+    _saveItemsToStorage();
+    return Promise.resolve();
     // item.byUser = userService.getLoggedinUser()
     // item.aboutUser = await userService.getById(item.aboutUserId)
     // const addedItem = storageService.post('item', item)
@@ -777,9 +760,8 @@ async function add(item) {
 }
 
 function getById(itemId) {
-    return httpService.get(`${BASE_URL}/${itemId}`)
-    // const item = gItems.find(item => item.id === itemId);
-    // return Promise.resolve(item);
+    const item = gItems.find(item => item.id === itemId);
+    return Promise.resolve(item);
 }
 
 function _saveItemsToStorage() {
