@@ -318,7 +318,7 @@ const ITEM_DB = [
         "createdAt": 1519129853500,
         "purchasedAt": 1519129853500,
         "tags": [
-            "bike",
+            "bike"
         ],
         "seller": {
             "_id": "s102",

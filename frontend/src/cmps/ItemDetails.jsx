@@ -14,8 +14,9 @@ export class _ItemDetails extends Component {
     item: null,
     items: []
   }
-
+ 
   componentDidMount() {
+
     this.props.loadItems()
     console.log('Items from store:', this.props.items)
 
@@ -58,11 +59,16 @@ export class _ItemDetails extends Component {
 
   render() {
     const { items } = this.props
-    const { item } = this.state
-    const itemId = this.state.item?._id
+    const { loggedInUser } = this.props
+   console.log('loggedInUser', loggedInUser);
+
+   const itemId = this.props.match.params.itemId
+    // const itemId = this.state.item?._id
+    const item = this.props.items.find(item => item._id === itemId)
+    // const { item } = this.state
     if (!item) return <h1>loading..</h1>
 
-
+    console.log('props');
     
       const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
       console.log('details', sellerItems);

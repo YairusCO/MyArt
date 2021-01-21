@@ -19,7 +19,7 @@ export function cartReducer(state = initialState, action) {
             return {...state, count: state.count + 1}
         case 'DECREMENT':
             return {...state, count: state.count - 1}
-        case 'BUY':
+        case 'ADD_TO_CART':
             return {...state, cartItems: [...state.cartItems, action.item]}
         case 'REMOVE_FROM_CART':
             return {...state, cartItems: state.cartItems.filter(item => item._id !== action.itemId)}

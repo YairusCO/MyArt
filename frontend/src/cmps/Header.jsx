@@ -4,8 +4,10 @@ import { connect } from 'react-redux'
 import { Cart } from './Cart.jsx'
 
 class _Header extends Component {
+
     render() {
         const { loggedInUser } = this.props;
+       
         return <React.Fragment>
             <header>
                 <nav className="main-header">
