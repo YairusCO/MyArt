@@ -725,7 +725,7 @@ const ITEM_DB = [
 ]
 var gItems = [];
 
-const BASE_URL = 'item/'
+const BASE_URL = 'item'
 
 async function query(filterBy) {
     // gItems =  storageService.load(KEY)
