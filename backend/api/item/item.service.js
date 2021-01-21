@@ -15,7 +15,7 @@ module.exports = {
 async function query(filterBy) {
     // const criteria = _buildCriteria(filterBy)
     // const criteria = {}
-    console.log(items);
+    console.log('back' , items);
     try {
         const collection = await dbService.getCollection('item')
         const items = await collection.find({}).toArray();
@@ -25,6 +25,7 @@ async function query(filterBy) {
         logger.error('cannot find items', err)
         throw err
     }
+    
 }
 
 async function getById(itemId) {
