@@ -66,21 +66,19 @@ async function query(filterBy = {}) {
     }
 }
 
-async function add(item) {
+async function add({ item, user }) {
     try {
         // peek only updatable fields!
+        const { seller, ...itemClean } = item
         console.log('ORDER.SERVICE:', item)
-        const store = asyncLocalStorage.getStore()
-        const { userId } = store
         const orderToAdd = {
             createdAt: Date.now(),
-            // status: 'pending',
-            itemId: ObjectId(item._id),
-            sellerId: ObjectId(item.seller._id),
-            buyerId: ObjectId(userId)
+            item: itemClean,
+            seller,
+            buyer: user,
         }
         const collection = await dbService.getCollection('order')
-        await collection.insertOne(orderToAdd)
+        const record = await collection.insertOne(orderToAdd)
         item.purchasedAt = Date.now()
         itemService.update(item)
         return orderToAdd;
