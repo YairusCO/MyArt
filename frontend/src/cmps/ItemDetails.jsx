@@ -6,6 +6,7 @@ import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem, loadItems } from '../store/actions/itemActions.js'
 import { loadOrders, addOrder } from '../store/actions/orderActions.js'
+import { BuyModal } from '../cmps/BuyModal'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
 import Button from '@material-ui/core/Button';
@@ -18,6 +19,7 @@ export class _ItemDetails extends Component {
       item: [],
       userId: '',
     },
+    modal:false,
   }
 
   componentDidMount() {
@@ -52,25 +54,17 @@ export class _ItemDetails extends Component {
   // }
   onPurchase = async (item) => {
     const { loggedInUser } = this.props
+<<<<<<< HEAD
     
+=======
+>>>>>>> 49b2864e53489c04ae858d24302a5b53b4e24639
     try {
-      console.log('Ze Kara!!!!')
+      this.setState({ modal: true });
       await this.props.addOrder({ user: loggedInUser, item })
       return item
-
     } catch (err) {
-      console.log('Ze Kara!!!!-basa')
+      console.log('Login First', err)
     }
-  }
-
-  onBuy = (item) => {
-    var order = orderService.add(this.props.loggedInUser, item)
-    console.log('this order', order)
-    // const action = {
-    //   type: 'BUY',
-    //   item
-    // }
-    // this.props.dispatch(action)
   }
 
   onAddToCart = (items) => {
@@ -113,17 +107,15 @@ export class _ItemDetails extends Component {
               <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
               <div className="items-btns">
-                {/* <button className="btn-buy" onClick={() => {
-                  this.onBuy([item])
-                }}>Buy</button> */}
                     <button className="btn-buy" onClick={() => {
                   this.onPurchase(item)
                 }}>Buy</button>
+                {this.state.modal && <BuyModal item={item}/>}
                 <button className="btn-buy" onClick={() => {
                   this.onAddToCart([item])
                 }}>Add to cart</button>
                 <div className="details-reactions">
-                  <Button>❤️</Button>
+                  <Button>I❤️kfir</Button>
                   <Button>👍</Button>
                 </div>
                 <div className="item-reviews">
