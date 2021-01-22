@@ -12,7 +12,7 @@ export function itemReducer(state = initialState, action) {
       console.log(action.items);
       return { ...state, items: action.items}
     case 'ADD_ITEM':
-      return { ...state, items: [...state.items, action.item] }
+      return { ...state, items: [...state.items, action.saveOrder] }
     case 'SAVE_ITEM':
       return {
         ...state, items: state.items.map(item => {

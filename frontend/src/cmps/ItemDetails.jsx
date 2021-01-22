@@ -54,10 +54,7 @@ export class _ItemDetails extends Component {
   // }
   onPurchase = async (item) => {
     const { loggedInUser } = this.props
-<<<<<<< HEAD
     
-=======
->>>>>>> 49b2864e53489c04ae858d24302a5b53b4e24639
     try {
       this.setState({ modal: true });
       await this.props.addOrder({ user: loggedInUser, item })
@@ -110,7 +107,7 @@ export class _ItemDetails extends Component {
                     <button className="btn-buy" onClick={() => {
                   this.onPurchase(item)
                 }}>Buy</button>
-                {this.state.modal && <BuyModal item={item}/>}
+                {this.state.modal && <BuyModal item={item} loggedInUser={loggedInUser}/>}
                 <button className="btn-buy" onClick={() => {
                   this.onAddToCart([item])
                 }}>Add to cart</button>
