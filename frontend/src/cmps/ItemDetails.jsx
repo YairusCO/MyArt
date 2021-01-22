@@ -52,7 +52,7 @@ export class _ItemDetails extends Component {
   // }
   onPurchase = async (item) => {
     const { loggedInUser } = this.props
-    debugger
+    
     try {
       console.log('Ze Kara!!!!')
       await this.props.addOrder({ user: loggedInUser, item })
