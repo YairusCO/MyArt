@@ -1,57 +1,43 @@
-.details-page{
-  
-    .details-page-container{
+.details-page {
+    .details-page-container {
         display: flex;
         flex-direction: column;
         justify-items: center;
         padding: 50px;
-        .item-container{
+        .item-container {
             box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
             border-radius: 32px;
             display: flex;
             flex-direction: row;
             justify-items: center;
-            // width: 1000px;
+            // width: 1200px;
             padding: 20px;
             box-sizing: border-box;
             margin-bottom: 50px;
             position: relative;
-            .img-container{
-               
+            .img-container {
                 width: 50%;
                 max-height: 100%;
-                img{
+                img {
                     max-width: 100%;
                     max-height: 100%;
-                   border-radius: 32px;
+                    border-radius: 32px;
                 }
             }
-            .txt-container{
+            .txt-container {
                 width: 50%;
                 height: 100%;
-                // text-align: center;
                 padding: 0 0 0 2rem;
                 margin-left: 1rem;
-                // display: flex;
                 flex-direction: column;
                 justify-content: space-around;
-              }
-           
+            }
         }
-    
     }
-    // .seller-items {
-        // display: flex;
-        // flex-direction: row;
-        // justify-items: center;
-        // align-items: center;
-    //  }
 }
-
 
 .btn-buy {
     background-color: #2d6aa2;
-    // color: #211922;
     cursor: pointer;
     font-weight: 700;
     text-align: center;
@@ -59,12 +45,11 @@
     border-radius: 24px;
     color: #fff;
     padding: 8px 28px;
-    // padding: 0 0 0 2rem;
     margin-left: 1rem;
 }
 
-  .btn-buy:hover {
-    background: #ddd;;
+.btn-buy:hover {
+    background: #ddd;
     transition: transform 85ms ease-out;
     text-decoration: none;
-  }
+}
