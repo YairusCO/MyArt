@@ -7,22 +7,24 @@
 // console.log('Items', items);
 
 const initialState = {
-    count: 0,
-    cartItems: [],
-    // items,
+    order: {
+        item: [],
+        userId: '',
+      }
 }
 
-export function cartReducer(state = initialState, action) {
-    console.log('working!@#!@#!@#');
+export function orderReducer(state = initialState, action) {
+    console.log('order Reducer on');
     switch (action.type) {
         case 'INCREMENT':
             return {...state, count: state.count + 1}
         case 'DECREMENT':
             return {...state, count: state.count - 1}
-        case 'ADD_TO_CART':
-            return {...state, cartItems: [...state.cartItems, action.item]}
+        case 'ADD_ORDER':
+            console.log('add oreder');
+            return {...state, orderItems: [...state.orderItems, action.item]}
         case 'REMOVE_FROM_CART':
-            return {...state, cartItems: state.cartItems.filter(item => item._id !== action.itemId)}
+            return {...state, orderItems: state.cartItems.filter(item => item._id !== action.itemId)}
         default:
             return state
     }

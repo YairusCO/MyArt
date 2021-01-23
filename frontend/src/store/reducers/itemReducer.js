@@ -17,7 +17,7 @@ export function itemReducer(state = initialState, action) {
                 items: state.items.map(item => item._id === action.item._id ? action.item : item)
             }
     case 'ADD_ITEM':
-      return { ...state, items: [...state.items, action.item] }
+      return { ...state, items: [...state.items, action.saveOrder] }
     case 'SAVE_ITEM':
       return {
         ...state, items: state.items.map(item => {

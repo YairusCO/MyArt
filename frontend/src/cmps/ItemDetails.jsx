@@ -21,7 +21,7 @@ export class _ItemDetails extends Component {
       item: [],
       userId: '',
     },
-    modal:false,
+    modal: false,
     fileDownloadUrl: ''
   }
 
@@ -64,18 +64,18 @@ export class _ItemDetails extends Component {
     } catch (err) {
       console.log('Login First', err)
     }
-//   }
-//   onUploadImg (event) {
-//     let output;
-//     const blob = new Blob(output);                   // Step 3
-//     const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
-//     this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
-//       () => {
-//         this.dofileDownload.click();                   // Step 6
-//         URL.revokeObjectURL(fileDownloadUrl);          // Step 7
-//         this.setState({fileDownloadUrl: ''})
-//     })
-// }
+  }
+  //   onUploadImg (event) {
+  //     let output;
+  //     const blob = new Blob(output);                   // Step 3
+  //     const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
+  //     this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
+  //       () => {
+  //         this.dofileDownload.click();                   // Step 6
+  //         URL.revokeObjectURL(fileDownloadUrl);          // Step 7
+  //         this.setState({fileDownloadUrl: ''})
+  //     })
+  // }
 
   onAddToCart = (items) => {
     var cart = cartService.add(this.props.loggedInUser, items)
@@ -117,10 +117,10 @@ export class _ItemDetails extends Component {
               <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
               <div className="items-btns">
-                    <button className="btn-buy" onClick={() => {
+                <button className="btn-buy" onClick={() => {
                   this.onPurchase(item)
                 }}>Buy</button>
-                {this.state.modal && <BuyModal item={item}/>}
+                {this.state.modal && <BuyModal item={item} loggedInUser={loggedInUser} />}
                 <button className="btn-buy" onClick={() => {
                   this.onAddToCart([item])
                 }}>Add to cart</button>
@@ -147,6 +147,8 @@ export class _ItemDetails extends Component {
     )
   }
 }
+
+
 
 
 

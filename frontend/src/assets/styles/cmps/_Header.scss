@@ -16,10 +16,10 @@ nav a {
     padding: 0 5px;
     margin: 10px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color:#9AC7F0
+    color: rgb(60, 88, 209);
 }
 nav .active {
-    color: #9AC7F0
+    color: rgb(71, 71, 71)
 }
 #root > div > header {
     grid-column: 1/-1;
@@ -39,7 +39,17 @@ nav .active {
     font-family: 'IndieFlower',sans-serif;
     font-size: 1.5rem;
     color: #9ac7f0;
-    >span {
+    span{
         font-family: 'PottaOne',sans-serif;
+        color: rgb(71, 71, 71);
     }
+    .pic{
+        font-family: 'PottaOne',sans-serif;
+        color: rgb(60, 88, 209);
+    }
+    .art{
+        font-family: 'PottaOne',sans-serif;
+        color:rgb(90, 68, 124);
+    }
+
 }

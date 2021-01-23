@@ -11,7 +11,7 @@ class _Header extends Component {
         return <React.Fragment>
             <header>
                 <nav className="main-header">
-                    <NavLink exact to="/store"><div className="logo">Buy<span>Art</span></div></NavLink>
+                    <NavLink exact to="/store"><div className="logo"><span className="pic">Pic</span><span>&</span><span className="art">Art</span></div></NavLink>
                     <div className="nav-bar">
                         <NavLink to="/login">Login</NavLink>
                         <NavLink to="/chat">About Us</NavLink>
