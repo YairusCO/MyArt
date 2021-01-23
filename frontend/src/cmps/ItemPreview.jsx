@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import x from '../assets/imgs/01.jpg';
+import heart from '../assets/imgs/heart.png';
+import heartRed from '../assets/imgs/heart-red.png';
 import Button from '@material-ui/core/Button';
+
+var currHeart = heartRed;
+function onHeart(){
+    currHeart = heartRed;
+}
 export function ItemPreview({ item, onBuy, onAddToCart }) {
 
     return (
@@ -12,8 +18,10 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                     <div className="card-info">
                         <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
                         <div className="reactions">
-                            <Button>❤️</Button>
-                            <Button>👍</Button>
+                            <Button className="heart-icon" onClick={() => {onHeart()}}>
+                                <img className="heart-icon" src={currHeart} alt="" />
+                                </Button>
+                            {/* <Button>👍</Button> */}
                         </div>
                     </div>
                 </div>

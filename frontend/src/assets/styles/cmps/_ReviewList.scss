@@ -1,7 +1,10 @@
 .item-preview {
   display: block;
   margin: 0 auto;
-
+  margin-bottom: 3rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1rem;
+  break-inside: avoid;
 }
 
 .items-btns {
@@ -34,13 +37,25 @@ img.profile-img {
     margin: 0;
     font-family: cursive;
   }
+
+ 
+
+  .heart-icon:hover{
+   
+  }
 }
 
 .item-img {
   width: 100%;
   transition: 0.3s;
+  opacity: 0.9;
   &:hover {
-    opacity: 0.8;
+    opacity: 1;
+    transform: scale(1.02);
     stroke-opacity: black;
   }
+}
+
+.heart-icon{
+  width: 40px;
 }

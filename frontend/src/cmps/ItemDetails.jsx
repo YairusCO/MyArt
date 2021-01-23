@@ -11,6 +11,7 @@ import { BuyModal } from '../cmps/BuyModal'
 import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
 import Button from '@material-ui/core/Button';
+import heartRed from '../assets/imgs/heart-red.png';
 
 
 export class _ItemDetails extends Component {
@@ -24,7 +25,7 @@ export class _ItemDetails extends Component {
     modal: false,
     fileDownloadUrl: ''
   }
-
+  
   componentDidMount() {
 
     this.props.loadItems()
@@ -87,6 +88,7 @@ export class _ItemDetails extends Component {
   }
 
   render() {
+  
     const { items } = this.props
     const { loggedInUser } = this.props
     console.log('loggedInUser', loggedInUser);
@@ -107,26 +109,27 @@ export class _ItemDetails extends Component {
       <section className="details-page main-container">
         <div className="details-page-container">
           <div className="item-container">
+            <div className="title-container"><h1>{item.title}</h1></div>
+            <div className="item-subcontainer">
             <div className="img-container">
               <img className="img-details" src={item.imgUrl} />
             </div>
             <div className="txt-container" >
-              <h1>{item.title}</h1>
+              
               <p>{item.description}</p>
-              <p>{item.createdAt}</p>
+              {/* <p>{item.createdAt}</p> */}
               <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
               <p>${item.price}</p>
               <div className="items-btns">
-                <button className="btn-buy" onClick={() => {
+                <button className="btn" onClick={() => {
                   this.onPurchase(item)
                 }}>Buy</button>
                 {this.state.modal && <BuyModal item={item} loggedInUser={loggedInUser} />}
-                <button className="btn-buy" onClick={() => {
+                <button className="btn" onClick={() => {
                   this.onAddToCart([item])
                 }}>Add to cart</button>
                 <div className="details-reactions">
-                  <Button>I❤️kfir</Button>
-                  <Button>👍</Button>
+                  <Button className="heart-icon"><img src={heartRed} alt=""/></Button>
                 </div>
                 <div className="item-reviews">
                   <p>Review: {item.reviews[0].txt}</p>
@@ -135,8 +138,10 @@ export class _ItemDetails extends Component {
               </div>
             </div>
           </div>
-          <div>More by this artist....</div>
+          </div>
+          
           <div className="seller-items">
+          <div><p>More by this artist....</p></div>
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
             </SellerItemList>

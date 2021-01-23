@@ -25,6 +25,9 @@ nav .active {
     grid-column: 1/-1;
 }
 .main-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
