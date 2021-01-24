@@ -9,10 +9,25 @@
     .hero {
         height: 75vh;
     }
+    .btn-hamburger {
+        display: block;
+        fill:blue;
+    }
+    .nav-bar {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 540px) {
     .item-details {
         column-count: 1;
     }
+    .btn-hamburger {
+        display: block;
+        fill:blue;
+    }
+    .nav-bar {
+        display: none;
+    }
 }
+
