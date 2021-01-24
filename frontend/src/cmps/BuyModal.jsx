@@ -8,7 +8,7 @@ export function BuyModal({item, loggedInUser}) {
             <p>Item: {item.title}</p>
             <p>Price: {item.price}</p>
             <p>user: {loggedInUser.fullname}</p>
-            <Button>Checkout & Download</Button>
+            <Button className="buy-btn">Checkout & Download</Button>
         </div>
     )
 }
