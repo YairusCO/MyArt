@@ -1,4 +1,3 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
 
 export function ItemFilter(props) {
@@ -6,13 +5,9 @@ export function ItemFilter(props) {
     return <section className="item-filter item-filter-container">
         <input className="item-filter-search" name="title" type="text" placeholder="Search:" onChange={props.handleInput} />
 
-        {/* <Button> <SellerItemList sellerItems={sellerItems}>
-              {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
-            </SellerItemList>  </Button> */}
-
-        {/* <Button name="artist1" onClick={props.handleArtist}>Paints</Button>
-        <Button>Bycecles</Button>
-        <Button>Nature</Button> */}
+        {/* <button name="artist1" onClick={props.handleArtist}>Paints</button>
+        <button>Bycecles</button>
+        <button>Nature</button> */}
 
         {/* <select className="item-sort" name="title" onChange={(ev) => this.handleChange(ev)} >
             <option value="title" >Title</option>
@@ -21,6 +16,6 @@ export function ItemFilter(props) {
             <option value="highPrice">High Price</option>
         </select> */}
 
-        {/* <Button onClick={ this.onChangeFilter } className="btn-search">Search</Button> */}
+        {/* <button onClick={ this.onChangeFilter } className="btn-search">Search</button> */}
     </section>
 }

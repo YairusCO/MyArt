@@ -70,7 +70,6 @@ async function add({ item, user }) {
     try {
         // peek only updatable fields!
         const { seller, ...itemClean } = item
-        console.log('ORDER.SERVICE:', item)
         const orderToAdd = {
             createdAt: Date.now(),
             item: itemClean,

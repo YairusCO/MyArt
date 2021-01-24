@@ -1,14 +1,10 @@
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
-import { appStoreService } from '../services/appStoreService'
-import { ItemPreview } from './ItemPreview.jsx'
 import { SellerItemList } from './SellerItemList.jsx'
 import { SellerItemPreview } from './SellerItemPreview.jsx'
 import { removeItem, loadItems } from '../store/actions/itemActions.js'
 import { loadOrders, addOrder } from '../store/actions/orderActions.js'
 import { BuyModal } from '../cmps/BuyModal'
-import { orderService } from '../services/orderService'
 import { cartService } from '../services/cartService'
 import Button from '@material-ui/core/Button';
 import heartRed from '../assets/imgs/heart-red.png';
@@ -30,7 +26,6 @@ export class _ItemDetails extends Component {
 
     this.props.loadItems()
     this.props.loadOrders()
-    console.log('Items from store:', this.props.items)
 
     const itemId = this.props.match.params.itemId
     if (itemId) {
@@ -49,13 +44,7 @@ export class _ItemDetails extends Component {
   //   // this.props.history.push('/login')
   // }
 
-  // addOrder = async ev => {
-  //   ev.preventDefault()
-  //   const { order } = this.state
-  //   if (!order.items || !order.userId) return alert('All fields are required')
-  //   await this.props.addOrder(this.state.order)
-  //   this.setState({ order: { items: [], userId: '' } })
-  // }
+ 
   onPurchase = async (item) => {
     const { loggedInUser } = this.props
     try {
@@ -66,17 +55,7 @@ export class _ItemDetails extends Component {
       console.log('Login First', err)
     }
   }
-  //   onUploadImg (event) {
-  //     let output;
-  //     const blob = new Blob(output);                   // Step 3
-  //     const fileDownloadUrl = URL.createObjectURL(blob); // Step 4
-  //     this.setState ({fileDownloadUrl: fileDownloadUrl}, // Step 5
-  //       () => {
-  //         this.dofileDownload.click();                   // Step 6
-  //         URL.revokeObjectURL(fileDownloadUrl);          // Step 7
-  //         this.setState({fileDownloadUrl: ''})
-  //     })
-  // }
+ 
 
   onAddToCart = (items) => {
     var cart = cartService.add(this.props.loggedInUser, items)
@@ -94,15 +73,10 @@ export class _ItemDetails extends Component {
     console.log('loggedInUser', loggedInUser);
 
     const itemId = this.props.match.params.itemId
-    // const itemId = this.state.item?._id
     const item = this.props.items.find(item => item._id === itemId)
-    // const { item } = this.state
+  
     if (!item) return <h1>loading..</h1>
-
-    console.log('props');
-
     const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
-    console.log('details', sellerItems);
 
 
     return (
@@ -168,8 +142,5 @@ const mapDispatchToProps = {
   loadItems,
   loadOrders,
   addOrder
-  // // loadUsers,
-  // // addItem,
-  //  removeItem
 }
 export const ItemDetails = connect(mapStateToProps, mapDispatchToProps)(_ItemDetails)

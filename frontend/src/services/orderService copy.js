@@ -38,7 +38,6 @@ function add(buyer, items) {
         "items": items
     }
     gOrders = [...gOrders, order]
-    console.log('order is ', order)
     storageService.save(KEY, gOrders)
     return order
 }

@@ -1,10 +1,10 @@
 * {
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 ::selection {
-    background-color: #00DBF1;
+    background-color: #00dbf1;
     color: white;
 }
 
@@ -19,13 +19,15 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    // font-family: caveat;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 0.6em;
     line-height: 1;
 }
-
-
 
 img {
     width: 100%;
@@ -41,16 +43,16 @@ a:hover {
 .appStore {
     margin: 5px 0;
     display: grid;
-    grid-template-columns: minmax(2rem,1fr) minmax(auto,1040px) minmax(2rem,1fr);
-    >* {
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1040px) minmax(2rem, 1fr);
+    > * {
         grid-column: 2;
     }
-    >.item-details{
+    > .item-details {
         margin-bottom: 20px;
     }
 }
 #root {
     // min-height: 100vh;
     // grid-template-rows: auto 1fr auto;
-    // padding-top: 60px;
+    padding-top: 0px;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-// import x from '../assets/imgs/01.jpg';
 import Button from '@material-ui/core/Button';
+
 function onScrollToTop(){
 window.scrollTo(0, 0); }
 

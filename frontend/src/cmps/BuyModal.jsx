@@ -2,7 +2,6 @@ import { Button } from '@material-ui/core';
 import React from 'react'
 
 export function BuyModal({item, loggedInUser}) {
-    console.log('BuyModal');
     return (
         <div className="modal">
             <h1>Order Details</h1>

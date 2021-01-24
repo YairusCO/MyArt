@@ -1,0 +1,18 @@
+@media screen and (max-width: 680px) {
+    .item-details {
+        column-count: 2;
+    }
+    .appStore {
+        display: inline-block;
+        padding: 20px;
+    }
+    .hero {
+        height: 75vh;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .item-details {
+        column-count: 1;
+    }
+}

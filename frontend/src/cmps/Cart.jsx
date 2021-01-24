@@ -13,10 +13,7 @@ export  class Cart extends Component {
         const user = await userService.getById(this.props.match.params.id)
         this.setState({user})
         const cart = await cartService.query()
-        console.log('cart:', cart);
-        console.log('user:', user);
         const userCart = cart.filter(miniCart=> miniCart.buyer._id === user._id)
-    console.log('userCart', userCart);
         this.setState({
           cart : userCart
         })
