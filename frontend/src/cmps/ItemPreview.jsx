@@ -22,9 +22,9 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                     <div className="card-info">
                         <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
                         <div className="reactions">
-                            <Button className="heart-icon" onClick={() => {onHeart()}}>
+                            {/* <Button className="heart-icon" onClick={() => {onHeart()}}>
                                 <img className="heart-icon" src={currHeart} alt="" />
-                                </Button>
+                                </Button> */}
                             {/* <Button>👍</Button> */}
                         </div>
                     </div>
