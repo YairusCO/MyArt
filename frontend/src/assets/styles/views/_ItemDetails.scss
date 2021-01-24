@@ -42,6 +42,45 @@
                     // display: flex;
                     flex-direction: column;
                     justify-content: space-around;
+                    .item-reviews{
+                      text-align: left ;
+                    }
+                    .icon-heart{
+                      width: 40px;
+                      margin: 0;
+                      padding: 0;
+                    }
+
+                    .icon-heart-btn{
+                      margin: 0;
+                      padding: 0;
+                    }
+                    .grey{
+                      color:#777;
+                      span{
+                        color: #4f3a65;
+                        font-size: 1.5rem;
+                      }
+                      .p-star{
+                        display: flex;
+                      }
+                      .star-btn{
+                     display: flex;
+                      }
+                     .star{
+                       width: 20px;
+      
+                     }
+                    }
+
+                    .heart-icon{
+                      width: 40px;
+                    }
+
+                    p .see-more{
+                      font-size: 0.8rem;
+                      color:rgba(119, 119, 119, 0.787);
+                    }
                 }
             }
         }

@@ -8,6 +8,7 @@ import { BuyModal } from '../cmps/BuyModal'
 import { cartService } from '../services/cartService'
 import Button from '@material-ui/core/Button';
 import heartRed from '../assets/imgs/heart-red.png';
+import star from '../assets/imgs/star.png';
 
 
 export class _ItemDetails extends Component {
@@ -21,7 +22,7 @@ export class _ItemDetails extends Component {
     modal: false,
     fileDownloadUrl: ''
   }
-  
+
   componentDidMount() {
 
     this.props.loadItems()
@@ -44,7 +45,7 @@ export class _ItemDetails extends Component {
   //   // this.props.history.push('/login')
   // }
 
- 
+
   onPurchase = async (item) => {
     const { loggedInUser } = this.props
     try {
@@ -55,7 +56,7 @@ export class _ItemDetails extends Component {
       console.log('Login First', err)
     }
   }
- 
+
 
   onAddToCart = (items) => {
     var cart = cartService.add(this.props.loggedInUser, items)
@@ -67,14 +68,14 @@ export class _ItemDetails extends Component {
   }
 
   render() {
-  
+
     const { items } = this.props
     const { loggedInUser } = this.props
     console.log('loggedInUser', loggedInUser);
 
     const itemId = this.props.match.params.itemId
     const item = this.props.items.find(item => item._id === itemId)
-  
+
     if (!item) return <h1>loading..</h1>
     const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
 
@@ -85,37 +86,52 @@ export class _ItemDetails extends Component {
           <div className="item-container">
             <div className="title-container"><h1>{item.title}</h1></div>
             <div className="item-subcontainer">
-            <div className="img-container">
-              <img className="img-details" src={item.imgUrl} />
-            </div>
-            <div className="txt-container" >
-              
-              <p>{item.description}</p>
-              {/* <p>{item.createdAt}</p> */}
-              <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
-              <p>${item.price}</p>
-              <div className="items-btns">
-                <button className="btn" onClick={() => {
-                  this.onPurchase(item)
-                }}>Buy</button>
+              <div className="img-container">
+                <img className="img-details" src={item.imgUrl} />
+                <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
+              </div>
+              <div className="txt-container" >
+
+                <p>{item.description}</p>
+                {/* <p>{item.createdAt}</p> */}
+
+                <p className="grey">Price: <span >${item.price}</span></p>
+                <div className="items-btns">
+                  <button className="icon-heart-btn" ><img className="icon-heart" src={heartRed} alt="" /></button>
+
+                  <button className="btn" onClick={() => {
+                    this.onPurchase(item)
+                  }}>Continue with purchase</button>
+                </div>
                 {this.state.modal && <BuyModal item={item} loggedInUser={loggedInUser} />}
-                <button className="btn" onClick={() => {
-                  this.onAddToCart([item])
-                }}>Add to cart</button>
-                <div className="details-reactions">
-                  <Button className="heart-icon"><img src={heartRed} alt=""/></Button>
-                </div>
+
+                {/* <button className="btn" onClick={() => {
+                    this.onAddToCart([item])
+                  }}>Add to cart</button> */}
+                {/* <div className="details-reactions">
+                    <Button className="heart-icon"><img src={heartRed} alt="" /></Button>
+                  </div> */}
                 <div className="item-reviews">
-                  <p>Review: {item.reviews[0].txt}</p>
-                  <p>Rating: {item.reviews[0].rate}</p>
+                  <p className="grey" >Comments: <span className="see-more">see more...</span>
+                    {/* {item.reviews[0].txt} */}
+                  </p>
+                  <p className="grey p-star">Rating: <button className="star-btn">
+                    <img className="star" src={star} alt="" />
+                    <img className="star" src={star} alt="" />
+                    <img className="star" src={star} alt="" />
+                    <img className="star" src={star} alt="" />
+                    <img className="star" src={star} alt="" />
+                  </button>
+                    {/* {item.reviews[0].rate} */}
+                  </p>
                 </div>
+
               </div>
             </div>
           </div>
-          </div>
-          
+
           <div className="seller-items">
-          <div><p>More by this artist....</p></div>
+            <div><p>More by this artist....</p></div>
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
             </SellerItemList>
