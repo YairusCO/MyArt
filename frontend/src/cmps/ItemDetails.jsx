@@ -92,7 +92,7 @@ export class _ItemDetails extends Component {
               </div>
               <div className="txt-container" >
 
-                <p>{item.description}</p>
+                <p className="item-desc">{item.description}</p>
                 {/* <p>{item.createdAt}</p> */}
 
                 <p className="grey">Price: <span >${item.price}</span></p>

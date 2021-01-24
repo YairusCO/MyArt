@@ -1,12 +1,18 @@
 .modal {
     position: absolute;
     background-color: whitesmoke;
-    border: 1px solid rgb(221, 221, 221);
-    right: 340px;
-    top: 400px;
+    border: 1px solid #dddddd;
+    right: 210px;
+    top: 210px;
     width: 400px;
     height: 250px;
     opacity: 0.99;
     border-radius: 30px;
     padding: 10px;
+    z-index: 1;
+    text-align: center;
+}
+
+.buy-btn:focus::after {
+    content: "✅";
 }

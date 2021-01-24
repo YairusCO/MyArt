@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { Button } from '@material-ui/core';
+import Menu from '../assets/imgs/menu.svg';
 
 class _Header extends Component {
 
@@ -11,6 +13,7 @@ class _Header extends Component {
             <header>
                 <nav className="main-header">
                     <NavLink exact to="/store"><div className="logo"><span className="pic">Pic</span><span>&</span><span className="art">Art</span></div></NavLink>
+                        <Button className="btn-hamburger"><img src={Menu} alt="menu"/></Button>
                     <div className="nav-bar">
                         <NavLink to="/login">Login</NavLink>
                         <NavLink to="/chat">About Us</NavLink>

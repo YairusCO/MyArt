@@ -1,169 +1,168 @@
 .details-page {
-    padding-top: 50px;
-    .details-page-container {
-        display: flex;
-        flex-direction: column;
-        justify-items: center;
-        padding: 50px;
-        .item-container {
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
-            border-radius: 32px;
-            display: flex;
-            flex-direction: column;
-            // width: 1000px;
-            padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 50px;
+  padding-top: 50px;
+  .details-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    padding: 50px;
+    .item-container {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
+      border-radius: 32px;
+      display: flex;
+      flex-direction: column;
+      // width: 1000px;
+      padding: 20px;
+      box-sizing: border-box;
+      margin-bottom: 50px;
 
-            .title-container {
-                text-align: center;
-            }
-            .item-subcontainer {
-                display: flex;
-                flex-direction: row;
-                justify-items: center;
-                position: relative;
-
-                .img-container {
-                    width: 50%;
-                    max-height: 100%;
-                    img {
-                        max-width: 100%;
-                        max-height: 100%;
-                        border-radius: 32px;
-                    }
-                }
-                .txt-container {
-                    width: 50%;
-                    height: 100%;
-                    // text-align: center;
-                    padding: 0 0 0 2rem;
-                    margin-left: 1rem;
-                    // display: flex;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    .item-reviews{
-                      text-align: left ;
-                    }
-                    .icon-heart{
-                      width: 40px;
-                      margin: 0;
-                      padding: 0;
-                    }
-
-                    .icon-heart-btn{
-                      margin: 0;
-                      padding: 0;
-                    }
-                    .grey{
-                      color:#777;
-                      span{
-                        color: #4f3a65;
-                        font-size: 1.5rem;
-                      }
-                      .p-star{
-                        display: flex;
-                      }
-                      .star-btn{
-                     display: flex;
-                      }
-                     .star{
-                       width: 20px;
-      
-                     }
-                    }
-
-                    .heart-icon{
-                      width: 40px;
-                    }
-
-                    p .see-more{
-                      font-size: 0.8rem;
-                      color:rgba(119, 119, 119, 0.787);
-                    }
-                }
-            }
-        }
-    }
-   
-    .seller-items {
+      .title-container {
         text-align: center;
-        font-size: 24px;
-        // display: flex;
-        // flex-direction: row;
-        // justify-items: center;
-        // align-items: center;
+      }
+      .item-subcontainer {
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        position: relative;
+
+        .img-container {
+          width: 50%;
+          max-height: 100%;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 32px;
+          }
+        }
+        .txt-container {
+          width: 50%;
+          height: 100%;
+          // text-align: center;
+          padding: 0 0 0 2rem;
+          margin-left: 1rem;
+          // display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .item-reviews {
+            text-align: left;
+          }
+          .icon-heart {
+            width: 40px;
+            margin-right: 5px;
+            padding: 0;
+          }
+
+          .icon-heart-btn {
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+          }
+          .grey {
+            color: #777;
+            span {
+              color: #4f3a65;
+              font-size: 1.5rem;
+            }
+            .p-star {
+              display: flex;
+            }
+            .star-btn {
+              display: flex;
+            }
+            .star {
+              width: 20px;
+            }
+          }
+
+          .heart-icon {
+            width: 40px;
+          }
+
+          p .see-more {
+            font-size: 0.8rem;
+            color: rgba(119, 119, 119, 0.787);
+          }
+        }
+      }
     }
+  }
+
+  .seller-items {
+    text-align: center;
+    font-size: 24px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-items: center;
+    // align-items: center;
+  }
 }
 
 .btn-buy {
-    background-color: #fe423f;
-    // color: #211922;
-    cursor: pointer;
-    font-weight: 700;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 24px;
-    color: #fff;
-    padding: 8px 28px;
-    opacity: 0.9;
-    // padding: 0 0 0 2rem;
-    margin-left: 1rem;
+  background-color: #fe423f;
+  // color: #211922;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 24px;
+  color: #fff;
+  padding: 8px 28px;
+  opacity: 0.9;
+  // padding: 0 0 0 2rem;
+  margin-left: 1rem;
 }
 
 .btn-buy:hover {
-    background-color: #fe423f;
-    opacity: 1;
-    transition: transform 85ms ease-out;
-    text-decoration: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
-        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-color: #fe423f;
+  opacity: 1;
+  transition: transform 85ms ease-out;
+  text-decoration: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 
-
 .btn {
-    display: inline-block;
-    padding: .75rem 1.25rem;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: 0.15rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $clr7;
     border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($clr7, 15%);
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
     color: #fff;
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: .15rem;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: $clr7;
-      border-radius: 10rem;
-      z-index: -2;
-    }
     &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: darken($clr7, 15%);
-      transition: all .3s;
-      border-radius: 10rem;
-      z-index: -1;
+      width: 100%;
     }
-    &:hover {
-      color: #fff;
-      &:before {
-        width: 100%;
-      }
-    }
- 
-  
+  }
+
   /* optional reset for presentation */
   * {
     font-family: Arial;
@@ -178,19 +177,32 @@
   }
   h1 {
     text-transform: uppercase;
-    font-size: .8rem;
+    font-size: 0.8rem;
     margin-bottom: 2rem;
     color: #777;
   }
   span {
     display: block;
     margin-top: 2rem;
-    font-size: .7rem;
+    font-size: 0.7rem;
     color: #777;
     a {
-      font-size: .7rem;
+      font-size: 0.7rem;
       color: #999;
       text-decoration: underline;
     }
   }
+}
+p.grey.p-star {
+  display: flex;
+  align-items: center;
+}
+
+.img-container p {
+  display: flex;
+  align-items: center;
+}
+
+.item-desc {
+  margin-top: 0;
 }

@@ -14,11 +14,10 @@ export function SellerItemPreview({ sellerItem}) {
                 <Button onClick={() => {onScrollToTop()}}>
                     <Link to={`/item/${sellerItem._id}`}>  <img className="item-img" src={sellerItem.imgUrl} alt="" /></Link>
                     </Button>
-                  
+
                 </p>
                 <div className="items-btns">
-                   
-               
+
                 </div>
             </div>
         </React.Fragment>

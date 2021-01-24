@@ -21,13 +21,14 @@ nav a {
 nav .active {
     color: rgb(71, 71, 71)
 }
+
 #root > div > header {
     grid-column: 1/-1;
 }
 .main-header {
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,4 +56,10 @@ nav .active {
         color:rgb(90, 68, 124);
     }
 
+}
+
+@media screen and (min-width: 681px) {
+.btn-hamburger {
+    display: none !important;
+}
 }
