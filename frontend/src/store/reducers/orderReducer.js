@@ -10,23 +10,21 @@ const initialState = {
     order: {
         item: [],
         userId: '',
-      }
+      },
+      orders: []
 }
 
 export function orderReducer(state = initialState, action) {
-    console.log('order Reducer on');
     switch (action.type) {
-        case 'INCREMENT':
-            return {...state, count: state.count + 1}
+        case 'SET_ORDERS':
+            return {...state, orders: action.orders}
         case 'DECREMENT':
             return {...state, count: state.count - 1}
         case 'ADD_ORDER':
-            console.log('add oreder');
-            return {...state, orderItems: [...state.orderItems, action.item]}
+            return {...state, orders: [...state.orders, action.order]}
         case 'REMOVE_FROM_CART':
-            return {...state, orderItems: state.cartItems.filter(item => item._id !== action.itemId)}
+            return {...state, orders: state.cartItems.filter(item => item._id !== action.itemId)}
         default:
             return state
     }
 }
-// export const store = createStore(cartReducer) 
