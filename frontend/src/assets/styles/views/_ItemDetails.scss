@@ -59,8 +59,9 @@
           .grey {
             color: #777;
             span {
+              font-weight: bold;
               color: #4f3a65;
-              font-size: 1.5rem;
+              font-size: 1.3rem;
             }
             .p-star {
               display: flex;
@@ -88,7 +89,7 @@
 
   .seller-items {
     text-align: center;
-    font-size: 24px;
+    font-size: 2rem;
   }
 }
 

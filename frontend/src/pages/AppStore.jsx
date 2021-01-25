@@ -78,6 +78,7 @@ const mapStateToProps = state => {
   return {
     items: state.itemModule.items,
     users: state.userModule.users,
+    // ordres: state.userOrderModule.orders,
     loggedInUser: state.userModule.loggedInUser,
     filterBy: state.itemModule.filterBy
   }

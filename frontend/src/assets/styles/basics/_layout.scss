@@ -24,11 +24,20 @@
         grid-template-columns:
             minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
     }
+    @include for-wide-layout {
+        grid-template-columns:
+            minmax(20px, 1fr) minmax(auto, $max-breakpoint) minmax(20px, 1fr);
+    }
 }
 
 .item-details {
     column-count: 4;
-    // display: grid;
-    // grid-gap: 20px;
-    // grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
+.item-seller{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
+// .item-seller > * {
+//     width: 30%;
+// }

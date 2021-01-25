@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    font-family: "montserrat";
+    // font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
 ::selection {
@@ -35,6 +36,7 @@ img {
 
 a {
     text-decoration: none;
+    font-family: montserrat;
 }
 
 a:hover {
