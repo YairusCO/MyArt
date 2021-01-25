@@ -20,13 +20,9 @@ export function ItemPreview({ item, onBuy, onAddToCart }) {
                 <div className="item-preview">
                     <Link to={`/item/${item._id}`} onClick={() => {onScrollToTop()}} ><img className="item-img" src={item.imgUrl} alt="" /></Link>
                     <div className="card-info">
-                        <p><img className="profile-img" src={item.seller.imgUrl} alt="" />{item.seller.fullname}</p>
-                        <div className="reactions">
-                            {/* <Button className="heart-icon" onClick={() => {onHeart()}}>
-                                <img className="heart-icon" src={currHeart} alt="" />
-                                </Button> */}
-                            {/* <Button>👍</Button> */}
-                        </div>
+                    <img className="profile-img" src={item.seller.imgUrl} alt="" />
+                    <p>{item.seller.fullname}</p>
+                     
                     </div>
                 </div>
             </div>

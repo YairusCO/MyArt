@@ -24,10 +24,8 @@ export class _ItemDetails extends Component {
   }
 
   componentDidMount() {
-
     this.props.loadItems()
     this.props.loadOrders()
-
     const itemId = this.props.match.params.itemId
     if (itemId) {
       const item = this.props.items.find(item => item._id === itemId)
@@ -68,16 +66,13 @@ export class _ItemDetails extends Component {
   }
 
   render() {
-
-    const { items } = this.props
-    const { orders } = this.props
-    const { loggedInUser } = this.props
-    console.log('loggedInUser', loggedInUser);
+    const { loggedInUser, items, orders } = this.props
+    console.log(orders);
 
     const itemId = this.props.match.params.itemId
     const item = this.props.items.find(item => item._id === itemId)
 
-    if (!item) return <h1>loading..</h1>
+    if (!item || !orders.length) return <h1>loading..</h1>
     const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
 
 
@@ -104,8 +99,7 @@ export class _ItemDetails extends Component {
                     this.onPurchase(item)
                   }}>Continue with purchase</button>
                 </div>
-                {this.state.modal && <BuyModal item={item} loggedInUser={loggedInUser} />}
-
+                {this.state.modal && <BuyModal order={orders[orders.length-1]} loggedInUser={loggedInUser} />}
                 {/* <button className="btn" onClick={() => {
                     this.onAddToCart([item])
                   }}>Add to cart</button> */}
@@ -154,7 +148,6 @@ const mapStateToProps = state => {
     users: state.userModule.users,
     loggedInUser: state.userModule.loggedInUser,
     orders: state.orderModule.orders
-
   }
 }
 const mapDispatchToProps = {

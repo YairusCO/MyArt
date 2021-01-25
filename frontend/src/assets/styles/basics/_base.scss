@@ -36,21 +36,25 @@ img {
 a {
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
 
 .appStore {
-    margin: 5px 0;
+    margin: 10px 0;
     display: grid;
-    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 1040px) minmax(2rem, 1fr);
-    > * {
+    grid-template-columns: 10vw minmax(auto, 80vw) 10vw;
+
+    >* {
         grid-column: 2;
     }
-    > .item-details {
+
+    >.item-details {
         margin-bottom: 20px;
     }
 }
+
 #root {
     // min-height: 100vh;
     // grid-template-rows: auto 1fr auto;

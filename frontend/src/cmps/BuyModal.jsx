@@ -2,15 +2,16 @@ import { Button } from '@material-ui/core';
 import React from 'react'
 // import swal from 'sweetalert';
 
-export function BuyModal({ item, loggedInUser }) {
+export function BuyModal({ order, loggedInUser }) {
+console.log('order',order);
     return (
 
         <div className="modal">
             <h1>Order Details</h1>
-            <p>Item: {item.title}</p>
-            <p>Price: {item.price}</p>
-            <p>user: {loggedInUser.fullname}</p>
-            <Button className="buy-btn" href="#/thankyou">Checkout & Download</Button>
+            <p>Item: {order.item.title}</p>
+            <img src={order.item.imgUrl} alt=""/>
+            <p>Price: {order.item.price}</p>
+            <Button className="buy-btn">Checkout & Download</Button>
         </div>
 
     )

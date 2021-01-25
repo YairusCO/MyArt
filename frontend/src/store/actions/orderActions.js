@@ -15,7 +15,6 @@ export function loadOrders() { // Action Creator
 export function addOrder(order) {
     return async (dispatch) => {
         const saveOrder = await orderService.add(order)
-        this.props.dispatch(action)
         const action = {
             type: 'ADD_ORDER',
             order: saveOrder

@@ -1,18 +1,23 @@
 .modal {
     position: absolute;
-    background-color: whitesmoke;
+    background-color: white;
     border: 1px solid #dddddd;
     right: 210px;
-    top: 210px;
-    width: 400px;
-    height: 250px;
-    opacity: 0.99;
-    border-radius: 30px;
+    top: -60px;
+    width: 500px;
+    height: 700px;
     padding: 10px;
     z-index: 1;
     text-align: center;
 }
 
-.buy-btn:focus::after {
-    content: "✅";
+// .buy-btn:focus::after {
+//     content: "✅";
+// }
+
+
+#root > div > main > section > div > div.item-container > div.item-subcontainer > div.txt-container > div.modal > button {
+    background-color: green;
+    color:white;
+    font-size: 1.1rem;
 }

@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import Button from '@material-ui/core/Button';
 
 function onScrollToTop(){
-window.scrollTo(0, 0); }
+window.scrollTo(0, 0);
+ }
 
 export function SellerItemPreview({ sellerItem}) {
 
