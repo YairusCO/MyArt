@@ -15,8 +15,11 @@ nav {
 nav a {
     padding: 0 5px;
     margin: 10px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: rgb(60, 88, 209);
+    font-family: "montserrat", sans-serif;
+    color: rgb(58, 58, 59);
+}
+nav a:link {
+    text-decoration: none;
 }
 nav .active {
     color: rgb(71, 71, 71)
