@@ -16,10 +16,18 @@ const initialState = {
 export function orderReducer(state = initialState, action) {
     console.log('order Reducer on');
     switch (action.type) {
-        case 'INCREMENT':
-            return {...state, count: state.count + 1}
-        case 'DECREMENT':
-            return {...state, count: state.count - 1}
+        case 'SET_ORDERS':
+            console.log(action.items);
+            return { ...state, orders: action.orders}
+            // case 'SET_ORDER':
+            //       return {
+            //           ...state,
+            //           items: state.items.map(item => item._id === action.item._id ? action.item : item)
+            //       }
+        // case 'INCREMENT':
+        //     return {...state, count: state.count + 1}
+        // case 'DECREMENT':
+        //     return {...state, count: state.count - 1}
         case 'ADD_ORDER':
             console.log('add oreder');
             return {...state, orderItems: [...state.orderItems, action.item]}

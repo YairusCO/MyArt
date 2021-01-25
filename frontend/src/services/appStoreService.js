@@ -730,14 +730,7 @@ var gItems = [];
 const BASE_URL = 'item'
 
 async function query(filterBy) {
-    // gItems =  storageService.load(KEY)
-    // if (!gItems || !gItems.length) {
-    //     gItems = ITEM_DB
-    // }
-    // console.log('query: ', filteredItems);
-    // _saveItemsToStorage();
-    // return Promise.resolve(filteredItems);
-    // var queryStr = (!filterBy) ? '' : `?name=${filterBy.name}&sort=anaAref`
+   
     const items = await httpService.get(BASE_URL)
     console.log(items);
     const filteredItems = items.filter(item => item.title.includes(filterBy.title))
@@ -745,13 +738,7 @@ async function query(filterBy) {
 }
 
 function remove(itemId) {
-    // console.log('remove', gItems);
-    // //   return httpService.delete(`item/${itemId}`)
-    // // return storageService.delete('item', itemId)
-    // gItems = storageService.load(KEY)
-    // gItems = gItems.filter(item => item.id !== itemId);
-    // _saveItemsToStorage();
-    // return Promise.resolve();
+  
     return httpService.delete(`${BASE_URL}/${itemId}`)
 }
 

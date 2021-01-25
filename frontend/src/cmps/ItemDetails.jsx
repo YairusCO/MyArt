@@ -15,7 +15,7 @@ export class _ItemDetails extends Component {
   state = {
     item: null,
     items: [],
-    order: {
+    orders: {
       item: [],
       userId: '',
     },
@@ -70,6 +70,7 @@ export class _ItemDetails extends Component {
   render() {
 
     const { items } = this.props
+    const { orders } = this.props
     const { loggedInUser } = this.props
     console.log('loggedInUser', loggedInUser);
 
@@ -151,7 +152,9 @@ const mapStateToProps = state => {
   return {
     items: state.itemModule.items,
     users: state.userModule.users,
-    loggedInUser: state.userModule.loggedInUser
+    loggedInUser: state.userModule.loggedInUser,
+    orders: state.orderModule.orders
+
   }
 }
 const mapDispatchToProps = {
