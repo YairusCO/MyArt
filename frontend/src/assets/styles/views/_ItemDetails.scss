@@ -59,8 +59,9 @@
           .grey {
             color: #777;
             span {
+              font-weight: bold;
               color: #4f3a65;
-              font-size: 1.5rem;
+              font-size: 1.3rem;
             }
             .p-star {
               display: flex;
@@ -88,17 +89,12 @@
 
   .seller-items {
     text-align: center;
-    font-size: 24px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-items: center;
-    // align-items: center;
+    font-size: 2rem;
   }
 }
 
 .btn-buy {
   background-color: #fe423f;
-  // color: #211922;
   cursor: pointer;
   font-weight: 700;
   text-align: center;
@@ -107,7 +103,6 @@
   color: #fff;
   padding: 8px 28px;
   opacity: 0.9;
-  // padding: 0 0 0 2rem;
   margin-left: 1rem;
 }
 

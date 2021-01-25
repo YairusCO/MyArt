@@ -72,7 +72,7 @@ export class _ItemDetails extends Component {
     const itemId = this.props.match.params.itemId
     const item = this.props.items.find(item => item._id === itemId)
 
-    if (!item || !orders.length) return <h1>loading..</h1>
+    if (!item ) return <h1>loading..</h1>
     const sellerItems = items.filter(sellerItem => sellerItem.seller.fullname === item.seller.fullname)
 
 
@@ -99,7 +99,7 @@ export class _ItemDetails extends Component {
                     this.onPurchase(item)
                   }}>Continue with purchase</button>
                 </div>
-                {this.state.modal && <BuyModal order={orders[orders.length-1]} loggedInUser={loggedInUser} />}
+                {this.state.modal && orders.length > 0 && <BuyModal order={orders[orders.length-1]} loggedInUser={loggedInUser} />}
                 {/* <button className="btn" onClick={() => {
                     this.onAddToCart([item])
                   }}>Add to cart</button> */}
@@ -125,7 +125,7 @@ export class _ItemDetails extends Component {
             </div>
           </div>
 
-          <div className="seller-items">
+          <div className="seller-items more-details">
             <div><p>More by this artist....</p></div>
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
