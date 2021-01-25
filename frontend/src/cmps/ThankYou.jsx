@@ -9,12 +9,6 @@ import { BuyModal } from '../cmps/BuyModal'
 export class _ThankYou extends Component {
 
 
-    componentDidMount() {
-
-        this.props.loadItems()
-        this.props.loadOrders()
-      }
-
     render() {
     return (
         <div className="thank-you">
