@@ -89,16 +89,11 @@
   .seller-items {
     text-align: center;
     font-size: 24px;
-    // display: flex;
-    // flex-direction: row;
-    // justify-items: center;
-    // align-items: center;
   }
 }
 
 .btn-buy {
   background-color: #fe423f;
-  // color: #211922;
   cursor: pointer;
   font-weight: 700;
   text-align: center;
@@ -107,7 +102,6 @@
   color: #fff;
   padding: 8px 28px;
   opacity: 0.9;
-  // padding: 0 0 0 2rem;
   margin-left: 1rem;
 }
 
@@ -133,6 +127,7 @@
   overflow: hidden;
   z-index: 1;
   cursor: pointer;
+  outline: none;
   &:after {
     content: "";
     position: absolute;
