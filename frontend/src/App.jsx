@@ -8,6 +8,8 @@ import { Footer } from './pages/Footer.jsx'
 import { Header } from './cmps/Header'
 import { Cart } from './cmps/Cart'
 import { AppStore } from './pages/AppStore'
+import { ThankYou } from './cmps/ThankYou'
+
 
 
 export function App() {
@@ -20,7 +22,7 @@ export function App() {
             <Route path="/user/:id" component={UserDetails} />
             <Route path="/order/:id" component={Cart} />
             <Route path="/login" component={LoginSignup} />
-            <Route path="/chat" component={Chat} />
+            <Route path="/thankyou" component={ThankYou} />
             <Route path="/item/:itemId" component={ItemDetails} />
             <Route path="/" component={AppStore} />
           </Switch>
