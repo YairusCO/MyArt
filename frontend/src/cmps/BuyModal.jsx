@@ -1,6 +1,6 @@
 import { Button } from '@material-ui/core';
 import React from 'react'
-import swal from 'sweetalert';
+// import swal from 'sweetalert';
 
 export function BuyModal({ item, loggedInUser }) {
     return (

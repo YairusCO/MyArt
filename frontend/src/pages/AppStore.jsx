@@ -60,10 +60,10 @@ class _AppStore extends Component {
     const { items } = this.props;
     return (
       <React.Fragment>
-        <HeroPic />
+        <HeroPic handleInput={this.handleInput} />
         <div className="appStore">
           {/* <Cart /> */}
-          <ItemFilter handleInput={this.handleInput} />
+          {/* <ItemFilter handleInput={this.handleInput} /> */}
 
           <ItemList items={items} onBuy={this.onBuy} onAddToCart={this.onAddToCart} onRemoveItem={this.onRemoveItem} />
 

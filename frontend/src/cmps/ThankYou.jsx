@@ -20,8 +20,9 @@ export class _ThankYou extends Component {
         <div className="thank-you">
             <h1>Thank you for the purchase</h1>
             <p>Order Details:</p>
-            <Button>You can download you image here <a href={order.item.imgUrl} title={order.item.title}>
-            </a></Button>
+            <Button>You can download you image here
+               {/* <a href={order.item.imgUrl} title={order.item.title}> </a> */}
+               </Button>
         </div>
     )}
 }
