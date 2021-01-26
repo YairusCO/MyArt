@@ -5,14 +5,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 7vh;
+  width: 35vw;
   position: absolute;
-  bottom: 19vh;
-  height: 6vh;
-  width: 60vw;
-  left: 0;
-  margin-left: 10vw;
-  position: absolute;
-  top: 80%;
+  top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
   input {
