@@ -2,19 +2,15 @@
   text-align: left;
   background-color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 20px 0px;
-  // margin-bottom: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  height: 7vh;
+  width: 35vw;
   position: absolute;
-  bottom: 18vh;
-  height: 6vh;
-  width: 29vw;
-  left: 0;
-  margin-left: 10vw;
-
-
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   input {
     padding-left: 0.8rem;
     font-size: 1.2rem;
