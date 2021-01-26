@@ -1,5 +1,5 @@
 import { ItemFilter } from '../cmps/ItemFilter'
-import Hero from '../assets/imgs/hero3.jpg';
+import Hero from '../assets/imgs/hero4.jpg';
 
     export function HeroPic({handleInput}){
 
