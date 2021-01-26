@@ -11,7 +11,7 @@ export function SellerItemPreview({ sellerItem}) {
     return (
         <React.Fragment>
             <div>
-                <p className="item-preview item-seller">
+                <p className="">
                 <Button onClick={() => {onScrollToTop()}}>
                     <Link to={`/item/${sellerItem._id}`}>  <img className="item-img" src={sellerItem.imgUrl} alt="" /></Link>
                     </Button>

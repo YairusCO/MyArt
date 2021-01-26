@@ -125,11 +125,13 @@ export class _ItemDetails extends Component {
             </div>
           </div>
 
-          <div className="seller-items more-details">
+          <div className="seller-items-container">
             <div><p>More by this artist....</p></div>
+            <div className="seller-items ">
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
             </SellerItemList>
+            </div>
           </div>
         </div>
 

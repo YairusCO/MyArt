@@ -35,9 +35,10 @@
 }
 .item-seller{
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     }
-// .item-seller > * {
-//     width: 30%;
-// }
+.item-seller > * {
+    width: 30%;
+}
