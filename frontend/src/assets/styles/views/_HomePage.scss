@@ -59,6 +59,14 @@
     margin: 20px;
 }
 
+.social img {
+    height: 40px;
+    width: 40px;
+}
+#root > div > footer > div.social > img:nth-child(3) {
+    width: 60px;
+    height: 40px;
+}
 
 .relative {
     position: relative;
@@ -71,6 +79,6 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    background-color: #fd4e01cc;
+    background-color: #7195D3;
     width: 56px
 }

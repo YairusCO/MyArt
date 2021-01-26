@@ -93,8 +93,8 @@ export class _ItemDetails extends Component {
 
                 <p className="grey">Price: <span >${item.price}</span></p>
                 <div className="items-btns">
-                  <button className="icon-heart-btn" ><img className="icon-heart" src={heartRed} alt="" /></button>
-
+                  <button className="icon-heart-btn" ></button>
+                  {/* <img className="icon-heart" src={heartRed} alt="" /> */}
                   <button className="btn" onClick={() => {
                     this.onPurchase(item)
                   }}>Continue with purchase</button>
@@ -107,8 +107,9 @@ export class _ItemDetails extends Component {
                     <Button className="heart-icon"><img src={heartRed} alt="" /></Button>
                   </div> */}
                 <div className="item-reviews">
-                  <p className="grey" >Comments: <span className="see-more">see more...</span>
-                    {/* {item.reviews[0].txt} */}
+                  <p className="grey" >Comments: "{item.reviews[0].txt}"
+                    <br/>
+                    <span className="see-more">see more...</span>
                   </p>
                   <p className="grey p-star">Rating: <button className="star-btn">
                     <img className="star" src={star} alt="" />
@@ -126,7 +127,7 @@ export class _ItemDetails extends Component {
           </div>
 
           <div className="seller-items more-details">
-            <div><p>More by this artist....</p></div>
+            <div><p>More by this artist</p></div>
             <SellerItemList sellerItems={sellerItems}>
               {sellerItems.map(sellerItem => <SellerItemPreview key={sellerItem._id} sellerItem={sellerItem} />)}
             </SellerItemList>

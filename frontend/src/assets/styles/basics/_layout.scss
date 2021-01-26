@@ -34,7 +34,7 @@
 #root > div > main > section > div > div.seller-items.more-details > div.item-details {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 #root > div > main > section > div > div.seller-items.more-details > div.item-details > * {
     width: 30%;
