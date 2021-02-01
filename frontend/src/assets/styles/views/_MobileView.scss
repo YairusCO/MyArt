@@ -7,7 +7,7 @@
         padding: 20px;
     }
     .hero {
-        height: 75vh;
+        height: 45vh;
     }
     .btn-hamburger {
         display: block;
@@ -15,6 +15,9 @@
     }
     .nav-bar {
         display: none;
+    }
+    .item-filter-container {
+        width: 80vw;
     }
 }
 
@@ -28,6 +31,10 @@
     }
     .nav-bar {
         display: none;
+    }
+    .item-filter-container {
+        width: 80vw;
+        top: 260px;
     }
 }
 
