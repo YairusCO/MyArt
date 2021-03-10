@@ -31,12 +31,15 @@
 }
 
 
-#root > div > main > section > div > div.seller-items.more-details > div.item-details {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-#root > div > main > section > div > div.seller-items.more-details > div.item-details > * {
-    width: 30%;
-}
+// #root > div > main > section > div > div.seller-items.more-details >div.seller-list>{
+//     display: flex;
+//     flex-direction: column;
+//     flex-wrap: wrap;
+//     justify-content: space-around;
+//     column-count: 4;
+//     // break-inside: avoid;
+// }
+// #root > div > main > section > div > div.seller-items.more-details >div.seller-list>* {
+ 
+//     width: 30%;
+// }

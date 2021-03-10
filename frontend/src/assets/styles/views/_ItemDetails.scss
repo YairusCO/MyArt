@@ -106,6 +106,15 @@
   margin-left: 1rem;
 }
 
+.seller-items {
+  .seller-list {
+    column-count: 4;
+    p{
+      margin-top: 0;
+    }
+  }
+}
+
 .btn-buy:hover {
   background-color: #fe423f;
   opacity: 1;

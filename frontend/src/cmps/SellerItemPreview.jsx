@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 
 function onScrollToTop(){
 window.scrollTo(0, 0);
@@ -10,16 +10,13 @@ export function SellerItemPreview({ sellerItem}) {
 
     return (
         <React.Fragment>
-            <div>
-                <p className="">
-                <Button onClick={() => {onScrollToTop()}}>
+            <div className="item-preview">
+                <p>
+                <button onClick={() => {onScrollToTop()}}>
                     <Link to={`/item/${sellerItem._id}`}>  <img className="item-img" src={sellerItem.imgUrl} alt="" /></Link>
-                    </Button>
+                    </button>
 
                 </p>
-                <div className="items-btns">
-
-                </div>
             </div>
         </React.Fragment>
     )

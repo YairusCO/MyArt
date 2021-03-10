@@ -2,7 +2,7 @@
 
 export function SellerItemList({ children }) {
     return (
-        <div className="item-seller">
+        <div className="seller-list">
             {children}
         </div>
     )
