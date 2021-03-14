@@ -160,7 +160,7 @@ class _LoginSignup extends Component {
         {!loggedInUser && signupSection}
 
         <hr />
-        <section className="admin">
+        {/* <section className="admin">
           <details>
             <summary>Admin</summary>
             <button onClick={this.props.loadUsers}>Refresh Users</button>
@@ -181,7 +181,7 @@ class _LoginSignup extends Component {
               ))}
             </ul>}
           </details>
-        </section>
+        </section> */}
       </div>
     )
   }
