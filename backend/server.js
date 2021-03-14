@@ -18,6 +18,7 @@ const session = expressSession({
 app.use(cookieParser())
 app.use(bodyParser.json())
 app.use(session)
+app.use(express.static('public'));
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.resolve(__dirname, 'public')))
@@ -57,8 +58,14 @@ app.get('/**', (req, res) => {
 
 const logger = require('./services/logger.service')
 const port = process.env.PORT || 3030
+
+app.get('/**', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    })
+
 http.listen(port, () => {
-    logger.info('Server is running on port: ' + port)
+    console.log(`App listening on port ${port}!`)
+    // logger.info('Server is running on port: ' + port)
 })
 
 console.log('I am Here!, am I?')
