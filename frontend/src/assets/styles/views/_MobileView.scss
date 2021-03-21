@@ -1,4 +1,4 @@
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 750px) {
     .item-details {
         column-count: 2;
     }
@@ -19,11 +19,12 @@
     .item-filter-container {
         width: 80vw;
     }
+    
 }
 
 @media screen and (max-width: 540px) {
     .item-details {
-        column-count: 1;
+        column-count: 2;
     }
     .btn-hamburger {
         display: block;

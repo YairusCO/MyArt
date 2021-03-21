@@ -10,12 +10,41 @@
         }
     }
 
+    @include for-mobile-layout {
+        .item-subcontainer{
+            flex-direction: column;
+            .img-container{
+                width: 100%;
+            }
+            .txt-container{
+                width: 100%;
+            }
+        }
+    }
     @include for-narrow-layout {
         grid-template-columns: minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
+        .item-subcontainer{
+            flex-direction: column;
+            .img-container{
+                width: 100%;
+            }
+            .txt-container{
+                width: 100%;
+            }
+        }
     }
 
     @include for-normal-layout {
         grid-template-columns: minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
+        .item-subcontainer{
+            flex-direction: row;
+            .img-container{
+                width: 50%;
+            }
+            .txt-container{
+                width: 50%;
+            }
+        }
     }
 
     @include for-wide-layout {

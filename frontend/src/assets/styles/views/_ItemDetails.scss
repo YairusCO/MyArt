@@ -20,12 +20,12 @@
       }
       .item-subcontainer {
         display: flex;
-        flex-direction: row;
+        // flex-direction: row;
         justify-items: center;
         position: relative;
 
         .img-container {
-          width: 50%;
+          // width: 50%;
           max-height: 100%;
           img {
             max-width: 100%;
@@ -34,7 +34,7 @@
           }
         }
         .txt-container {
-          width: 50%;
+          // width: 50%;
           height: 100%;
           // text-align: center;
           padding: 0 0 0 2rem;
