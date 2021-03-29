@@ -18,11 +18,18 @@
             }
             .txt-container{
                 width: 100%;
-            }
-            .seller-list {
-                column-count: 2;
+                padding: 0;
+                margin: auto;
             }
         }
+        .item-details {
+            column-count: 2;
+        }
+        .appStore{
+            .item-details {
+                column-count: 2;
+            }
+            }
     }
     @include for-narrow-layout {
         grid-template-columns: minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
@@ -33,11 +40,19 @@
             }
             .txt-container{
                 width: 100%;
+                padding: 0;
+                margin: auto;
             }
         }
-        .seller-list {
+            .seller-list {
             column-count: 2;
-        }
+            }
+            .appStore{
+                .item-details {
+                    column-count: 3;
+                }
+                }
+        
     }
 
     @include for-normal-layout {
@@ -49,11 +64,19 @@
             }
             .txt-container{
                 width: 50%;
+                padding: 0 0 0 2rem;
+                margin-left: 1rem;
             }
         }
-        .seller-list {
+            .seller-list {
             column-count: 4;
-        }
+            }
+            .appStore{
+                .item-details {
+                    column-count: 4;
+                }
+                }
+       
     }
 
     @include for-wide-layout {
@@ -64,20 +87,7 @@
     }
 }
 
-.item-details {
-    column-count: 4;
-}
 
 
-// #root > div > main > section > div > div.seller-items.more-details >div.seller-list>{
-//     display: flex;
-//     flex-direction: column;
-//     flex-wrap: wrap;
-//     justify-content: space-around;
-//     column-count: 4;
-//     // break-inside: avoid;
-// }
-// #root > div > main > section > div > div.seller-items.more-details >div.seller-list>* {
- 
-//     width: 30%;
-// }
+
+
