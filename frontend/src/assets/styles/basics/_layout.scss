@@ -19,6 +19,9 @@
             .txt-container{
                 width: 100%;
             }
+            .seller-list {
+                column-count: 2;
+            }
         }
     }
     @include for-narrow-layout {
@@ -32,6 +35,9 @@
                 width: 100%;
             }
         }
+        .seller-list {
+            column-count: 2;
+        }
     }
 
     @include for-normal-layout {
@@ -44,6 +50,9 @@
             .txt-container{
                 width: 50%;
             }
+        }
+        .seller-list {
+            column-count: 4;
         }
     }
 
