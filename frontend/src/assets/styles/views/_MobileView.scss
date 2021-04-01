@@ -1,8 +1,63 @@
-@media screen and (max-width: 750px) {
+
+
+@media screen and (max-width: 540px) {
     .item-details {
-        .seller-list {
+        column-count: 2;
+    }
+
+    // .item-details {
+    //     .seller-list {
+    //     column-count: 2;
+    //     }
+    // }
+    .appStore {
+        display: inline-block;
+        padding: 20px;
+    }
+    .hero {
+        height: 45vh;
+    }
+    .btn-hamburger {
+        display: block;
+        fill:blue;
+    }
+    .nav-bar {
+        display: none;
+    }
+    .item-filter-container {
+        width: 80vw;
+        top: 260px;
+    }
+
+    .item-subcontainer{
+        flex-direction: column;
+        .img-container{
+            width: 100%;
+        }
+        .txt-container{
+            width: 100%;
+            padding: 0;
+            margin: auto;
+        }
+    }
+    .item-details {
+        column-count: 2;
+    }
+    .seller-list {
         column-count: 2;
         }
+    .appStore{
+        .item-details {
+            column-count: 2;
+        }
+        }
+}
+
+@media screen and (min-width: 541px) and (max-width: 750px) {
+    .item-details {
+        // .seller-list {
+        column-count: 3;
+        // }
     }
     .appStore {
         display: inline-block;
@@ -21,23 +76,46 @@
     .item-filter-container {
         width: 80vw;
     }
+    .item-subcontainer{
+        flex-direction: column;
+        .img-container{
+            width: 100%;
+        }
+        .txt-container{
+            width: 100%;
+            padding: 0;
+            margin: auto;
+        }
+    }
+        .seller-list {
+        column-count: 2;
+        }
+        .appStore{
+            .item-details {
+                column-count: 3;
+            }
+            }
     
 }
 
-@media screen and (max-width: 540px) {
-    .item-details {
-        column-count: 2;
-    }
-    .btn-hamburger {
-        display: block;
-        fill:blue;
-    }
-    .nav-bar {
-        display: none;
-    }
-    .item-filter-container {
-        width: 80vw;
-        top: 260px;
-    }
+@media screen and (min-width: 751px) {
+.item-subcontainer{
+            flex-direction: row;
+            .img-container{
+                width: 50%;
+            }
+            .txt-container{
+                width: 50%;
+                padding: 0 0 0 2rem;
+                margin-left: 1rem;
+            }
+        }
+            .seller-list {
+            column-count: 4;
+            }
+            .appStore{
+                .item-details {
+                    column-count: 4;
+                }
+                }
 }
-
