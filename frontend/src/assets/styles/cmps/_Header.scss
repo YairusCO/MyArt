@@ -1,15 +1,155 @@
-header {
-    justify-content: space-between;
-    z-index: 1;
+
+.header {
+    background-color: #fff;
+    box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+    position: fixed;
     width: 100%;
-    .loggedin-user {
-        padding: 2px 8px;
-        border-radius: 1em;
-        align-self: flex-end;
-        color: whitesmoke;
+    z-index: 3;
+  }
+  
+  .header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+  }
+  
+  .header li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+  
+  .header li a:hover,
+  .header .menu-btn:hover {
+    background-color: #f4f4f4;
+  }
+  
+  .header .logo {
+    font-family: 'IndieFlower',sans-serif;
+        font-size: 1.5rem;
+        color: #9ac7f0;
+        span{
+            font-family: 'PottaOne',sans-serif;
+            color: rgb(71, 71, 71);
+        }
+        .pic{
+            font-family: 'PottaOne',sans-serif;
+            color: rgb(60, 88, 209);
+        }
+        .art{
+            font-family: 'PottaOne',sans-serif;
+            color:rgb(90, 68, 124);
+        }
+
+  }
+  
+  /* menu */
+  
+  .header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+    a {
+        padding: 0 5px;
+        margin: 10px;
+        font-family: "montserrat", sans-serif;
+        color: rgb(58, 58, 59);
     }
+    a:link {
+        text-decoration: none;
+    }
+    nav .active {
+        color: rgb(71, 71, 71)
+    }
+  }
+  
+  @media (max-width: 47.9em) {
+    .header .menu {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    }
+    .header .menu-btn ~ .menu {
+        display: none;
+      }
 }
-nav {
+  /* menu icon */
+  
+  .header .menu-icon {
+    cursor: pointer;
+    display: block;
+    padding: 28px 20px;
+    position: absolute;
+    -webkit-user-select: none;
+    user-select: none;
+    right: 0;
+    top: -6px;
+  }
+  
+  .header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+  }
+  
+  .header .menu-icon .navicon:before,
+  .header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+  }
+  
+  .header .menu-icon .navicon:before {
+    top: 5px;
+  }
+  
+  .header .menu-icon .navicon:after {
+    top: -5px;
+  }
+  
+  /* menu btn */
+  
+  .header .menu-btn {
+    display: none;
+  }
+  
+ 
+  .header .menu-btn:checked ~ .menu {
+    max-height: 240px;
+    display: flex;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:before {
+    transform: rotate(-45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon .navicon:after {
+    transform: rotate(45deg);
+  }
+  
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+  .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+  
+  /* 48em = 768px */
+  
+  @media (min-width: 48em) {
+      nav {
     padding: 5px 0;
 }
 nav a {
@@ -24,14 +164,23 @@ nav a:link {
 nav .active {
     color: rgb(71, 71, 71)
 }
+.header .menu-btn .menu {
+    display: flex;
+  }
+    
+    .header .menu-icon {
+      display: none;
+    }
 
-#root > div > header {
+    #root > div > header {
     grid-column: 1/-1;
 }
 .main-header {
-    position: fixed;
+    position: relative;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
     width: 100%;
-    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -42,30 +191,5 @@ nav .active {
     color: #9ac7f0;
 }
 
-.logo {
-    font-family: 'IndieFlower',sans-serif;
-    font-size: 1.5rem;
-    color: #9ac7f0;
-    span{
-        font-family: 'PottaOne',sans-serif;
-        color: rgb(71, 71, 71);
-    }
-    .pic{
-        font-family: 'PottaOne',sans-serif;
-        color: rgb(60, 88, 209);
-    }
-    .art{
-        font-family: 'PottaOne',sans-serif;
-        color:rgb(90, 68, 124);
-    }
+  }
 
-}
-
-#root > div > header > nav > a{
-    text-decoration: none;
-}
-@media screen and (min-width: 681px) {
-.btn-hamburger {
-    display: none !important;
-}
-}
